@@ -2774,7 +2774,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	e
 	$$
-	p_{j}' = \dfrac{\partial \Lambda'}{\partial q_{j}} = p_{j} + \dfrac{\partial F}{\partial q_{j}}
+	p_{j}' = \dfrac{\partial \Lambda'}{\partial \dot{q}_{j}} = p_{j} + \dfrac{\partial F}{\partial q_{j}}
 	$$
 	se la coordinate $q_{j}$ è ciclica per $\Lambda$, non è detto che lo sia anche per $\Lambda'$. Tuttavia $p_{j}'$ rimane un integrale primo del moto. In altre parole, alcuni sistemi fisici sono più "comodi" quando scritti in certe coordinate poiché queste risultano cicliche e, dunque, ci regalano un integrale primo del moto (diverso dall'energia).
 	\newpage
@@ -3537,7 +3537,38 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 		$$
 		\dot{A} = \dfrac{p_{\theta}}{2m} = const
 		$$
-		\item La terza legge di Keplero
+		\item La terza legge di Keplero ci dice che il periodo di un orbita è proporzionale al semiasse maggiore alla potenza $3/2$. L'abbiamo già dimostrato per considerazioni di scala, ma possiamo anche verificarlo analiticamente. Il periodo di un'orbita è, infatti:
+		$$
+		T = \dfrac{A}{\dot{A}}
+		$$
+		che segue dalla definizione stessa di velocità areolare $\dot{A}$ (e non mi servono integrali perché è costante). L'area di un'ellisse è:
+		$$
+		A = \pi ab
+		$$
+		con $a$ semiasse maggiore, $b$ semiasse minore. Fra questi vale una relazione geometrica:
+		$$
+		e = \sqrt{1-\dfrac{b^2}{a^2}}
+		$$
+		quindi
+		$$
+		b = a\sqrt{1-e^2} = a\sqrt{\dfrac{2Ep_{\theta}^2}{k^2m}}
+		$$
+		Ma:
+		$$
+		a = \dfrac{2k}{E}
+		$$
+		dunque:
+		$$
+		b = \sqrt{a}\sqrt{\dfrac{p_{\theta}^2}{km}}
+		$$
+		L'area è allora:
+		$$
+		A = \pi a^{3/2}\sqrt{\dfrac{p_{\theta}^2}{km}}
+		$$
+		e il periodo:
+		$$
+		T = 2\pi a^{3/2}\sqrt{\dfrac{m}{k}}
+		$$
 	\end{itemize}
 	\newpage
 	\section{Altre applicazioni della meccaninca lagrangiana}
