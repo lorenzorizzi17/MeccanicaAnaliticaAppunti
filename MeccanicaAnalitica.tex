@@ -1665,7 +1665,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	
 	Ipotizziamo di poter applicare un controllo periodico sul sistema del tipo:
 	\begin{equation}
-		f(t) = A \cos(\Omega t)
+		f(t) = A \sin(\Omega t)
 		\label{ControlloSeno}
 	\end{equation}
 	e vogliamo calibrare i parametri di $f$ di modo che, usando questo controllo e imponendo la condizione iniziale ($(x_{0}, p_{0}) = (0,p_{0})$), io arrivi ad una soluzione periodica. Chiaramente non è garantito che un tale controllo possa esistere e, anche esista, non è detto abbia la forma di (\ref{ControlloSeno}). Per ora è un azzardo, vedremo a posteriori se esistono dei parametri $\Omega$ e $A$ che soddisfino le nostre richieste.
@@ -1736,58 +1736,59 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	\end{equation}
 	e quindi, usando il solito metodo per le forzanti, dovremo risolvere per la soluzione particolare:
 	\begin{equation}\label{key}
-		x^{*}(t) = A \int_{0}^{t}\sinh(\omega (t-s))\cos(\Omega s) ds
+		x^{*}(t) = A \int_{0}^{t}\sinh(\omega (t-s))\sin(\Omega s) ds
 	\end{equation}
 	a cui aggiungeremo la soluzione omogenea. Svolgiamo l'integrale per parti:
 	\begin{equation}\label{key}
 		\begin{aligned}
-			x^{*}(t) &= A \int_{0}^{t}\sinh(\omega (t-s))\cos(\Omega s) ds = A\Bigl[\Bigl(\sinh(\omega(t-s)) \dfrac{\sin(\Omega s)}{\Omega}\Bigl)\Bigl|_{0}^{t} + \int_{0}^{t}\omega\cosh(\omega(t-s)) \dfrac{\sin(\Omega s)}{\Omega}ds\Bigl] =
+			x^{*}(t) &= A \int_{0}^{t}\sinh(\omega (t-s))\sin(\Omega s) ds = A\Bigl[\Bigl(\sinh(\omega(t-s)) \dfrac{-\cos(\Omega s)}{\Omega}\Bigl)\Bigl|_{0}^{t} - \int_{0}^{t}\omega\cosh(\omega(t-s)) \dfrac{\cos(\Omega s)}{\Omega}ds\Bigl] =
 			\\ 
-			&= A\Bigl[ \dfrac{\omega}{\Omega}\int_{0}^{t}\cosh(\omega(t-s))\sin(\Omega s)ds\Bigl] = 
+			&= A\Bigl[\dfrac{1}{\Omega}\sinh(\omega t)- \dfrac{\omega}{\Omega}\int_{0}^{t}\cosh(\omega(t-s))\cos(\Omega s)ds\Bigl] = 
 			\\
-			&= A \Bigl[ \dfrac{\omega}{\Omega}\Bigl(-\dfrac{1}{\Omega}\cosh(\omega(t-s))\cos(\Omega s)\Bigl)\Bigl|_{0}^{t}-\dfrac{\omega^2}{\Omega^2}\int_{0}^{t}\sinh(\omega(t-s))\sin(\Omega s)ds\Bigl] =\\
-			&= A\Bigl(- \dfrac{\omega}{\Omega^2}\cos(\Omega t)+ \dfrac{\omega}{\Omega^2}\cosh(\omega t) - \dfrac{\omega^2}{\Omega^2}\dfrac{x^{*}(t)}{A}\Bigl) = \\
-			&= A \dfrac{\omega}{\Omega}\Bigl(\dfrac{1}{\Omega}\cosh(\omega t)-\dfrac{1}{\Omega}\cos(\Omega t)- \dfrac{\omega}{\Omega}\dfrac{x^{*}(t)}{A}  \Bigl) 
+			&= A \Bigl[\dfrac{1}{\Omega}\sinh(\omega t) - \dfrac{\omega}{\Omega}\Bigl(\dfrac{1}{\Omega}\cosh(\omega(t-s))\sin(\Omega s)\Bigl)\Bigl|_{0}^{t}-\dfrac{\omega^2}{\Omega^2}\int_{0}^{t}\sinh(\omega(t-s))\sin(\Omega s)ds\Bigl] =\\
+			&= A\Bigl(\dfrac{1}{\Omega}\sinh(\omega t)
+			- \dfrac{\omega}{\Omega^2}\sin(\Omega t) - \dfrac{\omega^2}{\Omega^2}\dfrac{x^{*}(t)}{A}\Bigl) = \\
+			&= A \dfrac{\omega}{\Omega}\Bigl(\dfrac{1}{\omega}\sinh(\omega t)-\dfrac{1}{\Omega}\sin(\Omega t)- \dfrac{\omega}{\Omega}\dfrac{x^{*}(t)}{A}  \Bigl) 
 		\end{aligned}
 	\end{equation}
 	e quindi, volendo isolare la soluzione $x^{*}(t)$, otteniamo che:
 	\begin{equation}\label{key}
-		\dfrac{\Omega}{\omega} \dfrac{x^{*}(t)}{A} = \dfrac{1}{\Omega}\cosh(\omega t) - \dfrac{1}{\Omega}\cos(\Omega t) - \dfrac{\omega}{\Omega} \dfrac{x^{*}(t)}{A}
+		\dfrac{\Omega}{\omega} \dfrac{x^{*}(t)}{A} = \dfrac{1}{\omega}\sinh(\omega t) - \dfrac{1}{\Omega}\sin(\Omega t) - \dfrac{\omega}{\Omega} \dfrac{x^{*}(t)}{A}
 	\end{equation}
 	\begin{equation}\label{key}
-		\dfrac{x^{*}(t)}{A} \Bigl(\dfrac{\Omega}{\omega} + \dfrac{\omega}{\Omega}\Bigl)=\dfrac{1}{\Omega}(\cosh(\omega t)-\cos(\Omega t))
+		\dfrac{x^{*}(t)}{A} \Bigl(\dfrac{\Omega}{\omega} + \dfrac{\omega}{\Omega}\Bigl)=\dfrac{\Omega\sinh(\omega t)-\omega\sin(\Omega t)}{\omega\Omega}
 	\end{equation}
 	\begin{equation}\label{key}
-		\dfrac{x^{*}(t)}{A} \Bigl(\dfrac{\Omega^2+\omega^2}{\omega \Omega}\Bigl)=\dfrac{1}{\Omega}(\cosh(\omega t)-\cos(\Omega t))
+		\dfrac{x^{*}(t)}{A} \Bigl(\dfrac{\Omega^2+\omega^2}{\omega \Omega}\Bigl)=\dfrac{\Omega\sinh(\omega t)-\omega\sin(\Omega t)}{\omega\Omega}
 	\end{equation}
 	\begin{equation}\label{key}
-		x^{*}(t)= A \dfrac{\omega }{\Omega^2+\omega^2}\Bigl(\cosh(\omega t) - \cos(\Omega t)\Bigl)
+		x^{*}(t)= A \dfrac{1 }{\Omega^2+\omega^2}\Bigl(\Omega\sinh(\omega t) - \omega\sin(\Omega t)\Bigl)
 	\end{equation}
 	Infine valutiamo la soluzione omogenea che è quella di un oscillatore iperbolico con le giuste condizioni iniziali, cioè $x(0)= 0, p(0) = p_0$:
 	\begin{equation}\label{key}
-		x_{omo}(t) = p_0 \cosh(\omega t)
+		x_{omo}(t) = p_0 \sinh(\omega t)
 	\end{equation}
 	La soluzione finale del sistema, sommando l'omogenea e la particolare recita allora
 	\begin{equation}
-		x(t) = p_{0}\cosh(\omega t) + A \dfrac{\omega }{\Omega^2+\omega^2}\Bigl(\cosh(\omega t) - \cos(\Omega t)\Bigl)
+		x(t) = p_{0}\sinh(\omega t) + A \dfrac{1 }{\Omega^2+\omega^2}\Bigl(\Omega\sinh(\omega t) - \omega\sin(\Omega t)\Bigl)
 	\end{equation}
 	
-	Come ci aspettavamo, nella soluzione compaiono dei termini proporzionali a seni e coseni iperbolici. Sono loro la componente problematica di cui vorremmo sbarazzarci, poiché fanno divergere all'infinito la soluzione per $t\to\infty$. Per annullarli, basterà raccogliere i termini in $\cosh$:
+	Come ci aspettavamo, nella soluzione compaiono dei termini proporzionali a seni e coseni iperbolici. Sono loro la componente problematica di cui vorremmo sbarazzarci, poiché fanno divergere all'infinito la soluzione per $t\to\infty$. Per annullarli, basterà raccogliere i termini in $\sinh$:
 	\begin{equation}\label{key}
-		x(t) = \cosh(\omega t)\Bigl(p_0+ A \dfrac{\omega}{\omega^2+\Omega^2}\Bigl) - A\dfrac{\omega}{\omega^2+\Omega^2}\cos(\Omega t)
+		x(t) = \sinh(\omega t)\Bigl(p_0+ A \dfrac{\Omega}{\omega^2+\Omega^2}\Bigl) - A\dfrac{\omega}{\omega^2+\Omega^2}\sin(\Omega t)
 	\end{equation}
 	e annullarli, dunque porre:
 	$$
-	A = -\dfrac{\omega^{2} + \Omega^{2}}{\omega}p_{0}
+	A = -\dfrac{\omega^{2} + \Omega^{2}}{\Omega}p_{0}
 	$$
 	cioè agire con una forzante del tipo:
 	\begin{equation}
-		f(t) = -p_{0}\dfrac{\omega^{2} + \Omega^{2}}{\omega} \cos(\Omega t)
+		f(t) = -p_{0}\dfrac{\omega^{2} + \Omega^{2}}{\Omega} \cos(\Omega t)
 		\label{ForzanteControllo}
 	\end{equation}
 	In tal caso, la soluzione si riduce a:
 	\begin{equation}
-		x(t) = p_0\cos(\Omega t)
+		x(t) = p_0\dfrac{\omega}{\Omega}\cos(\Omega t)
 	\end{equation}
 	che è limitata e periodica di pulsazione $\Omega$, quella della forzante (che dunque non ha vincoli, posso agire con la frequenza che preferisco). Ho risolto il problema: per stabilizzare un sistema iperbolico che è stato perturbato nello stato $(0,p_{0})$, basterà agire con una forzante (\ref{ForzanteControllo}) ed il sistema si manterrà in orbite periodiche!
 	
@@ -3788,36 +3789,36 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	Da cui posso ricavare le equazioni del moto per $\theta(t)$ e $\varphi(t)$ applicando l'operatore di Lagrange in $\theta, \varphi$ (o osservando che $p_{\varphi}$ è ciclica). 
 	\subsection{Calcolo esplicito della reazione vincolare}
-	E se volessi calcolarmi esplicitamente la reazione vincolare? Con l'approccio newtoniano questo era parte del lavoro necessario per individuare le equazioni del moto ed anzi ne costitutiva, se vogliamo, un effetto collaterale. La meccaninca lagrangiana invece si concentra principalmente sulle orbite e ignora la forma della reazione vincolare. Ma se volessimo calcolarla? 
+	E se volessi calcolarmi esplicitamente la reazione vincolare? Con l'approccio newtoniano questo era parte del lavoro necessario per individuare le equazioni del moto ed anzi ne costitutiva, se vogliamo, un effetto collaterale. La meccanica lagrangiana invece si concentra principalmente sulle orbite e ignora la forma della reazione vincolare. Ma se volessimo calcolarla? 
 	
 	Poiché la forza vincolare ha lavoro virtuale nullo (principio del lavoro virtuale), allora necessariamente la reazione vincolare è perpendicolare alla varietà istante per istante e punto per punto:
 	$$
 	\vec{R} \cdot \delta \vec{x} \iff \vec{R} \in \mathcal{N}_{\mathcal{M}}(t)
 	$$
-	intendendo con $\mathcal{N}_{\mathcal{M}}(t)$ lo spazio normale alla varietà all'istante $t$. Tale spazio è necessariamente determinato dal vettore $\hat{n} = \dfrac{\partial \vec{x}}{\partial q_n}$, e dunque
+	intendendo con $\mathcal{N}_{\mathcal{M}}(t)$ lo spazio normale alla varietà all'istante $t$. Tale spazio è necessariamente determinato dal vettore $\vec{n} = \dfrac{\partial \vec{x}}{\partial q_n}$, e dunque
 	$$
 	\vec{R} \parallel \dfrac{\partial \vec{x}}{\partial q_n}
 	$$
 	Allora, riprendendo l'equazione di Newton completa di reazione vincolare:
 	$$
-	m\vec{a} = \vec{P} + \vec{R}
+	m\vec{a} = \vec{F} + \vec{R}
 	$$
-	e proiettando sullo spazio normale, parallelo al vincolo, avremo che $\vec{R}\cdot\hat{n} = R$ e l'equazione diventa:
+	e proiettando sullo spazio normale, parallelo al vincolo, avremo che $\vec{R}\cdot\vec{n} = R|n|$ e\footnote{Il vettore $\partial\vec{x}/\partial q_n$ non è un versore, è solo una base dello spazio tangente istantaneo, niente garantisce sia anche di norma unitaria} l'equazione diventa:
 	$$
-	m\vec{a}\cdot\hat{n} = \vec{P}\cdot\hat{n} + R
+	m\vec{a}\cdot\hat{n} = \vec{F}\cdot\vec{n} + R
 	$$
 	cioè:
 	$$
-	R = (m\vec{a}\cdot\dfrac{\partial \vec{x}}{\partial q_n} - \vec{F}\cdot \dfrac{\partial \vec{x}}{\partial q_n})
+	R |n| = (m\vec{a}\cdot\dfrac{\partial \vec{x}}{\partial q_n} - \vec{F}\cdot \dfrac{\partial \vec{x}}{\partial q_n})
 	$$
 	Per quanto visto in precedenza, il membro a destra è l'equazione di Newton in cui compaiono solo le forze attive in forma covariante espressa per la coordinate $n$-esima, perciò:
 	\begin{equation}
-		R = Lag_{q_n}(\Lambda)
+		R =\dfrac{1}{|\vec{n}|} Lag_{q_n}(\Lambda)
 		\label{EqNorm}
 	\end{equation}
 	In questo caso, il termine $Lag_{q_n}(\Lambda)$ non è necessariamente pari a 0, poiché tale equazione fa riferimento ad una situazione in cui non esiste la forza vincolare, e quindi rappresenta un problema fisico diverso da quello che vogliamo studiare noi (rappresenta cioè un problema non vincolato in cui sia presente solo la forza $\vec{F}$). La Lagrangiana $\Lambda$ in (\ref{EqNorm}) deve essere costruita lasciando $q_n$ libero, come se $\vec{R}$ fosse temporaneamente assente, tenendo conto solo della presenza di $\vec{F}$. Solo in un secondo momento andremo ad imporre che $q_n = const = q_0$. In altre parole, abbiamo l'equazione:
 	\begin{equation}
-		N = Lag_{q_n}(\Lambda_{libera})|_{q_n=q_0} = \Bigl(\dfrac{d}{dt}\dfrac{\partial \Lambda_{lib}}{\partial \dot{q_n}} - \dfrac{\partial \Lambda_{lib}}{\partial q_n}\Bigl)\Bigl|_{q_n = q_0}
+		N = \dfrac{1}{|\vec{n}|}Lag_{q_n}(\Lambda_{libera})|_{q_n=q_0} =  \dfrac{1}{|\vec{n}|}\Bigl(\dfrac{d}{dt}\dfrac{\partial \Lambda_{lib}}{\partial \dot{q_n}} - \dfrac{\partial \Lambda_{lib}}{\partial q_n}\Bigl)\Bigl|_{q_n = q_0}
 		\label{ReazioneVincolare}
 	\end{equation}
 	
@@ -3827,15 +3828,19 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	Torniamo all'esempio precedente, quello del punto materiale che si muove sulla sfera di raggio costante.
 	La lagrangiana non vincolata, dove è presente solo la forza peso, sarà evidentemente:
 	$$
-	\Lambda = \dfrac{m}{2}r^{2}(\dot{\theta}^{2}+\dot{\varphi}^{2}\sin^{2}(\theta)) - mgr\cos(\theta)
+	\Lambda =\dfrac{m}{2}\dot{r}^2+ \dfrac{m}{2}r^{2}(\dot{\theta}^{2}+\dot{\varphi}^{2}\sin^{2}(\theta)) - mgr\cos(\theta)
 	$$
-	che non dipende da $\dot{r}$. Otteniamo allora il risultato facile:
+	Quindi\footnote{Visto che $\vec{n} = \partial\vec{x}/\partial r $ ha norma unitaria}:
 	$$
-	N = - \dfrac{\partial \Lambda}{\partial r}\Bigl|_{r=R}
+	N =\dfrac{d}{dt}\dfrac{\partial \Lambda}{\partial \dot{r}} - \dfrac{\partial \Lambda}{\partial r}\Bigl|_{r=R}
 	$$
 	e cioè, in questo specifico caso:
 	$$
-	N = -mR\dot{\theta}^{2}-mR\dot{\varphi}^{2}\sin^{2}(\theta) + mg\cos(\theta)
+	N = m\ddot{r}  -mr\dot{\theta}^{2}-mr\dot{\varphi}^{2}\sin^{2}(\theta) + mg\cos(\theta)
+	$$
+	Imponendo ora $r=R$ (e quindi $\ddot{r}=0$), avrò che
+	$$
+	N =  -mR\dot{\theta}^{2}-mR\dot{\varphi}^{2}\sin^{2}(\theta) + mg\cos(\theta)
 	$$
 	che è l'espressione in coordinate lagrangiane della forza vincolare. Notiamo che possiamo riscrivere i primi due addendi dell'espressione di $N$ come:
 	$$ -m(R\dot{\theta}^{2}+R\dot{\varphi}^{2}\sin^{2}(\theta))  = -\dfrac{m}{R}(\dot{\theta}^{2}+ \dot{\varphi}^{2}\sin^{2}(\theta)) = -\dfrac{m}{R}v^{2}
@@ -3972,7 +3977,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	r^{4}_{c} = \dfrac{p_{\theta}^{2}}{m(k-mga)}
 	$$
-	
+	\newpage
 	\section{Potenziali generalizzati}
 	Abbiamo definito la funzione Lagrangiana come:
 	\begin{equation}
@@ -4053,7 +4058,30 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^j}{\partial x_i} -\dfrac{\partial A^i}{\partial x_j}\Bigl) 
 	$$
-	cioè che, in coordinate cartesiane, la forza generata da un potenziale generalizzato può essere espressa come:
+	Dimostriamolo. Ricordiamo la definizione di prodotto scalare con il tensore di Ricci:
+	$$
+	\vec{a}\times \vec{b} = \varepsilon_{ijk}a_jb_k
+	$$
+	quindi
+	$$
+	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i = \varepsilon_{ijk}v_j(\vec{\nabla}\times \vec{A})_k = \varepsilon_{ijk}v_i \varepsilon_{klm}\dfrac{\partial A^{m}}{\partial x_l}= \varepsilon_{ijk}\varepsilon_{klm}v_j \dfrac{\partial A^{m}}{\partial x_l}
+	$$
+	Dal corso di fluidi, ricordiamo l'identità:
+	$$
+	\varepsilon_{ijk}\varepsilon_{klm} = \delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}
+	$$
+	e quindi
+	$$
+		(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i =( \delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})v_j \dfrac{\partial A^{m}}{\partial x_l}
+	$$	
+	$$
+	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i =v_j\Bigl( \dfrac{\partial A^{j}}{\partial x_i}- \dfrac{\partial A^{i}}{\partial x_j}\Bigl)
+	$$	
+	volendo l'indice $j$ (ho fatto la formula iniziale con l'indice $i$ perché mi piaceva di più il tensore di Ricci scritto $\varepsilon_{ijk}$):
+$$
+(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^j}{\partial x_i} -\dfrac{\partial A^i}{\partial x_j}\Bigl) 
+$$
+	In altre parole, in coordinate cartesiane la forza generata da un potenziale generalizzato può essere espressa come:
 	\begin{equation}
 		\vec{F} = \vec{v} \times (\vec{\nabla}\times \vec{A})
 	\end{equation}
