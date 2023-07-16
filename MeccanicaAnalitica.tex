@@ -4018,9 +4018,10 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	Se il potenziale è generalizzato della forma di Eq.(\ref{PotGen}), allora in generale vale che:
 	\begin{equation}
 		\begin{split}
-			F_j &= Lag_{q_j}(V) = \Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}_j}-\dfrac{\partial}{\partial q_j}\Bigl) (\dot{q}_i A^{i}(q)) = \\
-			&= \dfrac{d}{dt}A^j (q) - \dfrac{\partial A^i}{\partial q_j}\dot{q}_i = \dfrac{\partial A^j}{\partial t} + \dfrac{\partial A^j}{\partial q_i}\dot{q}_i - \dfrac{\partial A^i}{\partial q_j}\dot{q}_i = \\
-			&= \dot{q}_i \Bigl(\dfrac{\partial A^j}{\partial q_i} -\dfrac{\partial A^i}{\partial q_j}\Bigl)
+			F_j &= Lag_{q_j}(-V) = \Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}_j}-\dfrac{\partial}{\partial q_j}\Bigl) (-\dot{q}_i A^{i}(q)) = \\
+			&= -\dfrac{d}{dt}A^j (q) + \dfrac{\partial A^i}{\partial q_j}\dot{q}_i =- \dfrac{\partial A^j}{\partial t} - \dfrac{\partial A^j}{\partial q_i}\dot{q}_i + \dfrac{\partial A^i}{\partial q_j}\dot{q}_i = \\
+			&= -\dot{q}_i \Bigl(\dfrac{\partial A^j}{\partial q_i} -\dfrac{\partial A^i}{\partial q_j}\Bigl) =\\
+			&= \dot{q}_i \Bigl(\dfrac{\partial A^i}{\partial q_j} -\dfrac{\partial A^j}{\partial q_i}\Bigl)
 		\end{split}
 		\label{ForzaGen}
 	\end{equation}
@@ -4048,7 +4049,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	e, per quanto ricavato in (\ref{ForzaGen}), la forza corrispondente a tale potenziale generalizzato è:
 	$$
-	F_j = \dot{x}_i \Bigl(\dfrac{\partial A^j}{\partial x_i} -\dfrac{\partial A^i}{\partial x_j}\Bigl)
+	F_j = \dot{x}_i \Bigl(\dfrac{\partial A^i}{\partial x_j} -\dfrac{\partial A^j}{\partial x_i}\Bigl)
 	$$
 	Questa forma ricorda molto la definizione di rotore. Se infatti considero la seguente espressione:
 	$$
@@ -4056,7 +4057,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	Allora effettivamente noto che
 	$$
-	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^j}{\partial x_i} -\dfrac{\partial A^i}{\partial x_j}\Bigl) 
+	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^i}{\partial x_j} -\dfrac{\partial A^j}{\partial x_i}\Bigl) 
 	$$
 	Dimostriamolo. Ricordiamo la definizione di prodotto scalare con il tensore di Ricci:
 	$$
@@ -4079,7 +4080,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$	
 	volendo l'indice $j$ (ho fatto la formula iniziale con l'indice $i$ perché mi piaceva di più il tensore di Ricci scritto $\varepsilon_{ijk}$):
 $$
-(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^j}{\partial x_i} -\dfrac{\partial A^i}{\partial x_j}\Bigl) 
+(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^i}{\partial x_j} -\dfrac{\partial A^j}{\partial x_i}\Bigl) 
 $$
 	In altre parole, in coordinate cartesiane la forza generata da un potenziale generalizzato può essere espressa come:
 	\begin{equation}
@@ -4157,7 +4158,7 @@ $$
 	\subsection{Lagrangiana e trasformazioni di Galileo}
 	Cosa succede alla funzione lagrangiana se passo da un sistema inerziale $S$ ad un sistema, sempre inerziale, $S'$ in moto rispetto al primo di velocità $\vec{V}$? La lagrangiana che scriverebbe un ipotetico osservatore solidale a $S'$ è uguale a quella scritta in $S$ nella parte potenziale\footnote{I potenziali dipendono dalle coordinate, che però variano in seguito a trasformazioni di Galileo, perciò anche il termine potenziale potrebbe variare. Questo però non capita perché tutti i potenziali fisici dipendono da differenza di coordinate, da spostamenti e non da posizioni, che sono invarianti per Galileo.}, ma varierebbe in quella cinetica. In particolare,
 	$$
-	T' = \dfrac{1}{2}m\vec{v}'\cdot\vec{v}'= \dfrac{1}{2}m(\vec{v}+\vec{V}^2) = T + 2\vec{v}\cdot\vec{V}+V^{2}
+	T' = \dfrac{1}{2}m\vec{v}'\cdot\vec{v}'= \dfrac{1}{2}m(\vec{v}+\vec{V}^2) = T + 2m\vec{v}\cdot\vec{V}+\dfrac{1}{2}mV^{2}
 	$$
 	Dove $\vec{v}'$ è la velocità di un punto materiale registrata da $S'$ e $\vec{v}$ quella di $S$, legate dalle relazioni di Galileo. Notiamo, però, che:
 	$$
@@ -4167,7 +4168,7 @@ $$
 	$$
 	\Lambda(\vec{x},\vec{v}) = \Lambda(\vec{x}',\vec{v}')
 	$$
-	Questo non vuol dire che le soluzioni del moto siano esattamente uguali, cioè $x(t) = x'(t)$, ma semplicemente che hanno la stessa forma e differiscono solo per le condizioni iniziali (diversi da $S$ a $S'$). Il fatto che però le due Lagrangiane siano uguali è di fondamentale importanza: anche per la meccaninca lagrangiana, i sistemi inerziali sono tutti equivalenti, in quanti condividono la medesima funzione $\Lambda$. Anche per questa riformulazione della meccaninca, le leggi fondamentali della fisica sono invarianti per sistemi inerziali, basta trovarne uno e scrivere la Lagrangiana in quel sistema e il gioco è fatto, non c'è sistema privilegiato.
+	Questo non vuol dire che le soluzioni del moto siano esattamente uguali, cioè $x(t) = x'(t)$, ma semplicemente che hanno la stessa forma e differiscono solo per le condizioni iniziali (diversi da $S$ a $S'$). Il fatto che però le due Lagrangiane siano uguali è di fondamentale importanza: anche per la meccaninca lagrangiana, i sistemi inerziali sono tutti equivalenti, in quanti condividono la medesima funzione $\Lambda$. Anche per questa riformulazione della meccanica, le leggi fondamentali della fisica sono invarianti per sistemi inerziali, basta trovarne uno e scrivere la Lagrangiana in quel sistema e il gioco è fatto, non c'è sistema privilegiato. L'invarianza di gauge è dunque intimamente legata alla covarianza delle leggi fisiche per trasformazioni di Galileo.
 	\subsection{Sistemi rotanti}
 	Il formalismo Lagrangiano funziona se il sistema viene descritto in un sistema di riferimento inerziale. Così, ad esempio, un sistema di riferimento rotante non è inerziale e non è possibile descrivere direttamente la fisica di quel sistema con coordinate locali rotanti nella lagrangiana. C'è però un metodo alternativo che consente di lavorare direttamente nei sistemi non inerziali col prezzo di aggiungere forze fittizie di natura non fisica. Proprio come in meccanica newtoniana era possibile operare in sistemi non inerziali aggiungendo forze fittizie, vogliamo trovare un equivalente in meccanica lagrangiana.
 	
@@ -4176,7 +4177,7 @@ $$
 	\vec{X} = (X_1,X_2,X_3) \iff \vec{r} = X_1
 	\vec{e}_1 + X_2
 	\vec{e}_2 +X_3 \vec{e}_3$$
-	Identifichiamo invece con $\vec{x}\in S'$ il raggio vettore come lo scriverebbe un osservatore nel sistema rotante\footnote{Ovviamente l'osservatore non inerziale è ignaro di esserlo}. Se la base del sistema rotante è $\vec{e'}_{1},\vec{e'}_{2},\vec{e'}_{3}$ (dipendente dal tempo), allora avremo analogamente a sopra:
+	Identifichiamo invece con $\vec{x}\in S'$ il raggio vettore come lo scriverebbe un osservatore nel sistema rotante. Se la base del sistema rotante è $\vec{e'}_{1},\vec{e'}_{2},\vec{e'}_{3}$ (dipendente dal tempo), allora avremo analogamente a sopra:
 	$$
 	\vec{x} = (x_1,x_2,x_3) \iff \vec{r} = x_1
 	\vec{e'}_1 + x_2
@@ -4196,7 +4197,7 @@ $$
 	$$
 	Che è ragionevole. Il termine a sinistra rappresenta la velocità assoluta di un punto materiale scritta nel sistema $S$. Il termine a destra rappresenta la velocità di un punto rispetto al sistema $S'$ vista però dalle coordinate si $S$. Queste due concidono, e tale relazione è la conferma della covarianza del vettore velocità per rotazioni degli assi cartesiani\footnote{Infatti si ha che $|\dot{\vec{X}}| = |R\dot{\vec{x}}| = |\dot{\vec{x}}|$, poiché $R$ ortogonale, cioè il modulo del vettore velocità assoluta è invariante per rotazioni del sistema di riferimento, è uno scalare. Le leggi delle fisici più fondamentale non dipendono dalle componenti della velocità (che sono controvarianti) ma devono dipendere dal modulo di questa, che davvero è uno scalare (ad esempio nell'energia cinetica che figura nella lagrangiana)}
 	
-	Se invece $R$ varia nel tempo, allora questo non è più vero. La velocità assoluta (quella riferita al sistema $S$ inerziale) non è semplicemente la velocità riferita al sistema non inerziale ($\dot{\vec{x}}$) ruotata (R$\dot{\vec{x}}$), ma devo aggiungere un altro pezzo, il termine $\dot{R}(t)\vec{x}$ (dovuto alla non inerzialità di $S'$). Riscriviamo la trasformazione:
+	Se invece $R$ varia nel tempo, allora questo non è più vero. La velocità assoluta (quella riferita al sistema $S$ inerziale) non è semplicemente la velocità riferita al sistema non inerziale ($\dot{\vec{x}}$) ruotata (R$\dot{\vec{x}}$), ma devo aggiungere un altro pezzo, il termine $\dot{R}(t)\vec{x}$ (dovuto al fatto che c'è moto relativo, una sorta di velocità di trascinamento). Riscriviamo la trasformazione:
 	$$
 	\dot{\vec{X}} = \dot{R}(t)\vec{x} + R(t)\dot{\vec{x}}
 	$$
@@ -4206,7 +4207,7 @@ $$
 	dove \begin{itemize}
 		\item $\vec{V}\in S$ è il vettore di velocità assoluta, cioè la velocità misurata dal sistema inerziale (nella base inerziale)
 		\item $\vec{v} = R\dot{\vec{x}} \in S$ è la velocità misurata dal sistema rotante scritta nella base inerziale (infatti $\dot{\vec{x}}$ è la velocità che vede $S'$ nelle sue coordinate, la ruoto applicando $R$ e ottengo $\vec{v}$). Questa è la velocità relativa
-		\item  $\dot{R}(t)\vec{x} \in S$ è un termine aggiuntivo
+		\item  $\dot{R}(t)\vec{x} \in S$ è un termine aggiuntivo, di trascinamento.
 	\end{itemize}
 	Siccome vogliamo descrivere la dinamica di un sistema dinamico non inerziale usando le sue coordinate, riscriviamo la relazione di trasformazione delle velocità nella base del sistema rotante. Per farlo basta moltiplicare per l'inversa della matrice di rotazione entrambi i membri dell'uguaglianza. Poiché la matrice è ortogonale, l'inversa coincide con la trasposta, da cui:
 	\begin{equation}
@@ -4228,7 +4229,7 @@ $$
 	$$
 	(R^{T}\dot{R})^{T} = - R^{T}\dot{R} 
 	$$
-	La matrice $R^{T}\dot{R}$ è dunque antisimmetrica, poiché è uguale all'opposto della sua trasposta. Le matrici antisimmetriche $3\times3$ godono di una particolare proprietà, cioè sono isomorfe ai vettori di $\mathcal{R}^{3}$. Infatti una generica matrice antisimmetrica $\Omega \in M^{3\times3}$ deve avere forma:
+	La matrice $R^{T}\dot{R}$ è dunque antisimmetrica, poiché è uguale all'opposto della sua trasposta. Le matrici antisimmetriche $3\times3$ godono di una particolare proprietà, cioè sono isomorfe ai vettori di $\mathbb{R}^{3}$. Infatti una generica matrice antisimmetrica $\Omega \in M^{3\times3}$ deve avere forma:
 	\begin{equation}
 		\Omega = 
 		\begin{pmatrix}
@@ -4241,7 +4242,12 @@ $$
 	$$
 	\Omega \vec{x} = \vec{\omega}\times\vec{x}
 	$$
-	È possibile farlo? La risposta è affermativa. Infatti, se $\vec{x} = \vec{\omega}$, allora $\vec{\omega}\times\vec{x} = 0$ e quindi $\Omega \vec{\omega} = 0$, cioè $\omega$ appartiene al kernel di $\Omega$. La matrice $\Omega$ ha allora questa forma:
+	È possibile farlo? La risposta è affermativa. Infatti, se $\vec{x} = \vec{\omega}$, allora $\vec{\omega}\times\vec{x} = 0$ e quindi $\Omega \vec{\omega} = 0$, cioè $\omega$ appartiene al kernel di $\Omega$. Siamo sicuri che $\Omega$ ammetta un autovalore nullo? Poiché $\Omega$ è antisimmetrica, allora dovrà essere che:
+	$$
+	Tr(\Omega) = 0
+	$$
+	Ora, gli autovalori di $A^T$ coincidono con gli autovalori di $A$. Se $\lambda$ è autovalore di $A$, allora anche -$\lambda$ deve essere autovalore perché $-A = A^T$. Segue allora che il terzo autovalore deve essere nullo, essendo la somma di tutti e tre la traccia, cioè 0.
+	Se alla matrice $\Omega$ do allora questa forma:
 	\begin{equation}
 		\Omega = 
 		\begin{pmatrix}
@@ -4265,25 +4271,30 @@ $$
 	\begin{equation}
 		T = (R^{T}\dot{\vec{X}})^2 = \dfrac{1}{2}m\dot{\vec{x}}^{2} + m\dot{\vec{x}}\cdot(\vec{\omega}\times\vec{x})+ \dfrac{1}{2}m (\vec{\omega}\times\vec{x})^{2}
 	\end{equation}
-	e dunque, la lagrangiana in coordinate cartesiane per sistemi rotanti (scritta nelle coordinate non inerziali) diventa:
+Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. Nel caso 1D, vedremo che il termine di doppio prodotto è una derivate temporale.} come accadeva quando trasformavo la velocità con Galileo, quindi non posso ometterli.
+
+	Dunque, la lagrangiana in coordinate cartesiane per sistemi rotanti (scritta nelle coordinate non inerziali) diventa:
 	\begin{equation}
 		\Lambda = \dfrac{1}{2}mv^{2} + m\vec{v}\cdot(\vec{\omega}\times\vec{x}) + \dfrac{1}{2}m(\vec{\omega}\times\vec{x})^{2} - V(x)
 		\label{LagRot}
 	\end{equation}
 	Notiamo subito che il fatto di essere un sistema non inerziale porta con sè alcune modifiche alla Lagrangiana che non è più banalmente $T-V$, ma deve tenere conto di altri termini. Infatti, l'addendo $1/2\> m\vec{v}^{2}$, rappresenta la forma dell'energia cinetica come verrebbe scritta da un osservatore interno al sistema in esame. Se tale sistema fosse inerziale, non avremmo avuto altri termini aggiuntivi. Concludiamo che, per far funzionare la Lagrangiana anche nei sistemi rotanti, dobbiamo modificarne la definizione.
 	\subsection{Forza di Coriolis}
-	Riprendiamo la nuova definizione della Lagrangiana per sistemi di riferimento rotanti, scritta in (\ref{LagRot}). I termini aggiuntivi hanno un'interessante interpretazione fisica. Il secondo termine, detto \textit{centrifugo}, è un potenziale fittizio in quanto dipende solo dalle coordinate. Questo corrisponde con la forza centrifuga di cui si fa esperienza nei sistemi rotanti. Il primo termine, invece, ha la forma di un potenziale generalizzato in quanto è lineare nella velocità $\vec{v}$. Che forza genera questo tipo di potenziale? Applicando i metodi della sezione precedente e supponendo che $\vec{\omega}$ avremo che:
+	Riprendiamo la nuova definizione della Lagrangiana per sistemi di riferimento rotanti, scritta in (\ref{LagRot}). I termini aggiuntivi hanno un'interessante interpretazione fisica. Il secondo termine, detto \textit{centrifugo}, è un potenziale fittizio in quanto dipende solo dalle coordinate. Questo corrisponde con la forza centrifuga di cui si fa esperienza nei sistemi rotanti. Il primo termine, invece, ha la forma di un potenziale generalizzato in quanto è lineare nella velocità $\vec{v}$. Che forza genera questo tipo di potenziale? Applicando i metodi della sezione precedente e supponendo che $\vec{\omega}$ non dipenda dal tempo avremo che:
 	\begin{equation}
 		\begin{aligned}
-			\vec{F} &= \Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \vec{v}} - \dfrac{\partial}{\partial \vec{x}}\Bigl) (m\vec{v}\cdot(\vec{\omega}\times\vec{x}) = m\dfrac{d}{dt}(\vec{\omega}\times\vec{x}) - 
+			\vec{F} &= - \Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \vec{v}} - \dfrac{\partial}{\partial \vec{x}}\Bigl) (m\vec{v}\cdot(\vec{\omega}\times\vec{x})) = - m\dfrac{d}{dt}(\vec{\omega}\times\vec{x}) +
 			\dfrac{\partial }{\partial x} m\vec{x}\cdot(\vec{v}\times\vec{\omega})
 			\\
 			\vspace{2cm}
-			&= m\vec{\omega}\times\vec{v} - m(\vec{v}\times\vec{\omega}) = 2m\vec{v}\times\vec{\omega} \\
+			&= - m\vec{\omega}\times\vec{v} + m(\vec{v}\times\vec{\omega}) = - 2m\vec{\omega}\times\vec{v} = 2m\vec{v}\times\vec{\omega} \\
 		\end{aligned}
 		\label{ForzaCoriolis}
 	\end{equation}
-	Questa è l'espressione cartesiana della cosiddetta \textit{forza di Coriolis}, un'altra forza fittizia che compare solo nei sistemi di riferimento rotanti. Notiamo, in ultimo, che tale espressione è molto simile alla forza di Lorentz per il campo magnetico. C'è, infatti, una profonda connessione fra il vettore $\vec{\omega}$ e $\vec{B}$ ...
+	Questa è l'espressione cartesiana della cosiddetta \textit{forza di Coriolis}, un'altra forza fittizia che compare solo nei sistemi di riferimento rotanti.
+	Essendo $\vec{F}_{cor} \perp \vec{v}$, tale forza non è in grado di erogare potenza, esattamente quanto ci aspettiamo da un potenziale generalizzato (questo a patto che $\omega$ non dipenda dal tempo, nel qual caso la formula per $\vec{F}$ è diversa perché non possiamo trascurare la derivata temporale di $\omega$).
+	
+	 Notiamo, in ultimo, che tale espressione è molto simile alla forza di Lorentz per il campo magnetico. C'è, infatti, una profonda connessione fra il vettore $\vec{\omega}$ e $\vec{B}$ ...
 	\subsubsection{Pendolo di Foucault}
 	Un classico esempio di problema fisico in cui è necessario tenere conto della forza di Coriolis è quello del pendolo di Foucault. Consideriamo il seguente set-up: una punto materiale di massa $m$ nel piano $xy$ attaccato ad una molla centrata nell'origine degli assi. Tale piano è in realtà posto in maniera tangente su di una sfera che ruota attorno al suo asse polare con velocità angolare $\vec{\Omega}$ costante. Qual è il moto del punto? Se decidiamo di descrivere la situazione fisica nel sistema di riferimento rotante solidale alla sfera il cui origine coincide col punto di tangenza (e con l'estremo fissato della molla), allora è necessario tenere conto delle forze di natura non inerziale che naturalmente insorgono nella lagrangiana. 
 	
@@ -4291,7 +4302,15 @@ $$
 	$$
 	\vec{\Omega} = (0,\Omega \sin(\alpha), \Omega \cos(\alpha))
 	$$
-	dove $\alpha$ è la latitudine del punto materiale. Allora la Lagrangiana scritta nel sistema di riferimento rotante con coordinate cartesiane è:
+	dove $\alpha$ è la latitudine del punto materiale. Ora costruiamo la lagrangiana partendo dal potenziale generalizzato non inerziali di Coriolis:
+	$$
+	V_{co} = m\vec{v}\cdot(\vec{\omega}\times\vec{x}) = m(\dot{x},\dot{y},0) \cdot ((0,\Omega \sin(\alpha), \Omega \cos(\alpha))\times(x,y,0)) = m\Omega\cos\alpha(x\dot{y}-y\dot{x})
+	$$
+	Mentre il potenziale centrifugo è:
+	$$
+	V_{cen} = \dfrac{1}{2}m(\vec{\omega}\times\vec{x})^2 = O(\Omega^2)
+	$$
+	 Allora la Lagrangiana scritta nel sistema di riferimento rotante con coordinate cartesiane è:
 	\begin{equation}
 		\Lambda = \dfrac{1}{2}m(\dot{x}^{2}+\dot{y}^{2}) + m\Omega \cos\alpha (x\dot{y}-\dot{x}y) - \dfrac{k}{2}(x^2+y^2) + O(\Omega^2)
 	\end{equation}
@@ -4315,7 +4334,7 @@ $$
 	$$
 	e la Lagrangiana in forma complessa assume la forma:
 	$$
-	\Lambda = \dfrac{1}{2}m\dot{z}\dot{\bar{z}} - \dfrac{1}{2}kz\bar{z} -im\Omega\cos\alpha(\dot{z}\bar{z}-\dot{\bar{z}}z)
+	\Lambda = \dfrac{1}{2}m\dot{z}\dot{\bar{z}} - \dfrac{1}{2}kz\bar{z} -\dfrac{1}{2}im\Omega\cos\alpha(\dot{z}\bar{z}-\dot{\bar{z}}z)
 	$$
 	Se ora applico l'operatore di Lagrange rispetto a $\bar{z}$, ottengo l'equazione:
 	$$
@@ -4334,7 +4353,7 @@ $$
 		z(t) = e^{i\Omega\cos\alpha t}(Ae^{i\omega_0 t}+ Be^{-i\omega_0 t})
 		\label{SoluzFouc}
 	\end{equation}
-	La soluzione nel piano complesso è uguale alla soluzione nel piano $xy$ essendo le due coordinate cartesiane le parti reali ed immaginarie di $z$. Notiamo che il termine fra parentesi della (\ref{SoluzFouc}) rappresenta un'ellisse nel piano, che è la soluzione che ci saremmo aspettati se il sistema fosse inerziale. Il termine moltiplicativo $exp(i\Omega\cos\alpha)$ aggiunge una rotazione aggiuntiva: è come se l'ellisse tracciata nel piano rotasse ella stessa (fenomeno di precessione). La velocità di tale precessione è legata al valore di $\Omega\cos\alpha$, dunque è massima ai poli e minima all'equatore della sfera.
+	La soluzione nel piano complesso è uguale alla soluzione nel piano $xy$ essendo le due coordinate cartesiane le parti reali ed immaginarie di $z$. Notiamo che il termine fra parentesi della (\ref{SoluzFouc}) rappresenta un'ellisse nel piano, che è la soluzione che ci saremmo aspettati se il sistema fosse inerziale. Il termine moltiplicativo $\exp(i\Omega\cos\alpha)$ aggiunge una rotazione aggiuntiva: è come se l'ellisse tracciata nel piano rotasse essa stessa (fenomeno di precessione). La velocità di tale precessione è legata al valore di $\Omega\cos\alpha$, dunque è massima ai poli e minima all'equatore della sfera.
 	\subsection{Potenziale di Lorentz come potenziale rotante}
 	Riprendiamo l'esercizio precedente e modifichiamolo leggermente. La sfera non è più posta in rotazione e dunque il sistema di riferimento è perfettamente inerziale. Aggiungiamo però un campo magnetico $\vec{B}$ che formi un angolo costante di $\alpha$ rispetto alla direzione $z$. Se la massa possiede una carica $q$, allora tale sentirà l'effetto del campo $\vec{B}$. Il sistema è inerziale, quindi non devono aggiungere termini esotici alla lagrangiana che diventa:
 	\begin{equation}
@@ -4361,9 +4380,9 @@ $$
 	\begin{equation}
 		\Lambda = \dfrac{1}{2}m(\dot{x}^{2}+\dot{y}^{2}) +\dfrac{q}{2c}(\vec{B}\times\vec{x})\cdot\vec{v} - \dfrac{k}{2}(x^2+y^2) 
 	\end{equation}
-	Notiamo di nuovo la sorprendente analogia col caso di Coriolis. In questo caso il sistema è perfettamente inerziale ma è soggetto ad una forza magnetica. Nel caso di Coriolis, il sistema è in rotazione con una velocità angolare $\vec{\Omega}$ costante. Le lagrangiana di queste due situazioni sono molto simili\footnote{Avevamo ignorato il termine centrifugo, però. Nel caso magnetico il conto è senza approssimazioni.}, nonostante l'apparente distanza concettuale (basta identificare $\vec{B}$ con $\vec{\Omega}$). Una particella soggetta a tale campo magnetico oscillerebbe con una pulsazione di precessione caratteristica che vale, secondo l'analogia fra $\vec{B}$ e $\vec{\Omega}$,
+	Notiamo di nuovo la sorprendente analogia col caso di Coriolis. In questo caso il sistema è perfettamente inerziale ma è soggetto ad una forza magnetica. Nel caso di Coriolis, il sistema è in rotazione con una velocità angolare $\vec{\Omega}$ costante. Le lagrangiana di queste due situazioni sono molto simili\footnote{Avevamo ignorato il termine centrifugo, però. Nel caso magnetico il conto è senza approssimazioni.}, nonostante l'apparente distanza concettuale (basta identificare $\dfrac{q}{2c}\vec{B}$ con $m\vec{\Omega}$). Una particella soggetta a tale campo magnetico oscillerebbe con una pulsazione di precessione caratteristica che vale, secondo l'analogia fra $\vec{B}$ e $\vec{\Omega}$,
 	$$
-	\Omega_m = \dfrac{qB_0}{2c}
+	\Omega_m = \dfrac{qB_0}{2mc}
 	$$
 	detta anche frequenza di Larmor
 	\subsubsection{Esercizio}
@@ -4459,7 +4478,7 @@ $$
 	$$
 	e la trasformazione identità è chiaramente l'unità del gruppo. L'esistenza dell'inverso è anch'essa facilmente dimostrabile, basta prendere $(\phi^{t})^{-1} = \phi^{-t}$.
 	
-	Il flusso di fase inteso come trasformazione nello spazio delle fasi costituisce dunque un gruppo abeliano parametrizzato al tempo fisico $t$. Possiamo chiaramente individuare tanti altri gruppi, come ad esempio il gruppo delle rotazioni in $\mathcal{R}^{2}$ che può essere rappresentato come il gruppo delle matrici ortogonali parametrizzate all'angolo di rotazione $\alpha$:
+	Il flusso di fase inteso come trasformazione \textbf{nello spazio delle fasi} costituisce dunque un gruppo abeliano parametrizzato al tempo fisico $t$. Possiamo chiaramente individuare tanti altri gruppi, come ad esempio il gruppo delle rotazioni in $\mathbb{R}^{2}$ (come spazio delle configurazioni) che può essere rappresentato come il gruppo delle matrici ortogonali parametrizzate all'angolo di rotazione $\alpha$:
 	\begin{equation}
 		G = \Bigl\{
 		R = 
@@ -4476,11 +4495,12 @@ $$
 	$$
 	x \longrightarrow \phi^{\alpha}(x)
 	$$ 
-	Richiediamo che anche per questo gruppo (che non deve necessariamente essere quello del flusso di fase) valgano le proprietà:
+	Quindi per ora ci occupiamo solo di gruppi definiti sullo spazio delle configurazioni (e non delle fasi).
+	Richiediamo che anche per questo gruppo\footnote{L'abbiamo indicato $\phi$ ma non ha niente a che vedere col flusso di fase, è solo l'ennesima notazione confusionaria. Qui $\phi$ è una trasformazione dello spazio delle configurazioni, $\phi : \mathcal{M}\to\mathcal{M}$ che ha struttura di gruppo.} valgano le proprietà:
 	$$
-	\phi^{\alpha = 0} = I \>\>\>\>\>\>\>\> \phi^{t}(\phi^{s}) = \phi^{t+s}
+	\phi^{\alpha = 0} = I \>\>\>\>\>\>\>\> \phi^{\alpha}(\phi^{\beta}) = \phi^{\alpha+\beta}
 	$$
-	e sappiamo che tali proprietà bastano per garantire la struttura di gruppo abeliano per $\phi?{\alpha}$. 
+	e sappiamo che tali proprietà bastano per garantire la struttura di gruppo abeliano per $\phi^{\alpha}$. 
 	
 	Diremo che tale gruppo è una \textit{simmetria} per un certo sistema fisico se applicare tale trasformazione alle coordinate lascia invariata la lagrangiana del sistema, cioè:
 	\begin{equation}
@@ -4498,7 +4518,7 @@ $$
 	\end{equation}
 	Allora la lagrangiana rimane chiaramente invariata per qualsiasi elemento di $\mathcal{G}$, essendo $\dfrac{d}{dt}\phi^{y_0}(x,y) = \dfrac{d}{dt}(x,y+y_0) = (\dot{x},\dot{y})$. Allora una qualsiasi traslazione lungo l'asse $y$ è una simmetria del sistema.
 	\subsection{Generatori di gruppi}
-	La richiesta che una simmetria di un sistema abbia la struttura di un gruppo abeliano è necessaria per poter parlare di \textit{generatori del gruppo}, definiti come campi vettoriali $a(x)$:
+	La richiesta che una simmetria di un sistema abbia la struttura di un gruppo è necessaria per poter parlare di \textit{generatori del gruppo}, definiti come campi vettoriali $a(x)$:
 	\begin{equation}
 		a(x) = \dfrac{d}{d\alpha}\Bigl|_{\alpha=0}\phi^{\alpha}(x)
 	\end{equation}
@@ -4551,9 +4571,9 @@ $$
 	$$
 	che è proprio il momento generalizzato coniugato alla coordinata ciclica $q_i$.
 	
-	E per quanto riguarda l'energia? Esiste una simmetria legata alla conservazione dell'energia? Sì, ed è quella temporale. Il gruppo da considerare è quello del flusso di fase propriamente detto, $\phi^{t}$.  
+	E per quanto riguarda l'energia? Esiste una simmetria legata alla conservazione dell'energia? Sì, ed è quella temporale. Il gruppo da considerare è quello del flusso di fase propriamente detto, $\phi^{t}$.  C'è però da dire che in questo caso il flusso di fase è un gruppo che agisce nello spazio delle fasi, non in quello delle configurazioni. Non so bene come conciliare i due fatti.
 	\subsection{Esempio di simmetrie}
-	Facciamo subito qualche esempio. Consideriamo il gruppo abeliano delle rotazioni attorni all'asse $z$ in $\mathbb{R}^{3}$, rappresentabile dalle matrici ortogonali:
+	Facciamo subito qualche esempio. Consideriamo il gruppo abeliano delle rotazioni attorno all'asse $z$ in $\mathbb{R}^{3}$, rappresentabile dalle matrici ortogonali:
 	\begin{equation}\label{key}
 		\phi^{\alpha} = \Bigl\{
 		\begin{pmatrix}
@@ -4586,7 +4606,7 @@ $$
 	\end{equation}
 	Che, guarda caso, coincide con la componente lungo $z$ del momento angolare. In generale, se ho un sistema fisico che è invariante per rotazioni attorno ad un certo asse, allora viene conservata la componente su quell'asse del momento angolare\footnote{Che va calcolato imponendo il polo su quell'asse}. Se il sistema è anche simmetrico rispetto agli altri assi di rotazione, come accade per la particella libera, allora tutti e tre le componenti di $\vec{L}$ si conservano e, dunque, si conserva $\vec{L}$ in generale (come già sappiamo debba essere).
 	\subsection{Limiti della meccanica lagrangiana}
-	Se consideriamo un sistema che è invariante per tutte le rotazioni in $\mathbb{R}^{3}$, detta $R(\alpha)$, incappiamo in un problema. Tale gruppo infatti non è abeliano e applicare Noether risulta impossibile. Vediamo subito un esempio facile ma significativo. Prendiamo una particella libera in $\mathbb{R}^{3}$ in coordinate sferiche, per cui sappiamo
+	Se consideriamo un sistema che è invariante per tutte le rotazioni in $\mathbb{R}^{3}$, il cui gruppo è $SO(3)$, incappiamo in un problema. Tale gruppo infatti non è abeliano e applicare Noether risulta impossibile. Vediamo subito un esempio facile ma significativo. Prendiamo una particella libera in $\mathbb{R}^{3}$ in coordinate sferiche, per cui sappiamo
 	\begin{equation}\label{key}
 		\Lambda = \dfrac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2+r^2\dot{\varphi}^2\sin^2\theta)
 	\end{equation}
@@ -4598,7 +4618,7 @@ $$
 	\begin{equation}\label{key}
 		H = \Lambda = \dfrac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2+r^2\dot{\varphi}^2\sin^2\theta)
 	\end{equation}
-	Sappiamo che la particella libera nello spazio deve essere un sistema perfettamento risolubile e quindi mi aspetto di poter trovare un terzo integrale primo del moto. Eppure non abbiamo altre coordinate cicliche (almeno in forma cartesiana) e abbiamo già sfruttato l'energia; cosa ci manca? 
+	Sappiamo che la particella libera nello spazio deve essere un sistema perfettamento risolubile e quindi mi aspetto di poter trovare un terzo integrale primo del moto. Eppure non abbiamo altre coordinate cicliche (almeno in forma polare) e abbiamo già sfruttato l'energia; cosa ci manca? 
 	
 	Proviamo a calcolare $p_\theta$ (che non è integrale primo del moto):
 	\begin{equation}\label{key}
@@ -4743,8 +4763,9 @@ $$
 	m\lambda^{2}Q_{\lambda}G^{0}Q_{\lambda} + Q_{\lambda}HQ_{\lambda} = 0
 	$$
 	e quindi
-	\begin{equation}\label{key}
+	\begin{equation}
 		\lambda^{2} = -\dfrac{Q_{\lambda}H^{0}Q_{\lambda}}{m \> Q_{\lambda}G^{0}Q_{\lambda}}
+		\label{348}
 	\end{equation}
 	La matrice metrica è sempre definita positiva (dovendo rappresentare l'energia cinetica, sempre positiva). La matrice hessiana del potenziale è sicuramente definita positiva in $q_0$ poiché l'equilibrio è stabile, cioè il punto $q_0$ è un minimo locale. Ne segue che le forme quadratiche che compaiono nella frazione sono sempre positive e, dunque, il termine $\lambda^{2}$ risulta negativo. Chiamiamo $\omega^{2}=-\lambda^{2}, \lambda = \pm i \omega$ e otteniamo delle soluzioni del tipo:
 	\begin{equation}\label{key}
@@ -4754,7 +4775,7 @@ $$
 	\begin{equation}\label{key}
 		Q(t) = Q_{\lambda} (A\cos(\omega t)+B\sin(\omega t))
 	\end{equation}
-	Notiamo che nella determinazione di $\omega$ non c'è traccia del potenziale generalizzato. Infatti la condizione (\ref{DetPO}) può tranquillamente essere riscritta come:
+	Notiamo che nella determinazione di $\omega$ non c'è traccia del potenziale generalizzato. Infatti la condizione (\ref{DetPO}) può tranquillamente\footnote{Non so quanto tranquillamente. Il punto è che nell'equazione (\ref{348}) ho una formula per $\lambda$ in cui non compare $\hat{A}$. Da qui ho pensato che, forse, nella formula del determinante posso escludere $\hat{A}$ e ottenere comunque la medesima condizione, ma non so come dimostrarlo algebricamente. } essere riscritta come:
 	\begin{equation}
 		det(-m\omega^{2}G^{0} + H^{0}) = 0
 		\label{DetPO}
@@ -4771,21 +4792,38 @@ $$
 	\begin{equation}\label{key}
 		Q_{\lambda}^{T}G^{0}Q_{\mu} = \langle Q_{\lambda},Q_{\mu} \rangle_{G}
 	\end{equation}
-	Io so che:
-	$$
-	m\omega^{2}(Q_{\lambda}^{T}G^{0}Q_{\mu}) = Q_{\lambda}^{T}(m\omega^{2}G^{0})Q_{\mu} = Q_{\lambda}^{T}H^{0}Q_{\mu} = \langle Q_{\lambda},Q_{\mu} \rangle_{H}
-	$$
-	Siccome $H$ è simmetrica, allora è autoaggiunta, dunque $H= H^{\dagger}$ e nel prodotto scalare posso scrivere\footnote{Se nel prodotto scalare non si sottintende la metrica, si fa riferimento a quella euclidea standard}:
-	$$
-	\langle Q_{\lambda},Q_{\mu} \rangle_{H} = \langle Q_{\lambda},H^{0}Q_{\mu} \rangle = \langle H^{0}Q_{\lambda},Q_{\mu} \rangle = H^{0}Q_{\lambda}^{T}Q_{\mu}
-	$$
-	DIMOSTRAZIONE DA FINIRE
-	
-	Siamo quindi giunti alla conclusione che:
-	$$
-	Q_{\lambda}^{T}G^{0}Q_{\mu} = 0
-	$$
-	e allora i vettori $Q_{\lambda}$ costituiscono una base ortogonali (eventualmente normalizzabile) dello spazio delle configurazioni. Poiché trattasi di vettori ortogonali, allora sono anche linearmente indipendente e la soluzione finale della lagrangiana delle piccole oscillazione è esprimibile come somma degli autovettori ortogonali:
+Questa equazione mi dice, sostanzialmente, che i vettori $Q_{\lambda}$ sono fra di loro perpendicolari nello spazio (la metrica mi racconta come cambiare il prodotto scalare in seguito a cambi di coordinate dal set cartesiano. Se impiegassimo le cartesiane, la metrica sarebbe l'identità $G_{ij} = \delta_{ij}$ e otterremmo il risultato aspettato $\langle Q_{\lambda},Q_{\mu}\rangle = Q_{\lambda,1}Q_{\mu,1}+ ... + Q_{\lambda,n}Q_{\mu,n}=0$, che è la condizione normale di perpendicolarità. La metrica serve apposta per aggiustare il prodotto scalare.)
+Come lo dimostro?
+Dall'eq (\ref{eq12}), so che:
+\begin{equation}
+	\begin{aligned}
+		m\lambda^2 Q_{\mu} G^0 Q_{\lambda} =  Q_{\mu} (	m\lambda^2G^0) Q_{\lambda} = Q_{\mu}(-H^0)Q_{\lambda} =- Q_{\mu}H^0Q_{\lambda}
+	\end{aligned}
+\end{equation}
+La matrice $H^0$ è simmetrica, dunque posso scambiarla nel prodotto scalare: 
+\begin{equation}\label{key}
+	-Q_{\mu}(H^0Q_{\lambda}) = -(H^0 Q_{\mu})Q_{\lambda}
+\end{equation}
+Sempre dall'eq (\ref{eq12}), ma stavolta con $\mu$,
+\begin{equation}\label{key}
+	(-H^0 Q_{\mu})Q_{\lambda} = (m\mu^2 G^{0}Q_{\mu})Q_{\lambda}
+\end{equation}
+E sfruttando la simmetria di $G^0$:
+\begin{equation}\label{key}
+	m\mu^2 G^{0}Q_{\mu}Q_{\lambda} = m\mu^2 Q_{\mu}G^0Q_{\lambda}
+\end{equation}
+cioè in definitiva, ricordando a cosa ciò era uguale,
+$$
+m\mu^2 Q_{\mu}G^0Q_{\lambda} = 	m\lambda^2 Q_{\mu} G^0 Q_{\lambda}
+$$
+$$
+(\lambda^2-\mu^2)Q_{\mu} G^0 Q_{\lambda} = 0
+$$
+Se $\lambda \neq \mu$, allora necessariamente si ha che:
+\begin{equation}\label{key}
+	Q_{\mu} G^0 Q_{\lambda} = 0
+\end{equation}
+dunque davvero si tratta di una base ortogonale (eventualmente normalizzabile) dello spazio delle configurazioni. Poiché trattasi di vettori ortogonali, allora sono anche linearmente indipendenti e la soluzione finale della lagrangiana delle piccole oscillazione è esprimibile come somma degli autovettori ortogonali:
 	\begin{equation}\label{key}
 		Q(t) = \sum_{\omega}Q_{\omega}(A_{\omega}\cos(\omega t)+B_{\omega}\sin(\omega t))
 	\end{equation}
@@ -4793,15 +4831,16 @@ $$
 	
 	Le $\omega$ sono dette \textit{frequenze delle piccole oscillazioni} e i relativi autovettori nello spazio delle configurazioni $Q_{\omega}$ sono detti \textit{modi normali di oscillazione}
 	\subsection{Indipendenza delle soluzioni}
+	Abbiamo visto che, in qualche modo, un sistema in regime di piccole oscillazioni si comporta come $n$ oscillatori armonici ciascuno su direzioni distinte nello spazio. Vogliamo individuare un sistema di coordinate in modo tale che ciascuna di esse compia una sola oscillazione semplice armonica.
 	Operiamo un cambio di variabile:
 	\begin{equation}\label{key}
 		Q = Tu
 	\end{equation} 
-	dove $T$ è la matrice del cambio di base che ci porta dalla base dei $Q$ alla nuova base ortogonale appena identificata:
+	dove $T$ è la matrice del cambio di base che ci porta dalla base dei $Q$ (vecchia) alla nuova base ortogonale appena identificata. Dunque la matrice del cambio di base si presenta come:
 	$$
-	T = (Q_{\omega1},Q_{\omega2}, ..., Q_{\omega n})
+	T = (\vec{Q}_{\omega1},\vec{Q}_{\omega2}, ..., \vec{Q}_{\omega n})
 	$$
-	In altre parole il vettore $u$ rappresenta un punto nello spazio delle configurazioni scritto nella base ortogonale dei $Q_{\omega i}$. Cosa succede alla Lagrangiana delle piccole oscillazione senza potenziali generalizzati in seguito a questo cambio di variabili?
+	cioè ha sulle colonne la base ortogonale individuata. Così, ad esempio, il vettore $\vec{u} = (1,0,0,...,0)$ corrisponde al primo modo di oscillazione, $\vec{Q} = T\vec{u} = T(1,0,0, ...,0) = \vec{Q}_{\omega1}$. Il vettore $u$ mi rappresenta un punto nello spazio delle configurazioni scritto nella base ortogonale dei $Q_{\omega i}$. Cosa succede alla Lagrangiana delle piccole oscillazione senza potenziali generalizzati in seguito a questo cambio di variabili?
 	\begin{equation}\label{key}
 		\Lambda_{PO} = \dfrac{1}{2}m\dot{Q}G^{0}\dot{Q} - \dfrac{1}{2}Q H^{0} Q
 	\end{equation}
@@ -4815,7 +4854,7 @@ $$
 	$$
 	T^{T}G^{0} T = I
 	$$
-	Questa espressione rappresenta come cambia il prodotto scalare nel cambio di basi. $G^{0}$ rappresentava il prodotto scalare standard scritto nella base delle coordinate generalizzate $Q$. Quando passo alla base degli $u = a_{1}Q_{\lambda 1} + a_{2}Q_{\lambda 2} + ... + a_{n}Q_{\lambda n}$, quel prodotto scalare diventa rappresentabile dalla matrice identità in ragione della ortogonalità degli $u$ rispetto a $G$.
+	Questa espressione rappresenta come cambia il prodotto scalare nel cambio di basi. $G^{0}$ rappresentava il prodotto scalare scritto nella base delle coordinate generalizzate $Q$. Quando passo alla base degli $u = a_{1}Q_{\lambda 1} + a_{2}Q_{\lambda 2} + ... + a_{n}Q_{\lambda n}$, quel prodotto scalare diventa rappresentabile dalla matrice identità\footnote{In realtà mi serve che la base sia ortonormale. Assumeremo da qui in poi che lo sia.} in ragione della ortogonalità degli $u$ rispetto a $G$.
 	Invece il termine:
 	\begin{equation}\label{key}
 		T^{T}H^{0}T = \begin{pmatrix}
@@ -4828,9 +4867,9 @@ $$
 	Perciò la Lagrangiana delle piccole oscillazioni diventa 
 	:
 	\begin{equation}\label{key}
-		\Lambda_{PO} = \dfrac{1}{2}\sum_{i=1}^{n}\dot{u}_{i}^{2} + \omega_{i}^{2}u_{i}^{2}
+		\Lambda_{PO} = \dfrac{1}{2}\Bigl(\sum_{i=1}^{n}\dot{u}_{i}^{2} - \omega_{i}^{2}u_{i}^{2}\Bigl)
 	\end{equation}
-	Cioè la lagrangiana finale è la somma di $n$ lagrangiane indipendenti, ciascuna quadratica e aventa frequenza caratteristica $\omega_{i}$. Se le varie frequenze in gioco sono incommensurabili, cioè se ad esempio $\omega_{i}/\omega_{j} = \mathbb{R}/\mathbb{Q}$, allora le orbite non saranno chiuse ma sicuramente limitate. Queste orbite si chiamano quasi-periodiche e riempiono in maniera densa un intorno dell'equilibrio stabile.
+	Cioè la lagrangiana finale è la somma di $n$ lagrangiane indipendenti, ciascuna quadratica e avente frequenza caratteristica $\omega_{i}$. Se le varie frequenze in gioco sono incommensurabili, cioè se ad esempio $\omega_{i}/\omega_{j} \in \mathbb{R}/\mathbb{Q}$, allora le orbite non saranno chiuse ma sicuramente limitate. Queste orbite si chiamano quasi-periodiche e riempiono in maniera densa un intorno dell'equilibrio stabile.
 	\subsection{Esercizio: il doppio pendolo}
 	Proponiamo un esercizio in cui è conveniente linearizzare il problema ricorrendo alla teoria delle piccole perturbazioni. Si consideri un doppio pendolo formato da un'asta rigida incernierata lunga $l$ al cui estremo v'è una massa $m$. A partire da questa massa, si estende un'altra asta lunga $l$ libera di rotare rispetto alla prima che termina con un'altra massa $m$. Rappresentando la dinamica del sistema con le coordinate lagrangiane ($\theta,\varphi$) che rappresentano i relativi angoli rispetto alla verticale, si ricava facilmente l'espressione delle lagrangiana del sistema:
 	\begin{equation}\label{key}
@@ -4970,8 +5009,59 @@ $$
 	$$
 	Nella situazione di pulsazione veloce, $\omega_{+}$, le oscillazioni avvengono in maniera discorde, cioè se $\theta$ va verso destra, $\varphi$ va verso sinistra. Al contrario, le oscillazione lenti avvengono in maniera concorde.
 	\subsection{Sincronizzazione del pendolo doppio}
-	DA FARE
-	\subsection{Esercizio: piccole oscillazioni con potenziali generalizzati}
+	Proponiamo un altro esercizio. Consideriamo due pendoli (di massa $m$) poggiati su di uno stesso supporto di massa $M$ libero di muoversi sul piano (ad esempio grazie a ruote). Per descrivere il sistema, utilizzo 3 coordinate lagrangiane:
+	$$
+	x_c,\theta,\varphi
+	$$
+	intendendo con $x_c$ il centro del supporto di base e con $\theta,\varphi$ i due angoli dalla verticale dei due pendoli. 
+	La posizione delle masse oscillanti sarà allora:
+	\begin{equation}
+		\begin{cases}
+		x_1 = x_c + l\sin\theta \\
+		y_1 = -l\cos\theta
+		\end{cases}
+	\begin{cases}
+		x_2 = x_c + l\sin\varphi \\
+		y_2 = -l\cos\varphi
+	\end{cases}
+	\end{equation}
+e le velocità
+\begin{equation}
+	\begin{cases}
+		\dot{x}_1 = \dot{x}_c + l\dot{\theta}\cos\theta \\
+		y_1 = l\dot{\theta}\sin\theta
+	\end{cases}
+	\begin{cases}
+		\dot{x}_2 = \dot{x}_c + l\dot{\varphi}\cos\varphi \\
+		y_2 = l\dot{\varphi}\sin\varphi
+	\end{cases}
+\end{equation}
+\begin{equation}\label{key}
+	v_1^2 = \dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta
+	\quad \quad \quad 
+	v_2^2 = \dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi
+\end{equation}
+E la Lagrangiana diventa:
+\begin{equation}\label{key}
+	\Lambda = \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta)+ \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi) + \dfrac{M}{2}\dot{x}_c^2 + mgl\cos\theta + mgl\sin\theta
+\end{equation}
+La coordinata $x_c$ è ciclica, dunque si conserva:
+$$
+\dfrac{\partial \Lambda}{\partial \dot{x}_c} = 2m\dot{x}_c +m l\dot{\theta}\cos\theta+ ml\dot{\varphi}\cos\varphi + M\dot{x}_c = \dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)
+$$
+che coincide con il momento della quantità di moto totale del sistema. A questo punto ci facciamo furbi: ci mettiamo nel sistema di riferimento in cui questo è nullo: 
+$$
+\dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)=0
+$$
+Integrando per $dt$, noto che:
+$$
+\dot{x}_c(2m+M) + ml(\sin\theta+\sin\varphi) =0
+$$
+$$
+\dot{x}_c = \dfrac{ml(\sin\theta+\sin\varphi) }{2m+M}
+$$
+Quindi la posizione del supporto non è propriamente libera ma è funzione delle coordinate angolari: il problema ha allora dimensione $2$. Posso sostituire allora nella lagrangiana\footnote{Posso farlo perché qua non si tratta di un integrale primo del moto, che potrebbe variare da orbita a orbita (e da condizione iniziali a condizione iniziali). Se mi metto nel sistema di riferimento a momento nullo, questo sempre deve rimanere, qualsiasi condizione iniziale. È un vincolo del sistema!} e ottenere ... 	WIP
+\subsection{Esercizio: piccole oscillazioni con potenziali generalizzati}
 	Consideriamo una guida circolare di raggio $R$ che inizialmente stia nel piano $xy$ sulla quale viene posto un punto materiale di massa $m$ e carica $q$. Viene acceso un campo magnetico $\vec{B} = B_0\hat{z}$. Sapendo che la guida è libera di ruotare attorno all'asse $x$, troviamo la lagrangiana del sistema e calcoliamo la frequenza delle piccole oscillazioni. 
 	
 	Che coordinate usare compatibili col vincolo olonomo della guida? Conviene impiegare la coppia $(\theta,\varphi)$, dove $\theta$ è l'angolo spazzato dal punto nel piano della spira e $\varphi$ è l'angolo che il piano della spira individua rispetto al piano $xy$. Come individuamo le coordinate del punto materiale in funzione di $\theta, \varphi$? La posizione della carica sulla guida quando questa è parallela al piano $xy$ (cioè $\varphi = 0$) è data da
@@ -5081,7 +5171,7 @@ $$
 	\subsection{Esercizio: lagrangiana su superficie toroidale}
 	Consideriamo una superficie toroidale che funga da guida per un punto materiale $m$. Usiamo le coordinate $\theta,\varphi$ per descrivere lo spazio delle configurazioni. La coordinata $\varphi$ rappresenta l'angolo che la sezione circolare sulla quale si trova istantaneamente il corpo individua rispetto all'asse x, mentre l'angolo $\theta$ individua l'angolo nella circonferenza stessa. Vale che $(\theta,\varphi) \in [0,2\pi]\times[0,2\pi]$. Notiamo, ad esempio, che questo spazio delle configurazioni coincide con quello del pendolo fisico: in effetti entrambi i casi hanno la stessa varietà, ma nel pendolo fisico la metrica indotta sul toro è legata all'energia cinetica, mentre in questa situazione (in cui il toro è un vincolo geometrico) la metrica è quella indotta dall'immersione in $\mathbb{R}^{3}$. Conviene parametrizzare la posizione di un punto così:
 	\begin{equation}\label{key}
-		\vec{x}
+		\vec{x} = 
 		\begin{pmatrix}
 			(R+a\cos\theta)\cos\varphi \\
 			(R+a\cos\theta)\sin\varphi \\
@@ -5157,14 +5247,14 @@ $$
 	$$
 	R^{T}\vec{V} = \dot{\vec{x}} +  \vec{\omega}\times\vec{x} 
 	$$
-	cioè la velocità assoluta di un corpo\footnote{Quella che conta ai fini dinamic} osservata dal sistema rotante è uguale alla velocità propria del sistema rotante scritta nelle coordinate rotanti più un termine aggiuntivo. Se analizziamo dei punti del corpo rigido stesso, allora $\dot{\vec{x}} = 0$ per definizione, cioè visto da $S'$, ogni punto del corpo è fermo. Dunque la velocità assoluta dei punti del corpo rigido nella base rotante è\footnote{Questa equazione dice qualcosa di molto importante. Il vettore $\vec{\omega}$, definito come $\dfrac{d\vec{\varphi}}{dt}$, rappresenta una rotazione \textit{attorno ad un asse}. Il fatto che una generica rotazione di un corpo con un punto fisso possa essere scritta attraverso $\vec{\omega}$ ci dice che il moto del corpo può essere rappresentato in un dato istante come una semplice rotazione infinitesima attorno ad un asse, detto \textit{asse di istanteanea rotazione}. L'asse di rotazione istanteanea passa chiaramente per il punto $O$ e la sua direzione è quella di $\vec{\omega}$. Quando il corpo si muove, variano in generale il modulo e la direzione di $\vec{\omega}$, dunque varia l'asse istantaneo di rotazione. Il vettore $\vec{\omega}$ può variare nel sistema rotante, chiaramente.}:
+	cioè la velocità assoluta di un corpo\footnote{Quella che conta ai fini dinamici} osservata dal sistema rotante è uguale alla velocità propria del sistema rotante scritta nelle coordinate rotanti più un termine aggiuntivo. Se analizziamo dei punti del corpo rigido stesso, allora $\dot{\vec{x}} = 0$ per definizione, cioè visto da $S'$, ogni punto del corpo è fermo. Dunque la velocità assoluta dei punti del corpo rigido nella base rotante è\footnote{Questa equazione dice qualcosa di molto importante. Il vettore $\vec{\omega}$, definito come $\dfrac{d\vec{\varphi}}{dt}$, rappresenta una rotazione \textit{attorno ad un asse}. Il fatto che una generica rotazione di un corpo con un punto fisso possa essere scritta attraverso $\vec{\omega}$ ci dice che il moto del corpo può essere rappresentato in un dato istante come una semplice rotazione infinitesima attorno ad un asse, detto \textit{asse di istanteanea rotazione}. L'asse di rotazione istanteanea passa chiaramente per il punto $O$ e la sua direzione è quella di $\vec{\omega}$. Quando il corpo si muove, variano in generale il modulo e la direzione di $\vec{\omega}$, dunque varia l'asse istantaneo di rotazione. Il vettore $\vec{\omega}$ può variare nel sistema rotante, chiaramente.}:
 	\begin{equation}
 		R^{T}\vec{V}_{P} = \vec{\omega}\times\vec{x}_{P}
 		\label{TrasfVelo}
 	\end{equation}
 	Chiamiamo per comodità $\vec{v}_{P} = R^{T}\vec{V}_{p}$ (la velocità assoluta scritta nel sistema rotante). Ora scrivo l'energia cinetica nel sistema del corpo:
 	$$
-	T = \dfrac{1}{2}\int_{K}(v_{p})^{2}\rho dx_{p} = \dfrac{1}{2}\int_{K}(\vec{\omega}\times\vec{x}_{P})^{2}\rho dx_{p}
+	T = \dfrac{1}{2}\int_{K}(v_{p})^{2}\rho d\vec{x}_{p} = \dfrac{1}{2}\int_{K}(\vec{\omega}\times\vec{x}_{P})^{2}\rho  d\vec{x}_{p}
 	$$
 	Il modulo quadro della velocità vale:
 	$$
@@ -5172,11 +5262,11 @@ $$
 	$$
 	quindi la cinetica diventa:
 	\begin{equation}
-		T = \dfrac{1}{2}\int_{K}\vec{\omega}\cdot(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))\rho dx_{p} = \dfrac{1}{2}\vec{\omega}\cdot\int_{K}\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p})\rho dx_{p}
+		T = \dfrac{1}{2}\int_{K}\vec{\omega}\cdot(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))\rho  d\vec{x}_{p} = \dfrac{1}{2}\vec{\omega}\cdot\int_{K}\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p})\rho  d\vec{x}_{p}
 	\end{equation}
 	Riconosco nell'integrale il momento angolare (rispetto al punto fisso $O$):
 	\begin{equation}
-		\vec{L} = \int_{K} \vec{x}_{p}\times(\rho \vec{v}_{p}dx) =  \int_{K}(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))\rho dx
+		\vec{L} = \int_{K} \vec{x}_{p}\times(\rho \vec{v}_{p} d\vec{x}_{p}) =  \int_{K}(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))\rho  d\vec{x}_{p}
 		\label{MomAng}
 	\end{equation}
 	Questa definizione del momento angolare mette in luce una proprietà interessante. Il momento angolare, infatti, è lineare in $\vec{\omega}$, nel senso che:
@@ -5235,24 +5325,26 @@ $$
 	$$
 	e vale che $\vec{L} \parallel \vec{\omega}$. Questo però non è sempre vero perché non sempre l'operatore I, detto \textit{tensore di inerzia}, è generalmente diverso da un semplice scalare.
 	\subsection{Momento di inerzia}
-	Ipotizziamo che il corpo $K$ ruoti con velocità angolare rispetto ad un asse fisso $\hat{\omega}$. Nel caso precedente, la rotazione era libera e richiedeva solo l'esistenza di un punto fisso. Ora invece ci concentriamo su rotazioni attorno ad un asse: l'asse di rotazione istanteaneo diventa costanteg. Vien bene definire allora il momento di inerzia rispetto all'asse di rotazione come avevamo fatto sopra:
+	Ipotizziamo che il corpo $K$ ruoti con velocità angolare rispetto ad un asse fisso $\hat{\omega}$. Nel caso precedente, la rotazione era libera e richiedeva solo l'esistenza di un punto fisso. Ora invece ci concentriamo su rotazioni attorno ad un asse: l'asse di rotazione istanteaneo diventa costante. Vien bene definire allora il momento (non il tensore, questo è uno scalare) di inerzia rispetto all'asse di rotazione come avevamo fatto sopra:
 	$$
 	I_{\omega} = \int_{K}d^{2}\rho dx
 	$$
-	dove $d$ è la distanza di un punto del corpo rigido rispetto all'asse. Se possediamo l'informazione del tensore di inerzia rispetto ad una generica terna cartesiana $xyz$ e vogliamo calcolare il momento di inerzia rispetto ad un asse $\hat{\omega}$, basta operare:
+	dove $d$ è la distanza di un punto del corpo rigido rispetto all'asse in esame. Questa definizione è comoda perché allora l'energia cinetica si scrive come:
+	\begin{equation}
+		T = \dfrac{1}{2}I_{\omega}\omega^2
+	\label{MomInerzia}
+	\end{equation}
+	Il momento di inerzia fa sempre riferimento alla rotazione rispetto ad uno specifico asse, mentre il tensore di inerzia non richiede che l'asse rimanga fisso. Se possediamo l'informazione del tensore di inerzia rispetto ad una generica terna cartesiana $xyz$ e vogliamo calcolare il momento di inerzia rispetto ad un asse $\hat{\omega}$, come possiamo fare? Basta operare:
 	$$
 	I_{\omega} = \hat{\omega}I\hat{\omega}
 	$$
-	e chiaramente otteniamo che gli elementi diagonali del tensore di inerzia sono i momenti di inerzia rispetto agli assi cartesiani. D'altronde l'energia cinetica del corpo in rotazione attorno ad un asse può essere riscritta come:
-	\begin{equation}
-		T = \dfrac{1}{2}I_{\omega}\omega^{2}
-		\label{MomInerzia}
-	\end{equation}
-	ed è facile farlo vedere. Sfruttando il tensore di inerzia (definito rispetto ad una terna cartesiana solidale col corpo), avremo che:
+	dove $\hat\omega$ è il versore dell'asse di rotazione di $\omega$ rispetto agli assi $xyz$.
+	
+	Perché? Sfruttando il tensore di inerzia (sempre definito rispetto ad una terna cartesiana solidale col corpo), avremo che:
 	$$
 	T = \dfrac{1}{2}\vec{\omega}I\vec{\omega}
 	$$
-	Se $\vec{\omega}$ è costante, $\vec{\omega}=\hat{\omega}\omega$ e :
+	Se $\vec{\omega}$ è costante, $\vec{\omega}=\hat{\omega}\omega$ e:
 	$$
 	T = \dfrac{1}{2}\omega^{2}\hat{\omega}I\hat{\omega}
 	$$
@@ -5260,6 +5352,7 @@ $$
 	$$
 	I_{\omega} = \hat{\omega}I\hat{\omega}
 	$$
+	La conclusione è che conoscendo il tensore di inerzia, sono in grado di calcolare il momento di inerzia attorno ad un qualsiasi asse di rotazione! \footnote{Ricordiamo che una qualsiasi rotazione del corpo rigido può essere istantaneamente vista come una rotazione attorno ad un asse. Il tensore d'inerzia immagazzina in sè tutte le informazioni su tutti i possibili momenti di inerzia per qualsiasi asse di rotazione immaginabile.}
 	Questo però non vuol dire che $\vec{L}$ sia necessariamente parallelo a $\hat{\omega}$, poiché in generale:
 	$$
 	\vec{L} = I\vec{\omega}
@@ -5267,17 +5360,50 @@ $$
 	e $I$ è individuato una volta stabilito il sistema di riferimento rotante.
 	
 	
+	A questo punto ci accorgiamo di un fatto interessante. Per come è stato definito, il tensore di inerzia possiede, lungo la diagonale, i momenti di inerzia lungo i tre assi di $S'$.
+	
 	\subsubsection{Teorema di Steiner}
-	Sia $K$ un corpo rigido. Se conosco il momento di inerzia di $K$ rispetto ad un asse $\hat{\omega}$ passante per il centro di massa, posso calcolare il momento di inerzia rispetto ad un asse parallelo a $\hat{\omega}$ distante $d$ dal centro di massa come:
+	Sia $K$ un corpo rigido. Se conosco il momento di inerzia di $K$ rispetto ad un asse $\hat{\omega}$ passante per il centro di massa, posso calcolare il momento di inerzia rispetto ad un asse parallelo a $\hat{\omega}$ distante $d$ dal centro di massa che passa per $O$ come:
 	$$
-	I_{\omega} = I_{\omega, CM} + Md^{2}
+	I_{\omega,O} = I_{\omega, CM} + Md^{2}
 	$$
+	Dimostriamolo. Sia $\vec{x}$ la posizione nuovo e $\vec{x}_{CM}$ quella del centro di massa.
+	Allora:
+	$$
+	\vec{x}_O = \vec{x}_{CM}+\vec{d}
+	$$
+	Per la definizione di momento di inerzia,
+	\begin{equation}\label{key}
+		\begin{aligned}
+			I_{\omega,O} = \int_{K}d^2_O \rho d\vec{x}
+		\end{aligned}
+	\end{equation}
+    dove $d_O$ è la distanza fra asse e punto. Questa è uguale a:
+    $$
+    d_O = |\vec{x}_{CM}\times\hat{\omega}|
+    $$
+    cioè del vettore posizione $\vec{x}_O$ che connette un generico punto P al punto $O$ devo prendere solo la componente perpendicolare all'asse stesso. Allora:
+    \begin{equation}\label{key}
+    	\begin{aligned}
+    		I_{\omega} = \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x}
+    	\end{aligned}
+    \end{equation}
+Sostituendo $\vec{x}_O = \vec{x}_{CM}+\vec{d}$ ho che
+    \begin{equation}\label{key}
+	\begin{aligned}
+		I_{\omega,O} &= \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x} = \int_{K}((\vec{x}_{CM}+\vec{d})\times\hat{\omega})^2 \rho d\vec{x} =  \\
+		&= \int_{K}(\vec{x}_{CM}\times\hat\omega)^2\rho d\vec{x} + 2(\vec{d}\times\hat\omega)\int_{K}\vec{x}_{CM}\times\hat\omega\rho d\vec{x} +(\vec{d}\times\hat\omega)^2 \int_{K}\rho d\vec{x} = \\
+		&= I_{\omega, CM} + 2(\vec{d}\times\hat\omega)\Bigl(\int_{K}\vec{x}_{CM}\rho d\vec{x}\Bigl) \times \hat\omega+ (\vec{d}\times\hat\omega)^2 M = \\
+		&= I_{\omega, CM} + Md^2
+	\end{aligned}
+\end{equation}
+Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di Steiner deve sempre essere usato con il centro di massa. Non posso usarlo fra due generici punti di cui conosco la distanza $d$ (perché solo col centro di massa vale la proprietà che mi permette di cancellare il termine doppio prodotto).
 	\subsection{Diagonalizzazione del tensore di inerzia}
 	Ripetiamo quanto appena scoperto. Dato un sistema di riferimento rotante solidale al corpo rigido $K$ con punto fisso, posso definire una matrice covariante detta \textit{tensore di inerzia} i cui elementi sono:
 	$$
 	I_{ij} = \int_{K}(\delta_{ij}x_j x_j - x_i x_j)\rho dx
 	$$
-	Il tensore di inerzia mi consente di calcolare l'energia cinetica di $K$ nel sistema rotante:
+	Il tensore di inerzia mi consente di calcolare l'energia cinetica (assoluta) di $K$ nel sistema rotante:
 	$$
 	T = \dfrac{1}{2}\vec{\omega}I\vec{\omega}
 	$$
