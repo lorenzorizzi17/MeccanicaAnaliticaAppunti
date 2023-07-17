@@ -10,6 +10,7 @@
 \usetikzlibrary{arrows}
 \usepackage{subfigure}
 \usepackage{textcomp}
+\usetikzlibrary{shapes,arrows}
 \usepackage{blindtext}
 \usepackage{hyperref}
 \usepackage{amsfonts}
@@ -5260,7 +5261,7 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 	$$
 	(\vec{v}_{p})^{2} = (\vec{\omega}\times\vec{x}_{p})^2 = (\vec{\omega}\times\vec{x}_{p})\cdot(\vec{\omega}\times\vec{x}_{p}) = \vec{\omega}\cdot(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))
 	$$
-	quindi la cinetica diventa:
+	Avendo ciclato i vettori nell'ultima relazione (possiamo leggerla come una sorta di prodotto misto, in fondo). Quindi la cinetica diventa:
 	\begin{equation}
 		T = \dfrac{1}{2}\int_{K}\vec{\omega}\cdot(\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p}))\rho  d\vec{x}_{p} = \dfrac{1}{2}\vec{\omega}\cdot\int_{K}\vec{x}_{p}\times(\vec{\omega}\times\vec{x}_{p})\rho  d\vec{x}_{p}
 	\end{equation}
@@ -5549,7 +5550,11 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 			0 & 0 & \dfrac{1}{I_z} \\
 		\end{pmatrix}
 	\end{equation}
-	e l'equazione cardinale si riduce al sistema:
+e quindi:
+\begin{equation}\label{key}
+	I^{-1}\vec{L} = \Bigl(\dfrac{L_x}{I_x},\dfrac{L_y}{I_y},\dfrac{L_z}{I_z}\Bigl)
+\end{equation}
+	e, facendo il prodotto vettoriale, l'equazione cardinale nel sistema degli assi principali si riduce al sistema:
 	\begin{equation}
 		\begin{cases}
 			\dfrac{dL_x}{dt} = \Bigl(\dfrac{1}{I_z}-\dfrac{1}{I_y}\Bigl) L_yL_z \\
@@ -5558,24 +5563,28 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 		\end{cases}
 		\label{EqEulero}
 	\end{equation}
-	Chiamate anche \textit{equazioni di Eulero} per il corpo rigido. La risoluzione di questo sistema di equazioni differenziali consente di ricavare la legge $\vec{L}(t)$, essendo i momenti di inerzia chiaramente costanti nel sistema rotante.\footnote{Ok, posso trovare $\vec{L}$, ma come ricavo la matrice $R$, che è quella che mi interessa? Potrei ricavarla cercando $R(t)$ tale che $\vec{l} = R(t)\vec{L}$, ma noi non ce ne occuperemo.}
+	Chiamate anche \textit{equazioni di Eulero} per il corpo rigido. La risoluzione di questo sistema di equazioni differenziali consente di ricavare la legge $\vec{L}(t)$, essendo i momenti di inerzia chiaramente costanti nel sistema rotante.\footnote{Ok, posso trovare $\vec{L}$, ma come ricavo la matrice $R$, che è quella che mi interessa? Potrei ricavarla cercando $R(t)$ tale che $\vec{l} = R(t)\vec{L}$, ma noi non ce ne occuperemo. Per costruirsi un'immagine intuitiva, possiamo procedere così. Io so che $\vec{l}$ e $\vec{L}$ sono lo stesso vettore, visto da sistemi di riferimento diversi. Il vettore $\vec{l}$ è costante, invece $\vec{L}$ si muove. In un certo senso, dobbiamo immaginarci una rotazione del sistema non inerziale $S'$ tale da controbilanciare il cambiamento di $\vec{L}$ (perché, per l'appunto, un osservatore in $S$ non vede $\vec{l}$ muoversi). Per intendersi, se $\vec{L}$ si muove descrivendo una circonferenza in un piano, allora la rotazione del sistema non inerziale è proprio una rotazione attorno all'asse perpendicolare alla circonferenza}. È importante fare due osservazioni. La prima è che le equazioni di Eulero valgono solo per corpi rigidi liberi. Inoltre tutte le quantità descritte sono sempre in riferimento al sistema degli assi principali.
 	\subsection{Soluzione delle equazioni di Eulero}
 	Le equazioni di Eulero (\ref{EqEulero}) sono abbastanza complicate da risolvere analiticamente. Tuttavia esiste un metodo più veloce per avere almeno un'idea qualitativa delle soluzioni di tale sistema differenziale. Infatti, poiché $\vec{l}$ è conservato, allora anche il suo modulo si conserva nel tempo. Ma il modulo di un vettore è uno scalare per rotazione degli assi, e dunque $|L(t)| = |l|$. Necessariamente, allora, la quantità:
 	$$
 	|L|^{2} = L_x^2 + L_y^2 +L_z^2 = const
 	$$
-	rappresenta un integrale primo del moto. L'altro integrale primo è l'energia, che nel sistema solidale al corpo è:
+	rappresenta un integrale primo del moto. L'altro integrale primo è l'energia (essendo il corpo libero), che nel sistema solidale al corpo è:
 	$$
-	E = T = \dfrac{1}{2}\vec{\omega}I\vec{\omega} = \dfrac{1}{2}\vec{\omega}\cdot\vec{L} = \dfrac{1}{2}\Bigl(\dfrac{L_x^2}{I_x} +\dfrac{L_y^2}{I_y}+\dfrac{L_z^2}{I_z}\Bigl) = const
+	E = T = \dfrac{1}{2}\vec{\omega}I\vec{\omega} = \dfrac{1}{2}\vec{\omega}\cdot\vec{L} = \dfrac{1}{2}I^{-1}\vec{L}\cdot\vec{L} =  \dfrac{1}{2}\Bigl(\dfrac{L_x^2}{I_x} +\dfrac{L_y^2}{I_y}+\dfrac{L_z^2}{I_z}\Bigl) = const
 	$$
 	La conservazione del momento angolare descrive una sfera nello spazio delle configurazioni $(L_x,L_y,L_z)$ mentre la conservazione dell'energia impone un ellissoide nello stesso spazio: le soluzioni del sistema stanno dunque nell'intersezioni fra tale sfera e l'ellissoide.
-	DA FINIRE
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale = 0.2]{ell1.jpg}
+	\caption{\textit{Visualizzazione delle soluzioni per il problema di Eulero sul corpo rigido libero (dall'Arnold). L'ellissoide è il vincolo imposto dalla conservazione dell'energia. Le varie intersezioni con le sfere (vincoli del modulo di $\vec{L}$) sono mostrate sull'ellissoide. Come sarà più chiaro nel prossimo capitolo, notiamo che le soluzioni che stanno vicine ai due assi $e_1, e_3$ (gli assi di inerzia maggiore e minore) rimangono abbastanza confinate mentre le soluzioni attorno a $e_2$ tendono ad allontanarsi di molto dall'asse stesso (comportamente iperbolico).}}
+\end{figure}
 	\subsection{Stabilità degli assi principali}
 	I punti di equilibrio di un corpo rigido libero (con tutti i momenti di inerzia diversi) sono quelli per cui il momento angolare è inizialmente lungo uno degli assi principali di inerzia:
 	$$
-	\vec{L} = (L_x,0,0), (0,L_y,0), (0,0,L_z)
+	\vec{L}_0 = (L_x,0,0), (0,L_y,0), (0,0,L_z)
 	$$
-	e basta verificarlo tramite le (\ref{EqEulero}). Così facendo, il momento angolare $\vec{L}$ rimane sempre costante. Questo vuol dire, nel sistema inerziale, che il corpo rigido rimane indefinitamente in rotazione attorno al suo asse principale, senza iniziare altre rotazioni.
+	e basta verificarlo tramite le (\ref{EqEulero}). Così facendo, il momento angolare $\vec{L}$ rimane sempre costante, $\vec{L}(t) = \vec{L}_0$. Questo vuol dire, nel sistema inerziale, che il corpo rigido rimane indefinitamente in rotazione attorno al suo asse principale, senza iniziare altre rotazioni.
 	
 	Che tipo di equilibrio è? Studio la stabilità dei punti di equilibrio appena individuati. Supponiamo che $I_x<I_y<I_z$.
 	Sia 
@@ -5628,11 +5637,11 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	\end{equation}
 	Queste sono le equazioni di un oscillatore armonico e, dunque, il punto di equilibrio è stabile. Una piccola perturbazione lungo i due assi non rotanti, dunque, genere piccole perturbazioni armoniche e non fa divergere indefinitamente il moto. Potremmo fare le stesse considerazioni anche per rotazioni attorno agli altri assi e otterremmo un risultato fondamentale: \textit{la rotazione attorno ai due assi di inerzia minore e maggiore è stabile, mentre la rotazione attorno all'asse intermedio è instabile} (teorema dell'asse intermedio o della racchetta da tennis).
 	\subsection{Descrizione del moto secondo Poinsot}
-	Le equazioni di Eulero permettono, in teoria, di risolvere le variabili cinematiche del corpo nel sistema solidal a quest'ultimo (ottengo cioè $\vec{L}$ e $\vec{\omega}$). Come faccio a visualizzare il moto del corpo nello spazio inerziale? Dovrei ottenere la matrice $R$, che identifica la rotazione istantanea degli assi non inerziali (possibilmente principali). Esiste però un metodo alternativo per raffigurarsi la dinamica di un corpo rigido nello spazio inerziale senza risolvere per $R$.
+	Le equazioni di Eulero permettono, in teoria, di risolvere le variabili cinematiche del corpo nel sistema solidale a quest'ultimo (ottengo cioè $\vec{L}$ e $\vec{\omega}$). Come faccio a visualizzare il moto del corpo nello spazio inerziale? Dovrei ottenere la matrice $R$, che identifica la rotazione istantanea degli assi non inerziali (possibilmente principali). Esiste però un metodo alternativo per raffigurarsi la dinamica di un corpo rigido nello spazio inerziale senza risolvere per $R$.
 	
 	Riprendiamo la dinamica del corpo rigido schematizzandola col suo ellissoide di inerzia $\mathcal{I}\in S'$:
 	$$
-	\vec{x}I\vec{x} = 1
+	\mathcal{I} : \vec{x}I\vec{x} = 1
 	$$
 	con $\vec{x}\in S'$. Nel sistema degli assi principali, la forma quadratica diventa semplice:
 	$$
@@ -5651,16 +5660,17 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	$$
 	\hat{n}_{\omega} =\dfrac{1}{\sqrt{2E}} (2I_x \omega_{x},2I_y \omega_y,2I_z \omega_z) = \dfrac{2}{\sqrt{2E}}\vec{L}
 	$$
-	Naturalmente $\hat{n}_{\omega}$, dunque per tornare nel sistema inerziale:
+	Naturalmente $\hat{n}_{\omega}$ è nel sistema non inerziale, dunque per tornare nel sistema inerziale:
 	$$
 	\hat{N}_{\omega} = R\hat{n}_{\omega} =\sqrt{\dfrac{2}{E}}R\vec{L} = \sqrt{\dfrac{2}{E}}\vec{l}
 	$$
-	essendo l'energia uno scalare la trasformazione $R$ non la modifica. Abbiamo dunque ottenuto il seguente risultato: se prendo il punto $R\vec{x}_{\omega}$ dell'ellissoide, questo naturalmente varierà nel tempo (invece $\vec{x}_{\omega}$) no perché appartiene allo spazio solidale $S'$) ma in tale punto l'ellissoide ha normale che è collineare con $\vec{l}$. Tuttavia $\vec{l}$ è costante e, dunque, esiste un piano $\pi \in S$ costante nel tempo sul quale l'ellissoide è sempre tangente, per tutti i tempi, nonostante si muova. Il punto di tangenza si trova sull'asse istantaneo di rotazione (perché proporzionale a $\vec{\omega}$) e dunque è istantaneamente fermo. In altre parole, visto da $S$, l'ellissoide di inerzia sta rotolando senza strisciare sul piano costante $\pi$. Per altro, detto $O$ il punto fisso del corpo rigido, la distanza di $O$ dal piano $\pi$ è sempre costante essendo questa pari a:
+	essendo l'energia uno scalare la trasformazione $R$ non la modifica. Abbiamo dunque ottenuto il seguente risultato: se prendo il punto $R\vec{x}_{\omega}$ dell'ellissoide, questo naturalmente varierà nel tempo (invece $\vec{x}_{\omega}$ no perché appartiene allo spazio solidale $S'$) ma in tale punto l'ellissoide ha normale che è collineare con $\vec{l}$. Tuttavia $\vec{l}$ è costante e, dunque, esiste un piano $\pi \in S$ sul quale l'ellissoide è sempre tangente, per tutti i tempi, nonostante si muova. Il punto di tangenza si trova sull'asse istantaneo di rotazione (perché proporzionale a $\vec{\omega}$) e dunque è istantaneamente fermo. In altre parole, visto da $S$, l'ellissoide di inerzia sta rotolando senza strisciare sul piano $\pi$. Per altro, detto $O$ (il centro dell'ellissoide) il punto fisso del corpo rigido, la distanza di $O$ dal piano $\pi$ è sempre costante essendo questa pari a:
 	$$
 	OH = \dfrac{\vec{L}}{|\vec{L}|}\cdot\vec{x}_{\omega} = \dfrac{\vec{L}\cdot\vec{\omega}}{L\sqrt{2E}} = \dfrac{\sqrt{2E}}{L} = const
 	$$
-	Questo è proprio l'enunciato del teorema di Poinsot. L'ellissoide di inerzia rotola senza strisciare sul piano ortogonale a $\vec{l}$ e tangente ad esso.
-	\subsection{Moto della trottola lagrangiana}
+	e quindi il piano $\pi$ è anch'esso costante nel tempo.
+	Questo è proprio l'enunciato del teorema di Poinsot. L'ellissoide di inerzia rotola senza strisciare sul piano ortogonale a $\vec{l}$.
+	\subsection{Moto della trottola libera}
 	Analizziamo la dinamica di un sistema per cui vale:
 	$$
 	I_x = I_y \neq I_z
@@ -5680,7 +5690,7 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	e assumendo $I_z > I_x$, allora $\omega > 0$ e:
 	\begin{equation}
 		\begin{cases}
-			\dfrac{dL_x}{dt} = -\omega L_yL_z \\
+			\dfrac{dL_x}{dt} = -\omega L_yL_z \\[6pt]
 			
 			\dfrac{dL_y}{dt} = \omega L_zL_x  \\
 			
@@ -5690,7 +5700,7 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	equivalente alle equazioni caratteristiche di un rotatore: 
 	\begin{equation}
 		\begin{cases}
-			\dfrac{d^2L_x}{dt^2} = -\omega^2 L_{z}^{0} L_x \\
+			\dfrac{d^2L_x}{dt^2} = -\omega^2 L_{z}^{0} L_x \\[6pt]
 			\dfrac{d^2L_y}{dt^2} = -\omega^2 L_{z}^{0} L_y \\ 
 		\end{cases}
 	\end{equation}
@@ -5702,19 +5712,36 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	\end{equation}
 	cioè, nel sistema solidale alla trottola, il momento angolare lungo $z$ rimane invariato mentre i momenti angolari lungo gli altri due assi variano armonicamente. Tale moto combinato produce il classico effetto di precessione del vettore del momento angolare attorno all'asse $z$
 	
-	Per visualizzare il moto della trottola appena descritto nello spazio inerziale possiamo avvalerci della rappresentazione alla Poinsot. 
-	
+	Per visualizzare il moto della trottola appena descritto nello spazio inerziale possiamo avvalerci anche della rappresentazione alla Poinsot. In questo caso, il vettore $\vec{\omega}$ ha modulo costante perché:
+	$$
+	\vec{\omega} = \Bigl(\dfrac{L_x}{I_x},\dfrac{L_y}{I_y},\dfrac{L_z}{I_z}\Bigl) = \Bigl(\dfrac{L_x}{I_x},\dfrac{L_y}{I_x},\dfrac{L_z}{I_z}\Bigl) 
+	$$ 
+	e
+	$$
+	\omega^2 = \dfrac{1}{I_x^2}(L_x^2+L_y^2) + \dfrac{1}{I_z}L_z^2 = \dfrac{1}{I_x^2}((L_x^0)^2+(L_y^0)^2) + \dfrac{1}{I_z}(L_z^0)^2 = const
+	$$
+	e quindi:
+	$$
+	|\vec{\omega}| = const
+	$$
+	Questo vuol dire che anche il modulo di $\vec{x}_{\omega}$ è costante, dunque la distanza da $O$ al punto di tangenza. Ma poiché anche la distanza fra $O$ e il piano $\pi$ è costante, allora è costante anche $OO'$, cioè il punto di tangenza disegna delle circonferenze perfette sul piano $\pi$. Questa è una caratteristica dei corpi rigidi riconducibili alla trottola. Notiamo che, nel caso generale, il vettore $\vec{x}_{\omega}$ che mi dice dove sta il punto di tangenza può variare (in modulo e in direzione), a patto che il centro dell'ellissoide sia sempre ad altezza costante. Il punto di tangenza dunque descrive delle traiettoria sul piano $\pi$ che possono o no essere chiuse.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale = 0.2]{ell2.jpg}
+		\caption{\textit{A sinistra, la traiettoria del punto di tangenza sul piano $\pi$ che potrebbe non essere chiusa. In tal caso il moto non è periodico e riempie densamente l'anello in figura. A destra, il moto secondo Poinsot della trottola libera. La traiettoria descritta è una circonferenza perfetta e, quindi, il moto è chiaramente periodico.}}
+	\end{figure}
+	\subsection{La trottola lagrangiana}
 	Se invece vogliamo studiare la dinamica di una trottola in un campo di forze gravitazionale con punto fisso, non possiamo più usare le equazioni di Eulero (valide se il corpo è libero). Proviamo a costruire la lagrangiana del sistema cercando in primis delle coordinate lagrangiane che mappino lo spazio $SO(3)$. Cerco, cioè, 3 numeri che rappresentino in maniera biunivoca una qualsiasi rotazioni dello spazio tridimensionale\footnote{Omomorfo allo spazio proiettivo}. Impiego allora i cosiddetti \textit{angoli di Eulero} $\varphi,\theta,\psi$. La loro definizione è la seguente:
 	\begin{itemize}
 		\item Parto dal sistema non ruotato con gli assi $x,y,z$. Ruoto attorno a $z$ di un angolo $\varphi$: ottengo un nuovo sistema $x',y',z$. L'asse $x'$ è chiamato anche \textit{linea dei nodi}
 		\item Ora applico una rotazione attorno alla linea dei nodi (il nuovo asse $x$) di un angolo $\theta$. L'asse $z$ è diventato $z'$
 		\item Infine, ruoto attorno al nuovo asse $z'$ di $\psi$
 	\end{itemize}
-	Si può dimostrare che tali operazioni\footnote{È importante farle in sequenza corretta!} permettono di definire un qualunque stato di rotazione del sistema cartesiano (una trasformazione $S\rightarrow S'$) e, dunque, la terna $\varphi,\theta,\psi$ costituisce effettivamente una terna di coordinate lagrangiane (mappano tutto lo spazio delle configurazioni). Vale che:
+	Si può dimostrare che tali operazioni\footnote{È importante farle in sequenza corretta!} permettono di definire un qualunque stato di rotazione del sistema cartesiano (una trasformazione $S\rightarrow S'$) e, dunque, la terna $\varphi,\theta,\psi$ costituisce effettivamente una terna di coordinate lagrangiane (mappano tutto lo spazio delle configurazioni $SO(3)$). Vale che:
 	$$
 	\varphi, \psi \in (0,2\pi), \quad 	\theta \in (0,\pi)
 	$$
-	La trottola costruita in questo modo, detta trottola di Lagrange, gode di evidenti simmetrie. Il sistema è infatti invariante per rotazioni attorno all'asse $z$ (quello fisso) e quindi sappiamo che la proiezione sull'asse $z$ di $\vec{l}$ (questo perché il campo di forze gravitazionale è diretto verso $-\hat{z}$). Dunque $L_z$ è sicuramente un integrale primo del moto. Anche l'energia $E$ è un integrale primo del moto, perciò siamo a quota due. E il terzo?
+	La trottola costruita in questo modo, detta trottola di Lagrange, gode di evidenti simmetrie. Il sistema è infatti invariante per rotazioni attorno all'asse $z$ (quello fisso) e quindi sappiamo che la proiezione sull'asse $z$ di $\vec{l}$ (questo perché il campo di forze gravitazionale è diretto verso $-\hat{z}$). Dunque $L_z$ è sicuramente un integrale primo del moto. Anche l'energia $E$ è un integrale primo del moto, perciò siamo a quota due. E il terzo? Si tratta della proiezione di $\vec{l}$ lungo l'asse della trottola, l'asse $z'$\footnote{Perché? Non l'ho ancora capito}
 	
 	Costruiamo il sistema rotante $S'$ di modo che sia il sistema degli assi principali della trottola chiamando l'asse $z'$ quello relativo al momento di inerzia diverso (si veda la figura). Costruito così il sistema, è chiaro che esiste allora anche una simmetria rotazionale attorno all'asse $z'$. Dunque si dovrà conservare anche la componento lungo $z'$ del momento angolare ($L_{z'}$)\footnote{Che io consideri la proiezione di $L$ o $l$, non cambia nulla: il vettore momento angolare è sempre lo stesso, è un'entità geometrica intrinseca, cambia solo il modo in cui lo rappresento. In alternativa, la proeizione su di un asse equivale ad un prodotto scalare, che è un invariante per rotazioni. Dunque che io prenda l'espressione di $\vec{L}$ e lo proietti su $z$ o che io prenda $\vec{l}$ e lo proietti su $z$ (che in $S'$ ha un'altra forma analitica), otterrei due risultati uguali}. Ricapitolando, i tre integrali primi del moto sono:
 	$$
@@ -5805,21 +5832,45 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	$$
 	f(u) = \dfrac{1}{2}(p_{\varphi}-p_{\psi}u)^2 + I_x(1-u^2)(Mgdu - E')
 	$$
-	Dovrò dunque usare funzioni ellittiche per risolvere tale moto. Poiché $f(-1) = f(1) = \dfrac{1}{2}(p_{\varphi}-p_{\psi})^2$, allora mi aspetto un punto stazionario nell'intervallo $[-1,1]$. Poiché la soluzione fisica esiste solo per i valori di $f(u)<0$, e sicuramente deve esistere una soluzione fisica, allora il punto stazionario di cui sopra sarà un minimo $\theta_{0}$. Dunque esiste una soluzione in cui la trottola si mantiene ad un'inclinazione $\theta$ costante, $\theta(t) = \theta_0$. Essendo:
+	Dovrò dunque usare funzioni ellittiche per risolvere tale moto. Notiamo che $f(-1) = f(1) = \dfrac{1}{2}(p_{\varphi}-p_{\psi})^2 > 0$. Poiché la soluzione fisica esiste solo per i valori di $f(u)<0$, e sicuramente deve esistere una soluzione fisica, allora $f(u)$ sarà tale da avere sempre due punti $u_1,u_2$ in cui si annulla, che corrispondono ai due punti di inversione del moto. Il moto su $\theta$ è interamente limitato a valori $[\theta_1,\theta_2] = [\arccos(u_1),\arccos(u_2)]$ (orbite ellittiche nel piano delle fasi). Necessariamente allora deve esistere un punto di equilibrio stabile per $\theta$ che stia fra questi due valori cioè esiste una soluzione in cui la trottola si mantiene ad un'inclinazione $\theta$ costante, $\theta(t) = \theta_0$, stabilmente. Essendo:
 	\begin{equation}
 		\dot{\varphi} = \dfrac{p_{\varphi}-p_{\psi}\cos\theta}{I_x \sin^2\theta}
 		\label{phidot}
 	\end{equation}
-	se $\theta$ è costante, allora anche $\varphi$ è costante e quindi $\varphi$ varia linearmente nel tempo. Se $\theta$ non è costante, $\dot{\varphi}$ può addirittura cambiare segno (la trottola è come se tornasse indietro!). Invece $\dot{\psi}$? Anche lui è costante, dunque si ha una rotazione uniforme attorno all'asse $z'$ (esattamente come ci aspettiamo)
+	se $\theta$ è costante, allora anche $\varphi$ è costante e quindi $\varphi$ varia linearmente nel tempo. Invece $\dot{\psi}$? Anche lui è costante se $\theta$ è costante, dunque si ha una rotazione uniforme attorno all'asse $z'$ (esattamente come ci aspettiamo). Infatti:
+	$$
+	\dot{\psi}= \dfrac{p_\psi - I_z\dot{\varphi}\cos\theta}{I_z} = const
+	$$
+	e questa è la velocità di rotazione della trottola attorno al suo asse ($z'$).
 	
 	
-	Se la soluzione di $\theta$ non è costante, sappiamo tuttavia che il moto su $\theta$ è confinato fra due valori, $\theta_1<\theta <\theta_2$ (moto di \textit{nutazione}). Dalla (\ref{phidot}), osserviamo che il segno di $\dot{\varphi}$ non è sempre positivo e può succedere che diventi negativo per certi angoli $\theta$. In tal caso, l'asse di rotazione $z'$ sembra tornare indietro e tracciare curve su di una sfera centrata in $O$ con dei riccioli. In caso contrario, la curva tracciata appare monotona, quasi sinusoidale. 
 	
+	E se $\theta$ non è costante, cioè non ci troviamo nelle condizioni di equilibrio? In tal caso sappiamo che il moto su $\theta$ è confinato fra due valori, $\theta_1<\theta <\theta_2$ (moto di \textit{nutazione}). Dalla (\ref{phidot}), osserviamo che il segno di $\dot{\varphi}$, che ora non è più generalmente costante, non è sempre positivo e può succedere che diventi addirittura negativo per certi angoli $\theta$. In tal caso, l'asse di rotazione $z'$ sembra tornare indietro e tracciare curve su di una sfera centrata in $O$ con dei riccioli. In caso contrario, la curva tracciata appare monotona, quasi sinusoidale. 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale = 0.2]{ell4.jpg}
+		\caption{\textit{Moto della trottola lagrangiana, immagine dell'Arnold. a) La soluzione per $\theta$ è confinata fra $\theta_1,\theta_2$ (nutazione). In tal caso, il valore di $\varphi$ è sempre maggiore di $0$, cioè $\cos\theta < \dfrac{p_{\varphi}}{p_\psi}$, $\forall\theta\in[\theta_1,\theta_2]$, dunque $\cos\theta_1 < \dfrac{p_{\varphi}}{p_\psi}$ b) Soluzione in cui, per certi angoli, $\dot{\varphi}<0$. In tal caso l'asse $z'$ sembra ritornare indietro e la traiettoria disegnata forma dei nodi. c) Caso limite in cui $\dot{\varphi}=0$ solo in un punto ($\theta_2$) ed è positiva altrove. Il moto presenta questa cuspidi angolose. Questo è il caso tipico di quando si lascia cadere da ferma una trottola (facendola però ruotare attorno a $z'$) ad una certa elevazione $\theta_2$. La trottola inizialmente cade ma poi si risolleva}}
+	\end{figure}
 	In generale, dunque, il moto di una trottola lagrangiana è composto da tre moti angolari indipendenti e periodici: nutazione ($\theta$), precessione ($\varphi$) e rotazione ($\psi$). Se le loro frequenze di oscillazione sono commensurabili, allora la trottola percorre orbite tridimensionali chiuse, altrimenti riempie densamente lo spazio delle configurazioni concesso e non torna mai nello stato iniziale.
 	Notiamo che se togliamo il termine di gravità, il polinomio si riduce di un grado e il problema può essere integrato senza ricorrere a funzioni esotiche. 
 	\subsubsection{Trottola addormentata}
-	E se inizialmente $\theta = 0$? Il potenziale della trottola lagrangiana è singolare in questo punto e quindi il problema va ripensato perché il set di coordinate euleriane non funziona adeguatamente per questi poli. 
-	DA FINIRE 
+	E se inizialmente $\theta = 0$? Il potenziale della trottola lagrangiana è singolare in questo punto e quindi il problema va ripensato perché il set di coordinate euleriane non funziona adeguatamente per questi poli. Questo è il caso della cosiddetta \textit{trottola addormentata}. Se $\theta=0$ inizialmente, allora $\varphi$ coincide con $\psi$ e, dunque:
+	$$
+	p_{\varphi} = p_\psi = p
+	$$
+	Con questa uguaglianza riscriviamo l'energia:
+	$$
+	E' = \dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{p^2}{2I_x}\dfrac{(1-\cos\theta)^2}{\sin^2\theta}+  Mgd\cos\theta
+	$$
+	Approssimando per intorni di $\theta=0$, abbiamo:
+	$$
+	E = \dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{p^2}{8I_x}\theta^2-\dfrac{1}{2}Mgd\theta^2 =\dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{1}{2}\theta^2\Bigl(\dfrac{p^2}{4I_x}-Mgd\Bigl)
+	$$
+	Se vogliamo che la trottola sia stabile in intorni di $\theta=0$, richiedo che questa sia l'energia di un oscillatore armonico e non iperbolico, dunque in definitiva
+	\begin{equation}\label{key}
+		\dfrac{p^2}{4I_x}-Mgd > 0
+	\end{equation}
+    
 	\newpage 
 	\subsection{Esempi ed esercizi}
 	\subsubsection{Tensore di inerzia di un corpo bidimensionale}
@@ -5878,34 +5929,84 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	$$
 	cosa che è effettivamente vera (e dalla quale avremmo potuto ricavare che necessariamente $I_y = 0$).
 	\subsubsection{Tensore di inerzia di un rettangolo omogeneo}
+	Calcoliamo il tensore di inerzia di un rettangolo a densità omogenea. Siano $a$ e $b$ le due dimensioni lineari del rettangolo
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[x=1cm,y=1cm]
+		\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$}; % x-axis
+		\draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$}; % y-axis
+		
+		\draw (-2,-1.5) rectangle (2,1.5); % rectangle
+
+		
+		
+		\draw[dashed] (-2.5,0) -- (2.5,0); % dashed x-axis extension
+		\draw[dashed] (0,-2.5) -- (0,2.5); % dashed y-axis extension
+	\end{tikzpicture}
+\end{figure}
+Già sappiamo che $I_z = I_x+I_y$, quindi procediamo a calcolare:
+$$
+I_x = \int_{A}y^2\sigma dA =\sigma\int_{-b/2}^{b/2}dx\int_{-a/2}^{a/2}y^2dy = \dfrac{M}{ab}b\dfrac{1}{12}a^3 = \dfrac{1}{12}Ma^2
+$$
+Analogamente,
+$$
+I_y = \dfrac{1}{12}Mb^2
+$$
+e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
+\begin{equation}\label{key}
+	I = \dfrac{1}{12}M
+	\begin{pmatrix}
+		a^2 & 0 & 0 \\
+		0 & b^2 & 0 \\
+		0 & 0 & a^2+b^2
+	\end{pmatrix}
+\end{equation}
 	\subsubsection{Disco su di una guida rotante}
 	Consideriamo un problema in cui vi sia una guida circolare di raggio $2R$ inizialmente nel piano $xy$ al cui interno può ruotare un altro disco omogeneo di raggio $R$. Il disco si muove sotto l'effetto della forza peso. Ad un certo punto la guida viene messa in rotazione attorno all'asse verticale con velocità angolare costante $\vec{\Omega}$. Il disco è vincolato a ruotare senza strisciare all'interno della guida.
 	
-	Definiamo in primis le coordinate lagrangiana del sistema. Sia $\varphi$ l'angolo della retta passante per il centro di massa mentre $\theta$ è l'angolo di rotolamento proprio del disco (posto $\theta = 0$ quando il disco poggia a $\varphi = 0$). Perché si abbia la condizione di rototraslazione, deve verificarsi che:
+	Definiamo in primis le coordinate lagrangiana del sistema. Sia $\varphi$ l'angolo della retta passante per il centro di massa mentre $\theta$ è l'angolo fra punto iniziale e punto attuale di appoggio ($\theta = 0$ quando il disco poggia a $\varphi = 0$). Perché si abbia la condizione di rototraslazione, deve verificarsi che:
 	$$
-	2R\theta = -R\varphi
+	2R\varphi = R\theta
 	$$
 	$$
-	2\theta = -\varphi
+	2\theta = \varphi
 	$$
-	Il segno meno è necessario perché se $\theta$ si sposta in senso antioraio, allora $\varphi$ si sposta in senso orario. Un altro modo per ricavare la stessa relazione passava per la nullità della velocità del punto di contatto, che è uguale alla velocità del disco dovuta alla sua rotazione attorno al centro di massa ($R\dot{\theta}$) e alla rotazione del disco intero rispetto al centro della circonferenza ($2R\dot{\varphi}$). Da questa seguiva la condizione di rototraslazione sulle velocità:
+	Un altro modo per ricavare la stessa relazione passava per la nullità della velocità del punto di contatto, che è uguale alla velocità del disco dovuta alla sua rotazione attorno al centro di massa ($R\dot{\theta}$) e alla rotazione del disco intero rispetto al centro della circonferenza ($2R\dot{\varphi}$). Da questa seguiva la condizione di rototraslazione sulle velocità:
 	$$
-	\dot{\theta} = -2\dot{\varphi}
+	\dot{\theta} = 2\dot{\varphi}
 	$$
 	Passiamo a costruire l'energia cinetica usando il teorema di Konig. Il centro di massa del disco sta nella posizione:
 	$$
-	\vec{x}_{CM}= (-R\cos\varphi, -R\sin\varphi)
+	\vec{x}_{CM}= (R\sin\varphi, -R\cos\varphi)
 	$$
 	e quindi:
 	$$
-	\vec{v}_{CM} = (R\dot{\varphi}\sin\varphi, -R\dot{\varphi}\cos\varphi)
+	\vec{v}_{CM} = (R\dot{\varphi}\cos\varphi, R\dot{\varphi}\sin\varphi)
 	$$
 	$$
 	T_{CM} = \dfrac{1}{2}mR^{2}\dot{\varphi}^{2}
 	$$
-	Ora devo valutare l'altro contributo. Mi metto nel sistema rotante solidale col disco e calcolo l'energia cinetica rispetto a questo usando il tensore di inerzia. Il disco ruota di $\theta+\varphi$, quindi
-	DA COMPLETARE 
+	Ora devo valutare l'altro contributo. Mi metto nel sistema rotante solidale col disco e calcolo l'energia cinetica rispetto a questo usando il tensore di inerzia. Il disco ruota di $\theta-\varphi = $ rispetto ad un sistema centrato nel centro di massa con gli assi paralleli, quindi 
+	$$
+	\vec{\omega} = \hat{z}(\dot{\theta}-\dot{\varphi}) = \hat{z}\dot{\varphi}
+	$$
+	dove $\hat{z}$ è l'asse (di $S'$) uscente dal foglio. Allora il termine $T'$:
+	$$
+	T' = \dfrac{1}{2}I_x\dot{\varphi}^2 = \dfrac{1}{4}mR^2\dot{\varphi}^2
+	$$
+	e, in totale,
+	$$
+	T = \dfrac{3}{4}mR^2\dot{\varphi}^2
+	$$
+	Da cui la lagrangiana:
+	$$
+	\Lambda = \dfrac{3}{4}mR^2\dot{\varphi}^2+mgR\cos\varphi
+	$$
+	il sistema cioè si comporta come un pendolo fisico. 
+	
+	Cosa succede se accendo una rotazione attorno all'asse verticale fisso? 
 	\subsubsection{Disco tagliato su piano}
+	!!!!!
 	\subsubsection{Ruota quadrata}
 	
 	\newpage
