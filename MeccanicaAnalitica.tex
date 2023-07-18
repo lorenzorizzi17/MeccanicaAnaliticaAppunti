@@ -3865,9 +3865,9 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	N =-2mg +2mg\cos(\theta) + mg\cos(\theta) = -2mg + 3mg\cos(\theta) 
 	$$
-	Per quanto abbiamo detto, tale problema ammette solo forze vincolari negative \footnote{Il segno è chiaramente convenzionale. Qua serve negativo perché il segno dell'accelerazione centripeta è negativo}, e quindi:
+	Per quanto abbiamo detto, tale problema ammette solo forze vincolari positive \footnote{Il segno è chiaramente convenzionale. Qua serve positivo perché il segno dell'accelerazione centripeta è negativo}, e quindi:
 	$$
-	\cos(\theta) < \dfrac{2}{3}
+	\cos(\theta) > \dfrac{2}{3}
 	$$
 	Tali valori di $\theta$ sono dunque quelli per cui il punto materiale si mantiene attaccato alla guida sferica.
 	\subsection{Vincolo dipendente dal tempo}
@@ -5371,7 +5371,7 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 	Dimostriamolo. Sia $\vec{x}$ la posizione nuovo e $\vec{x}_{CM}$ quella del centro di massa.
 	Allora:
 	$$
-	\vec{x}_O = \vec{x}_{CM}+\vec{d}
+	\vec{x} = \vec{x}_{CM}+\vec{d}
 	$$
 	Per la definizione di momento di inerzia,
 	\begin{equation}\label{key}
@@ -5381,7 +5381,7 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 	\end{equation}
     dove $d_O$ è la distanza fra asse e punto. Questa è uguale a:
     $$
-    d_O = |\vec{x}_{CM}\times\hat{\omega}|
+    d_O = |\vec{x}_{0}\times\hat{\omega}|
     $$
     cioè del vettore posizione $\vec{x}_O$ che connette un generico punto P al punto $O$ devo prendere solo la componente perpendicolare all'asse stesso. Allora:
     \begin{equation}\label{key}
@@ -5470,7 +5470,7 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	\begin{equation}\label{key}
 		T = \dfrac{1}{2}MV_{CM}^{2} + \dfrac{1}{2}\vec{\omega}I_{CM}\vec\omega
 	\end{equation}
-	Questo è il teorema di König, utile per calcolare l'energia cinetica di un corpo rigido sfruttando le proprietà del centro di massa. Il tensore di inerzia va chiaramente riferimento al centro di massa (e magari è bene orientarlo nelle direzioni degli assi principali//orientato in maniera parallela al sistema inerziale).
+	Questo è il teorema di König, utile per calcolare l'energia cinetica di un corpo rigido sfruttando le proprietà del centro di massa. Il tensore di inerzia va chiaramente riferimento al centro di massa (e magari è bene orientarlo nelle direzioni degli assi principali//orientato in maniera parallela al sistema inerziale).\footnote{Qua è doveroso un discorso. In classe è stato detto che il secondo sistema di riferimento, quello solidale al centro di massa, deve essere fisso e con gli assi paralleli a quello inerziale. Ci sta, ma in realtà non è necessario (si veda Landau, lì non è parallelo e non è fisso). Io ho scelto di prendere un secondo sistema di riferimento \textbf{non inerziale (dunque non fisso) e orientato} di modo che sia solidale col corpo, esattamente come avevamo fatto precedentemente. L'energia rispetto a questo sistema di riferimento la sappiamo calcolare. L'obiezione che si potrebbe fare è che, in questo sistema solidale $S'$, il corpo è fermo, quindi che energia cinetica vuoi che abbia. Vero, ma allora la stessa obiezione va fatto per le sezioni precedenti. Il senso della trattazione era che \textbf{non} posso usare direttamente l'energia cinetica percepita nel sistema $S'$ perché questo è non inerziale (quindi ci sta che sia nulla). La formula $T=1/2 \vec{\omega}I\vec\omega$ mi permette di trovare l'energia cinetica \textbf{scritta con le coordinate rotante} ma percepita da un osservatore inerziale che sia solidale col punto fisso del corpo rigido. Solo l'energia cinetica dell'osservatore inerziale conta a livello fisico, però io la voglio scrivere comodamente nelle coordinate rotanti. Quindi il termine $T'$ mi racconta l'energia cinetica del corpo rigido vista da un osservatore inerziale istantaneamente solidale col centro di massa ma scritta nelle coordinate rotanti. A questa devo aggiungere chiaramente l'energia del centro di massa. Richiedere che il secondo sistema $S'$ è equivalente a quello che ho scritto (però oh, abbiamo fatto tutta la trattazione per trovare l'energia cinetica assoluta scritta nel sistema non inerziale, mi sembrava un po' stupido impiegare ora un sistema fisso e parallelo, cioè istantaneamente inerziale).}
 	\subsection{Ellissoide di inerzia}
 	Sia $K$ un corpo rigido. Esiste un metodo molto efficace e semplice per comprendere la dinamica rotazionale di un corpo rigido arbitrariamente complicato che passa per il concetto di \textit{ellissoide di inerzia}. Infatti, associamo ad ogni corpo rigido $K$ la forma quadratica:
 	$$
@@ -5502,7 +5502,7 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 	$$
 	dove, ricordiamolo, $\vec{L}$ è il momento angolare calcolato nel sistema rotante (e non nel sistema inerziale!). Nel sistema degli assi principali, la relazione di sopra si semplifica e diventa:
 	$$
-	(L_x,L_y,L_z) = (I_x\omega_x,I_y\omega_y,,I_z\omega_z)
+	(L_x,L_y,L_z) = (I_x\omega_x,I_y\omega_y,I_z\omega_z)
 	$$
 	Studiamo ora il moto del corpo rigido libero, sul quale, cioè, non sono applicate forze o momenti torcenti esterni. In tal caso, mi aspetto che il momento angolare \textbf{rispetto al sistema inerziale} $\vec{l}$ sia conservato, cioè:
 	$$
@@ -5577,7 +5577,7 @@ e quindi:
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale = 0.2]{ell1.jpg}
-	\caption{\textit{Visualizzazione delle soluzioni per il problema di Eulero sul corpo rigido libero (dall'Arnold). L'ellissoide è il vincolo imposto dalla conservazione dell'energia. Le varie intersezioni con le sfere (vincoli del modulo di $\vec{L}$) sono mostrate sull'ellissoide. Come sarà più chiaro nel prossimo capitolo, notiamo che le soluzioni che stanno vicine ai due assi $e_1, e_3$ (gli assi di inerzia maggiore e minore) rimangono abbastanza confinate mentre le soluzioni attorno a $e_2$ tendono ad allontanarsi di molto dall'asse stesso (comportamente iperbolico).}}
+	\caption{\textit{Visualizzazione delle soluzioni per il problema di Eulero sul corpo rigido libero (dall'Arnold). L'ellissoide è il vincolo imposto dalla conservazione dell'energia. Le varie intersezioni con le sfere (vincoli del modulo di $\vec{L}$) sono mostrate sull'ellissoide. Come sarà più chiaro nel prossimo capitolo, notiamo che le soluzioni che stanno vicine ai due assi $e_1, e_3$ (gli assi di inerzia maggiore e minore) rimangono abbastanza confinate mentre le soluzioni attorno a $e_2$ tendono ad allontanarsi di molto dall'asse stesso (comportamento iperbolico).}}
 \end{figure}
 	\subsection{Stabilità degli assi principali}
 	I punti di equilibrio di un corpo rigido libero (con tutti i momenti di inerzia diversi) sono quelli per cui il momento angolare è inizialmente lungo uno degli assi principali di inerzia:
@@ -5759,7 +5759,7 @@ e quindi:
 	$$
 	T =\dfrac{1}{2} \vec{\omega}I\vec{\omega}
 	$$
-	e $I$ va riferito al punto di contatto (il punto fisso). Allora avremo:
+	e $I$ va riferito al punto di contatto (il punto fisso)\footnote{I momenti di inerzia che costituiscono il tensore di inerzia sono chiaramente da riferirsi agli assi principali del sistema rotante. Sarebbe più corretto chiamarli $I_{x'}, I_{y'},...$ ma non ho voglia quindi rimangono senza l'apice.}. Allora avremo:
 	$$
 	T = \dfrac{1}{2}(I_x(\omega_{x'}^2+\omega^{2}_{y'})+I_z\omega^{2}_{z'})
 	$$
@@ -5832,12 +5832,12 @@ e quindi:
 	$$
 	f(u) = \dfrac{1}{2}(p_{\varphi}-p_{\psi}u)^2 + I_x(1-u^2)(Mgdu - E')
 	$$
-	Dovrò dunque usare funzioni ellittiche per risolvere tale moto. Notiamo che $f(-1) = f(1) = \dfrac{1}{2}(p_{\varphi}-p_{\psi})^2 > 0$. Poiché la soluzione fisica esiste solo per i valori di $f(u)<0$, e sicuramente deve esistere una soluzione fisica, allora $f(u)$ sarà tale da avere sempre due punti $u_1,u_2$ in cui si annulla, che corrispondono ai due punti di inversione del moto. Il moto su $\theta$ è interamente limitato a valori $[\theta_1,\theta_2] = [\arccos(u_1),\arccos(u_2)]$ (orbite ellittiche nel piano delle fasi). Necessariamente allora deve esistere un punto di equilibrio stabile per $\theta$ che stia fra questi due valori cioè esiste una soluzione in cui la trottola si mantiene ad un'inclinazione $\theta$ costante, $\theta(t) = \theta_0$, stabilmente. Essendo:
+	Dovrò dunque usare funzioni ellittiche per risolvere tale moto. Notiamo che $f(-1) = \dfrac{1}{2}(p_{\varphi}+p_{\psi})^2 > 0, f(1) = \dfrac{1}{2}(p_{\varphi}-p_{\psi})^2 > 0$. Poiché la soluzione fisica esiste solo per i valori di $f(u)<0$, e sicuramente deve esistere una soluzione fisica\footnote{Lanciate una trottola e ve ne renderete conto}, allora $f(u)$ passa da segno positivo a segno negativo e poi di nuovo positivo, dunque sarà tale da avere sempre due punti $u_1,u_2$ in cui si annulla, che corrispondono ai due punti di inversione del moto. Il moto su $\theta$ è interamente limitato a valori $[\theta_1,\theta_2] = [\arccos(u_1),\arccos(u_2)]$ (orbite ellittiche nel piano delle fasi). Necessariamente allora deve esistere un punto di equilibrio stabile per $\theta$ che stia fra questi due valori cioè esiste una soluzione in cui la trottola si mantiene ad un'inclinazione $\theta$ costante, $\theta(t) = \theta_0$, stabilmente. Essendo:
 	\begin{equation}
 		\dot{\varphi} = \dfrac{p_{\varphi}-p_{\psi}\cos\theta}{I_x \sin^2\theta}
 		\label{phidot}
 	\end{equation}
-	se $\theta$ è costante, allora anche $\varphi$ è costante e quindi $\varphi$ varia linearmente nel tempo. Invece $\dot{\psi}$? Anche lui è costante se $\theta$ è costante, dunque si ha una rotazione uniforme attorno all'asse $z'$ (esattamente come ci aspettiamo). Infatti:
+	se $\theta$ è costante, allora anche $\dot\varphi$ è costante e quindi $\varphi$ varia linearmente nel tempo. Invece $\dot{\psi}$? Anche lui è costante se $\theta$ è costante, dunque si ha una rotazione uniforme attorno all'asse $z'$ (esattamente come ci aspettiamo). Infatti:
 	$$
 	\dot{\psi}= \dfrac{p_\psi - I_z\dot{\varphi}\cos\theta}{I_z} = const
 	$$
@@ -5854,7 +5854,7 @@ e quindi:
 	In generale, dunque, il moto di una trottola lagrangiana è composto da tre moti angolari indipendenti e periodici: nutazione ($\theta$), precessione ($\varphi$) e rotazione ($\psi$). Se le loro frequenze di oscillazione sono commensurabili, allora la trottola percorre orbite tridimensionali chiuse, altrimenti riempie densamente lo spazio delle configurazioni concesso e non torna mai nello stato iniziale.
 	Notiamo che se togliamo il termine di gravità, il polinomio si riduce di un grado e il problema può essere integrato senza ricorrere a funzioni esotiche. 
 	\subsubsection{Trottola addormentata}
-	E se inizialmente $\theta = 0$? Il potenziale della trottola lagrangiana è singolare in questo punto e quindi il problema va ripensato perché il set di coordinate euleriane non funziona adeguatamente per questi poli. Questo è il caso della cosiddetta \textit{trottola addormentata}. Se $\theta=0$ inizialmente, allora $\varphi$ coincide con $\psi$ e, dunque:
+	E se inizialmente $\theta = 0$? Il potenziale della trottola lagrangiana è singolare in questo punto e quindi il problema va ripensato perché il set di coordinate euleriane non funziona adeguatamente per questi poli. Questo è il caso della cosiddetta \textit{trottola addormentata}. Studiamo questa situazione come caso limite del precedente per $\theta\to 0, \psi\to\varphi$. Se $\theta=0$ inizialmente, allora $\varphi$ coincide con $\psi$ e, dunque formalmente:
 	$$
 	p_{\varphi} = p_\psi = p
 	$$
@@ -5862,7 +5862,11 @@ e quindi:
 	$$
 	E' = \dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{p^2}{2I_x}\dfrac{(1-\cos\theta)^2}{\sin^2\theta}+  Mgd\cos\theta
 	$$
-	Approssimando per intorni di $\theta=0$, abbiamo:
+	Procediamo col limite $\theta\to 0$. Avremo che, per Taylor, in intorni di $\theta=0$:
+	$$
+	\dfrac{(1-\cos\theta)^2}{\sin^2\theta} \to \dfrac{1}{4}\theta^2, \quad \quad \quad \cos\theta \to 1-\dfrac{\theta^2}{2}
+	$$
+	dunque:
 	$$
 	E = \dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{p^2}{8I_x}\theta^2-\dfrac{1}{2}Mgd\theta^2 =\dfrac{1}{2}I_x\dot{\theta}^2 + \dfrac{1}{2}\theta^2\Bigl(\dfrac{p^2}{4I_x}-Mgd\Bigl)
 	$$
@@ -5870,7 +5874,11 @@ e quindi:
 	\begin{equation}\label{key}
 		\dfrac{p^2}{4I_x}-Mgd > 0
 	\end{equation}
-    
+    cioè:
+    \begin{equation}\label{key}
+    	p^2 > 4I_xMgd
+    \end{equation}
+ossia la trottola deve spinnare su se stessa abbastanza velocemente (in fondo $p = I_z\dot\varphi$). Nelle situazioni reali, l'attrito tende a rallentare la rotazione finché l'equilibrio diventa instabile: la trottola si risveglia e segue la trattazione vista in precedenza.
 	\newpage 
 	\subsection{Esempi ed esercizi}
 	\subsubsection{Tensore di inerzia di un corpo bidimensionale}
@@ -6021,9 +6029,9 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\end{equation}
 	Il motivo della loro validità è ignoto (sono principi fondamentali, \textit{lo chieda al padre eterno}), ma sappiamo che se vale l'uno, vale anche l'altro. Vogliamo, a questo punto, dimostrare che esiste una terza formulazione possibile della meccanica classica che pone come assioma fondamentale un \textit{principio di carattere variazionale}, il \textit{principio di minima azione}
 	\subsection{Funzionali ed estremanti}
-	In primis, un po' di definizioni. Sia $q(t)$ una generica traiettoria nello spazio delle configurazioni tale che, ai tempi $t_A \mbox{ e } t_B$, valga $q_A = q(t_A), q_B = q(t_B)$. Definisco allora l'insieme $Q$ di tutte le possibili traiettorie nello spazio i cui estremi negli istanti temporali $t_A, t_B$ siano gli stessi, e cioè:
+	In primis, un po' di definizioni. Sia $q(t)$ una generica traiettoria nello spazio delle configurazioni $\mathcal{M}$ tale che, ai tempi $t_A \mbox{ e } t_B$, valga $q_A = q(t_A), q_B = q(t_B)$. Definisco allora l'insieme $Q$ di tutte le possibili traiettorie nello spazio i cui estremi negli istanti temporali $t_A, t_B$ siano gli stessi, e cioè:
 	\begin{equation}
-		Q = \{q(t)\in C^{(2)}(t_A,t_B): q(t_A) = q_A, \> q(t_B) = q_B\}
+		Q = \{q(t)\in \mathcal{M}: q(t_A) = q_A, \> q(t_B) = q_B\}
 	\end{equation}
 	e richiediamo anche le traiettorie $q$ siano di classe $C^{(2)}$. A questo punto, definiamo un \textit{funzionale} $\tilde{F}$ come un'applicazione che ad ogni traiettoria $q \in Q$ restituisce un numero reale:
 	$$
@@ -6043,15 +6051,15 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	$$
 	con $q_j$ coordinate cartesiane. Se impiegassimo altre coordinate generalizzate, allora avremmo genericamente
 	$$
-	L = \int_{\gamma}ds = \int_{a}^{b}\sqrt{\dot{q}_j G\dot{q}_j}dt
+	L = \int_{\gamma}ds = \int_{a}^{b}\sqrt{\dot{q}_i G_{ij}\dot{q}_j}dt = \int_{a}^{b}\sqrt{\dot{\vec{q}} \textbf{G}\dot{\vec{q}}}dt
 	$$
-	con $G$ matrice metrica dello spazio delle configurazioni con le coordinate generalizzate. La lunghezza è dunque un funzionale (associa ad una curva un numero). 
+	con $G$ matrice metrica dello spazio delle configurazioni con le coordinate generalizzate \footnote{Per comodità, da qui in poi useremo la notazione vettoriale e non più quella matriciale, senza però usare esplicitamente la freccetta.}. La lunghezza è dunque un funzionale (associa ad una curva un numero). 
 	
 	Definiamo ora cosa intendiamo per \textit{estremale} di un funzionale. Detto $\tilde{F}$ un funzionale, allora $q\in Q$ si dice traiettoria estremale o, semplicemente, estremale per $\tilde{F}$ se:
 	\begin{equation}\label{key}
 		\tilde{F}(q+\delta q) = \tilde{F}(q) + O(||\delta q||^2)
 	\end{equation}
-	dove $\delta q$ è una piccola funzione variazione nella traiettoria per la quale $\delta q (t_A) = \delta q(t_B) = 0$. Cosa intendiamo per piccola? Per dare un senso a questa frase, associamo alla funzione $\delta q $ una norma e richiediamo che tale norma sia piccola (e così possiamo usare la solita notazione degli O grande)\footnote{Questo è possibile perché lo spazio in cui vivono tutte le varia variazioni $\delta q$ è uno spazio vettoriale a tutti gli effetti e quindi posso normarlo. D'altronde, sommando due variazioni $\delta q$ otterrei ancora una variazione che si annulla in $t_A \mbox{ e } t_B$ (cosa non vero per lo spazio $Q$).} In un certo senso, una traiettoria estremale rende stazionario il valore del funzionale (non possiamo usare i concetti dell'analisi, come la derivata, che in questo caso non avrebbe senso). Dunque come definizione alternativa (ma ugualmente valida) richiediamo che spostandoci in intorni di $q$ (e il concetto di intorno è sensato perché ho normato lo spazio, dunque è topologico) la variazione che osservo nel funzionale è di ordine $2$ rispetto alla variazione stessa. 
+	dove $\delta q$ è una piccola funzione variazione nella traiettoria per la quale $\delta q (t_A) = \delta q(t_B) = 0$. Cosa intendiamo per piccola? Per dare un senso a questa frase, associamo alla funzione $\delta q $ una norma e richiediamo che tale norma sia piccola (e così possiamo usare la solita notazione degli O grande)\footnote{Questo è possibile perché lo spazio in cui vivono tutte le varie variazioni $\delta q$ è uno spazio vettoriale a tutti gli effetti e quindi posso normarlo. D'altronde, sommando due variazioni $\delta q$ otterrei ancora una variazione che si annulla in $t_A \mbox{ e } t_B$ (cosa non vero per lo spazio $Q$).} In un certo senso, una traiettoria estremale rende stazionario il valore del funzionale (non possiamo usare i concetti dell'analisi, come la derivata, che in questo caso non avrebbe senso). Dunque come definizione alternativa (ma ugualmente valida) richiediamo che spostandoci in intorni di $q$ (e il concetto di intorno è sensato perché ho normato lo spazio, dunque è topologico) la variazione che osservo nel funzionale è di ordine $2$ rispetto alla variazione stessa. 
 	
 	
 	Vediamo come calcolare esplicitamente l'estremale di un generico funzionale $\tilde{F}$. Valuto allora:
@@ -6094,7 +6102,51 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	
 	Notiamo, in ultimo, che nell'usare correttamente il principio dobbiamo imporre due condizioni di contorno, non più propriamente iniziali. Se nella formulazione lagrangiana ci preoccupavamo di conoscere lo stato iniziale (posizione e impulso), qua richiediamo di sapere le posizione in due istanti temporali differenti.
 	\subsubsection{Esempio: la catenaria}
-	\subsection{Proprietà del funzionale d'azione}
+	Facciamo un esempio di funzionali e di come usarli. Consideriamo una corda di lunghezza $l$ che viene lasciata libera sotto effetto della gravità, essendo però vincolata ai due estremi alla stessa altezza. La distanza fra i due estremi, costante, vale $2a$. Che curva assume spontaneamente la corda? In questo caso la meccanica lagrangiana fatica a risponderci. Il problema infatti possiede infiniti gradi di libertà e non sappiamo come gestirlo con la lagrangiana. Proviamo un altro metodo.
+	
+	Sia $\gamma = (x, y(x))$ la curva che la corda traccia nello spazio all'equilibrio. L'energia di quest'ultima, puramente potenziale, diventa allora:
+	\begin{equation}\label{key}
+		V = \int_{\gamma}dV = \int_{-a}^{a}\rho g y(x)\sqrt{1+y'^2(x)}dx
+	\end{equation}
+Avendo indicato $y'$ la derivata rispetto a $x$. È chiaro che la forma di sopra è un funzionale: ad ogni possibile curva $y(x)$, diamo un valore cumulativo di energia. L'azione $S$, essendo $\Lambda = V$ all'equilibrio, diventa:
+\begin{equation}\label{key}
+	S = -\int_{\gamma}dV = -\int_{-a}^{a}\rho g y(x)\sqrt{1+y'^2(x)}dx
+\end{equation}
+e dunque devo trovare la curva $y(x)$ che la minimizza (o meglio la rende stazionaria).\footnote{Nelle condizioni di equilibrio, richiedere che l'azione sia minima equivale a richiedere che il potenziale sia minimo.} Per comodità, minimizziamo l'energia (tanto c'è solo un segno di differenza)
+
+Nel problema c'è però un vincolo, quello della lunghezza $l$ della corda, cioè:
+\begin{equation}\label{key}
+	l = \int_{-a}^{a}\sqrt{1+y'^2(x)}dx
+\end{equation}
+Nei problemi di minimizzazione coi vincoli, ricorriamo al metodo dei moltiplicatori di Lagrange. Generiamo un nuovo funzionale con la variabile ausiliaria $\lambda$:
+\begin{equation}\label{key}
+	\tilde{F}(y,y') = V(y,y')-\lambda\int_{-a}^{a}\sqrt{1+y'^2(x)} =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx
+\end{equation}
+e minimizziamo globalmente questo. Potremmo a questo punto usare le equazioni di Eulero che produrrebbero\footnote{Attenzione che qua il parametro è $x$, non $t$!}:
+\begin{equation}\label{key}
+	\Bigl(\dfrac{d}{dx}\dfrac{\partial}{\partial y'}-\dfrac{\partial}{\partial y}\Bigl)(\rho g y-\lambda)\sqrt{1+y'^2(x)} = 0
+\end{equation}
+\begin{equation}\label{key}
+	\dfrac{d}{dx}(\rho g y -\lambda)\dfrac{y'}{\sqrt{1+y'^2}}-\rho g \sqrt{1+y'^2} =0
+\end{equation}
+Invece cerchiamo di cavarcela diversamente. Riprendiamo il funzionale da minimizzare:
+\begin{equation}\label{key}
+	\tilde{F}(y,y') =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx =\int_{-a}^{a} \Lambda'(y,y')dx
+\end{equation}
+Possiamo interpretare l'integrando come una lagrangiana di un qualche sistema fisico descritto dalla coordinata $y$ nel parametro $x$ (non più il tempo dunque). Questa lagrangiana fittizia non dipende da $x$ (che è alla stregua del tempo) e allora ci aspettiamo che, definendo un'energia con la formula rigorosa:
+\begin{equation}\label{key}
+	E = \dfrac{\partial \Lambda'}{\partial y'}y'-\Lambda' = (\rho g y -\lambda)\dfrac{y'^2}{\sqrt{1+y'^2}} - (\rho g y-\lambda)\sqrt{1+y'^2(x)} 
+\end{equation}
+questa quantità si conserva (rispetto a $x$, quindi ovunque nella corda). Svolgendo i calcoli, questo integrale primo $E$ diventa:
+\begin{equation}\label{key}
+	E = - \dfrac{\rho g y - \lambda}{\sqrt{1+y'^2}}
+\end{equation}
+Il gioco è fatto: questa è un'equazione differenziale un po' più semplice di quella di sopra (non è al secondo ordine) e, separando le variabili, posso integrare e ottenere analiticamente $y=y(x)$. La curva che ne risulta, è detta catenaria, e ha la forma tipo:
+\begin{equation}\label{key}
+	y(x) = A - B\cosh(Cx)
+\end{equation}
+
+\subsection{Proprietà del funzionale d'azione}
 	Tramite il principio di minima azione è possibile ricavare alcune proprietà già verificate in precedenza. Ad esempio, sappiamo che la lagrangiana è invariante per gauge, cioè data $\Lambda'$:
 	$$
 	\Lambda' = \Lambda + \dfrac{dF}{dt}
@@ -6146,56 +6198,48 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\end{equation}
 	La relazione (\ref{PrincipioMinimaAzione}) permette di individuare la \textit{traiettoria fisica}, mentre la relazione (\ref{Geod}) permette di individuare la curva geodetica, una proprietà puramente geometrica. Le due relazioni non sembrano uguali, non sembra che le curve fisiche siano anche geodetiche. Le traiettorie fisiche, infatti, sono determinate dal modulo quadro della velocità, $v^2$, mentre le curve geodetiche sono definite a partire dal modulo della velocità, $|v|$. Notiamo, infine, che nella definizione del funzionale d'azione $S$ il tempo è un parametro privilegiato, non posso sostituirlo senza compromettere la validità delle equazioni. Al contrario, nella definizione del funzionale lunghezza, il tempo è solo un parametro con cui descrivo una curva (e sappiamo che una curva è una classe di equivalenza, indipendente dalla sua parametrizzazione). Introdurlo come parametro è una scelta arbitraria.
 	
-	Vediamo come procedere. Riprendo in mano il funzionale d'azione $S$:
+	Vediamo come procedere. Riprendo in mano il funzionale d'azione fisico $S$:
 	$$ 
-	S = \int_{t_A}^{t_B}\dot{q}_iG_{ij}\dot{q}_j dt
+	S = \int_{t_A}^{t_B}\Lambda = \int_{t_A}^{t_B}\dot{q}_iG_{ij}\dot{q}_j dt
 	$$
-	So che l'energia è un integrale primo del moto, cioè:
-	$$
-	\dfrac{d}{dt}\dot{q}_iG_{ij}\dot{q}_j = 0
-	$$
-	Allora la curva viene percorsa a velocità costante poiché:
-	$$
-	v = \dfrac{ds}{dt} = \dfrac{\sqrt{\dot{q}_iG_{ij}\dot{q}_j}dt}{dt} = \sqrt{\dot{q}_iG_{ij}\dot{q}_j} = const
-	$$
-	Ora passo al funzionale geometrico, cioè la lunghezza, per cui so che vale:
-	\begin{equation}
-		\delta \int_{t_A}^{t_B}\sqrt{\dot{q}_iG_{ij}\dot{q}_j}dt  = 0
+	Le equazioni di Eulero-Lagrange (cioè Newton in forma covariante, il principio sperimentale) mi dicono che:
+	\begin{equation}\label{key}
+		Lag(\Lambda) = 0
 	\end{equation}
-	Svincoliamoci dalla richiesta che il parametro della curva sia necessariamente $t$ e, anzi, chiamiamolo $\lambda$:
-	\begin{equation}
-		\delta \int_{\lambda_A}^{\lambda_B}\sqrt{q'_iG_{ij}q'_j}d\lambda  = 0
-	\end{equation}
-	dove però chiaramente $q'_i= \dfrac{dq_i}{d\lambda}$ (il puntino sopra è riservato alla specifica derivata temporale). Per determinare la curva estremale (la geodesica), uso le equazioni di Eulero e ottengo:
-	$$
-	\dfrac{d}{d\lambda}\dfrac{\partial}{\partial q'_i}\sqrt{q'_iG_{ij}q'_j} - \dfrac{\partial}{\partial q_i}\sqrt{q'_iG_{ij}q'_j} = 0
-	$$
-	Ora ritorno a $\lambda = t$ (poiché solo con il tempo posso imporre $\dfrac{d}{dt}(\dot{q}G\dot{q})=0$):
-	$$
-	\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}_i}\sqrt{\dot{q}_iG_{ij}\dot{q}_j} - \dfrac{\partial}{\partial q_i}\sqrt{\dot{q}_iG_{ij}\dot{q}_j} = 0
-	$$
-	$$
-	\dfrac{d}{dt}\dfrac{1}{2\sqrt{\dot{q}_iG_{ij}\dot{q}_j}} G_{ij}\dot{q}_j - \dfrac{1}{2\sqrt{\dot{q}_i G_{ij}\dot{q}_j}} \dot{q}_i \frac{\partial G_{ij} }{\partial q_i} \dot{q}_j 0
-	$$
-	Dalla conservazione dell'energia, possiamo tirare fuori dalla prima derivata un termine
-	$$
-	\dfrac{d}{dt}\dfrac{1}{2\sqrt{\dot{q}G\dot{q}}}G_{ij} \dot{q}_j =\dfrac{1}{2\sqrt{\dot{q}G\dot{q}}} \dfrac{d}{dt}G_{ij} \dot{q}_j
-	$$
-	e quindi:
-	$$
-	\dfrac{1}{2\sqrt{\dot{q}_iG_{ij}\dot{q}_j}}\dfrac{d}{dt}\ G_{ij}\dot{q}_j - \dfrac{1}{2\sqrt{\dot{q}_i G_{ij}\dot{q}_j}} \dot{q}_i \frac{\partial G_{ij} }{\partial q_i} \dot{q}_j 0
-	$$
-	\begin{equation}
-		\dfrac{d}{dt} G_{ij}\dot{q}_j -\dot{q}_i \frac{\partial G_{ij} }{\partial q_i} \dot{q}_j = 0	\label{SoluzGeom}
-	\end{equation}
-	Ora invece costruiamo la soluzione meccanica, applicando le equazioni di Lagrange sulla lagrangiana fisica:
-	$$
-	\dfrac{d}{dt}\dfrac{\partial }{\partial \dot{q}_i}\dot{q}_i G_{ij} \dot{q}_j - \dfrac{\partial }{\partial q_i}\dot{q}_i G_{ij} \dot{q}_j = 0 
-	$$
-	$$
-	\dfrac{d}{dt}G_{ij} \dot{q}_j - \dot{q}_i \frac{\partial G_{ij}}{\partial q_i} \dot{q}_j
-	$$
-	Ma questa equazione è proprio uguale alla (\ref{SoluzGeom}), e dunque avranno le stesse soluzioni. Allora, almeno finché il corpo è libero, le curve fisiche tracciate nello spazio delle configurazioni coincidono anche con le geodetiche di questo spazio. Possiamo dire, in un certo senso, che la dinamica è una specificazione della geometria, nel senso che si specifica l'esistenza di parametro privilegiato per descrivere le traiettorie, ossia il \textit{tempo}. Una curva geodetica, dunque, costituisce la traiettoria di un problema fisica e se sceglio di parametrizzarla col tempo $t$, allora la geodetica non solo è traiettoria, ma è anche la curva del moto.
+\begin{equation}\label{key}
+	\Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\dot{q}G\dot{q}\Bigl) = 0
+\end{equation}
+\begin{equation}\label{eq123}
+	2\dfrac{d}{dt}G\dot{q}-\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+\end{equation}
+\begin{equation}\label{eq124}
+	\dfrac{d}{dt}G\dot{q}-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+\end{equation}
+Teniamo a mente questa relazione. Passiamo ora alla parte delle geodetiche. Il funzionale da minimizzare è quello di lunghezza, cioè
+$$
+\delta \int_{\lambda_A}^{\lambda_B}\sqrt{q'Gq'}d\lambda  = 0
+$$
+dove la curva è stata parametrizzata con $\lambda$ ed è tale da avere $q(\lambda_A) = q_A, q(\lambda_B) = q_B$. Impiegando le equazioni di Eulero per trovare l'estremale,
+\begin{equation}\label{key}
+	\Bigl(\dfrac{d}{d\lambda}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\sqrt{q'Gq'}\Bigl)
+\end{equation}
+\begin{equation}\label{eq321}
+	\dfrac{d}{d\lambda}\Bigl(\dfrac{1}{\sqrt{q'Gq'}}Gq'\Bigl)-\dfrac{1}{2\sqrt{q'Gq'}}q'\dfrac{\partial G}{\partial q}q' =0
+\end{equation}
+Ora dobbiamo sfruttare un fatto molto importante, caratteristico delle geodetiche. Si può infatti dimostrare che, dato un generico parametro $\lambda$ per la curva $q(\lambda)$, allora :
+$$
+\sqrt{q'Gq'} = \dfrac{ds}{d\lambda} = const
+$$
+costante rispetto a $\lambda$ (cioè le curve geodetiche vengono percorse con una velocità parametrica costante). Allora posso tirare fuori questo termine dalla (\ref{eq321}) e ottenere:
+\begin{equation}\label{key}
+		\dfrac{1}{\sqrt{q'Gq'}}\dfrac{d}{d\lambda}\Bigl(Gq'\Bigl)-\dfrac{1}{2\sqrt{q'Gq'}}q'\dfrac{\partial G}{\partial q}q' =0
+\end{equation}
+\begin{equation}\label{key}\dfrac{d}{d\lambda}\Bigl(Gq'\Bigl)-\dfrac{1}{2}q'\dfrac{\partial G}{\partial q}q' =0
+\end{equation}
+Ora, a patto di scegliere come parametro proprio il tempo $t$, questa equazione diventa:
+\begin{equation}\label{key}\dfrac{d}{dt}\Bigl(G\dot{q}\Bigl)-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+\end{equation}
+Formalmente uguale alla (\ref{eq124}). Allora, almeno finché il corpo è libero, \textbf{le curve fisiche tracciate nello spazio delle configurazioni coincidono con le geodetiche di questo spazio}. Possiamo dire, in un certo senso, che la dinamica è una specificazione della geometria, nel senso che si specifica l'esistenza di parametro privilegiato per descrivere le traiettorie, ossia il \textit{tempo}. Una curva geodetica, dunque, costituisce la traiettoria di un problema fisica e se sceglio di parametrizzarla col tempo $t$, allora la geodetica non solo è traiettoria, ma è anche la curva del moto.
 	
 	
 	Almeno per problemi senza potenziali, il principio di minima azione (e quindi la fisica) è equivalente al principio delle geodesiche. Se, ad esempio, definissimo una nuova lagrangiana, suggerita direttamente dal lato geometrico che abbiamo appena scoperto,
@@ -6206,7 +6250,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\begin{equation}\label{key}
 		H_{g} = \dfrac{\partial \Lambda_g}{\partial \dot{q}_i}\dot{q}_i - \Lambda_g
 	\end{equation}
-	Sfortunatamente, questa espressione è identicamente nullo, otteniamo dunque che $0$ deve rimanere costante nel tempo, affermazione banale. Questa nuova lagrangiana di origine geometrica, per quanto equivalente a quella fisica per corpi liberi, non sembra suggerire nuovi integrali primi del moto. L'esistenza dell'integrale primo energia dunque è strettamente legato al fatto che, nell'interpretazione fisica, esiste un parametro privilegiato, il tempo. L'energia esiste solo se esiste il tempo (e fra le due grandezze comincia a sorgere una strana relazione).
+	Sfortunatamente, questa espressione è identicamente nulla, otteniamo dunque che $0$ deve rimanere costante nel tempo, affermazione banale. Questa nuova lagrangiana di origine geometrica, per quanto equivalente a quella fisica per corpi liberi, non sembra suggerire nuovi integrali primi del moto. L'esistenza dell'integrale primo energia dunque è strettamente legato al fatto che, nell'interpretazione fisica, esiste un parametro privilegiato, il tempo. L'energia esiste solo se esiste il tempo (e fra le due grandezze comincia a sorgere una strana relazione).
 	\subsection{Un esempio: la metrica di Poincaré}
 	Proponiamo un esempio. Prendiamo uno spazio delle configurazioni $\Sigma$ descritto da due variabili $x,y$ in cui la metrica è:
 	$$
@@ -6237,10 +6281,10 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 		E = \dfrac{m\dot{y}^2}{2y^2} + \dfrac{p_x^2}{2m}y^2
 	\end{equation}
 	$$
-	2Ey^2 = m\dot{y}^2+ p_x^{2} y^4
+	2Ey^2 = m\dot{y}^2+ \dfrac{p_x^{2}}{m} y^4
 	$$
 	$$
-	m\dot{y}^2 = 2Ey^2 - p_x^{2} y^4 
+	m\dot{y}^2 = 2Ey^2 - \dfrac{p_x^{2}}{m} y^4 
 	$$
 	Risolvendo tale equazione differenziale otteniamo la legge oraria $y(t)$ (da cui poi possiamo ricavare $x(t)$ tramite momento di $x$).
 	\subsection{Principio di Maupertuis}
@@ -6252,7 +6296,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	$$
 	è integrale primo del moto. Le soluzioni fisiche sono allora caratterizzate da $H = E = const$. Dati due estremi del moto, $q_A$ e $q_B$ in $\Sigma$, allora è ben definita l'energia del sistema (che deve conservarsi). Perciò, quando definisco il dominio del funzionale d'azione posso restringere la scelta delle traiettoria $q(t) \subset \Sigma$ limitandola a quelle per cui l'energia si conserva:
 	$$
-	Q = \{q(t)\subset\Sigma: t\in [t_A,t_B], q(t_A) = q_A, q(t_B)=q_B, H(q(t),\dot{q}(t)) = E\}
+	Q = \{q(t)\subset\mathcal{M}: t\in [t_A,t_B], q(t_A) = q_A, q(t_B)=q_B, H(q(t),\dot{q}(t)) = E\}
 	$$
 	e il principio fisico (di minima azione) afferma che la traiettoria soluzione è quella per cui:
 	$$
@@ -6293,7 +6337,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	$$
 	\dfrac{\partial \Lambda}{\partial \dot{q}_i} \dot{q}_i dt = \Bigl(\dfrac{ds}{dt}\Bigl)^2 dt = v \cdot vdt = v ds = \Bigl(\dfrac{ds}{dt}\Bigl) ds
 	$$
-	Dalle legge di conservazione dell'energia, posso riscrivere $v$ cercando di sbarazzarmi della coordinata tempo:
+	Dalle legge di conservazione dell'energia, posso riscrivere $v$ cercando di sbarazzarmi della coordinata/parametro tempo:
 	$$
 	v = \sqrt{\dfrac{2}{m}(E-V(q))}
 	$$
@@ -6306,24 +6350,69 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\begin{equation}\label{key}
 		\delta \int_{q_A}^{q_B}  ds = 0
 	\end{equation}
-	che è la relazione costitutiva di una geodetica (lunghezza minima). Se invece esiste anche un potenziale, è come stessimo modificando la metrica dello spazio delle configurazioni (in base al potenziale stesso). Se infatti definisco una nuova metrica:
+	che è la relazione costitutiva di una geodetica (lunghezza minima secondo la metrica dello spazio delle configurazioni). Se invece esiste anche un potenziale, è come stessimo modificando la metrica dello spazio delle configurazioni in base al potenziale stesso. In un certo senso, il potenziale \textbf{modifica localmente  lo spazio delle configurazioni } (concetto che ricorrerà, ad esempio, in relatività generale).  Se infatti definisco una nuova metrica:
 	$$
 	d\sigma = \sqrt{2(E-V(q))} ds 
 	$$
-	il Principio di Maupertuis asserisce la stazionarietà delle traiettorie fisiche rispetto a questa nuova metrica nello spazio delle configurazioni (che infatti si riduce a $d\sigma = ds$ se $V(q)=0$. L'effetto del potenziale è quello di deformare localmente la metrica. \footnote{C'è in realtà $E$ di mezzo, ma tanto è costante durante il moto e, ai fini variazionali, è ininfluente}. Questo concetto verrà ripreso in relatività generale). 
+	il Principio di Maupertuis asserisce la stazionarietà delle traiettorie fisiche rispetto a questa nuova metrica nello spazio delle configurazioni (che infatti si riduce a $d\sigma = ds$ se $V(q)=0$. L'effetto del potenziale è quello di deformare localmente la metrica. \footnote{C'è in realtà $E$ di mezzo, ma tanto è costante durante il moto e, ai fini variazionali, è ininfluente}.). 
 	
 	
 	Con tale principio, posso costruire le soluzioni del problema fisico ricercando le geodesiche per la metrica deformata. Per re-introdurre il tempo, mi basta cercare quel parametro della curva tale per cui l'energia $E$ presente nel principio è conservata lungo il moto.
+	
+	In teoria, dunque, per trovare l'orbita nello spazio delle configurazioni $\mathcal{M}$ di un sistema mi basta cercare le geodetiche secondo la metrica $d\sigma$. Il principio di Maupertuis è molto comodo perché mi consente di studiare la geometria del problema senza studiarne la dinamica. Questo metodo, però, mi permette solo di trovare la traiettoria\footnote{Posso ottenere che il sistema si muove su di una circonferenza nello spazio delle configurazioni, ma non so quanto velocemente ci si muove!}, l'insieme di punti dello spazio che vengono effettivamente occupati dal sistema, ma non ho informazioni sulle leggi orarie! D'altronde in (\ref{Mauper2}) non si fa riferimento al parametro tempo che in geometria è solo, appunto, un parametro mentre in fisica assume un'interpretazione materiale, sperimentale. Come faccio, una volta trovata la curva $\gamma$ parametrizzata con un parametro a caso, a risalire alla legge oraria $\gamma(t)$? Mi basta cercare, fra tutti i parametri, quel parametro $t$ tale per cui:
+	\begin{equation}\label{key}
+		\dfrac{d\gamma}{dt} = \sqrt{\dfrac{2}{m}(E-V(q))}
+	\end{equation}
+cioè imporre che la \textit{velocità parametrica} (la velocità con cui ci si muove sulla curva in base al generico parametro di descrizione) sia proprio la velocità fisica, che a sua volta esprimo come funzione del potenziale e dell'energia dell'orbita. Poiché questa esposta sopra è, di fatto, la legge di conservazione dell'energia, allora stiamo cercando quel parametro della curva $t$ tale per cui si conservi davvero la quantità $E$.
 	\subsection{Applicazione nel problema di Keplero}
-	Usiamo le coordinate polari $(r,\theta)$ per descrivere il moto di un corpo soggetto al potenziale di keplero. La metrica dello spazio delle configurazioni $\Sigma = \{(r,\theta), r>0, 0 <\theta < 2\pi\}$ è data da:
+	Usiamo le coordinate polari $(r,\theta)$ per descrivere il moto di un corpo soggetto al potenziale di keplero. La metrica dello spazio delle configurazioni $\mathcal{M} = \{(r,\theta), r>0, 0 <\theta < 2\pi\}$ è data da:
 	$$
 	ds^2 = dr^2 + r^2d\theta^2
 	$$
 	e, quindi, la metrica deformata dal potenziale kepleriano è, data un'energia $E$:
 	$$
-	d\sigma = \sqrt{2(E+\dfrac{k}{r})} \sqrt{dr^2 + r^2d\theta^2}
+	d\sigma = \sqrt{2(E+\dfrac{k}{r})} \sqrt{dr^2 + r^2d\theta^2} = \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)(dr^2 + r^2d\theta^2)}
 	$$
-	\subsection{Particella relativistica}
+	Usiamo il parametro $\theta$ per parametrizzare la curva $(\theta, r(\theta))$:
+	\begin{equation}\label{key}
+		d\sigma =  \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta
+	\end{equation}
+e quindi devo minimizzare il funzionale:
+\begin{equation}\label{key}
+	\int_{\theta_1}^{\theta_2} \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
+\end{equation}
+\begin{equation}\label{key}
+	\int_{\theta_1}^{\theta_2} \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
+\end{equation}
+Procediamo come al solito, senza passare dalle equazioni di Eulero. Riconosco una lagrangiana:
+\begin{equation}\label{key}
+	\Lambda = \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}= \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'2 + r^2\Bigl)}
+\end{equation}
+che non dipende esplicitamente dal parametro $\theta$ e quindi abbiamo un integrale primo del moto, un'energia fittizia, data da:
+\begin{equation}\label{key}
+	\begin{aligned}
+	H = \dfrac{\partial\Lambda}{\partial r'}r'-\Lambda &= \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r'^2 -  \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)} = \\
+	&= - \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r^2
+	\end{aligned}
+\end{equation}
+cioà abbiamo ottenuto un integrale primo (da non confondere con l'energia $E$ che è l'energia fisica del problema di Keplero, questa $H$ è solo un artificio matematico) che chiamiamo $A$ per non confonderci, dunque:
+\begin{equation}\label{key}
+	\dfrac{1}{A^2} = \dfrac{r'^2+r^2}{E+\dfrac{k}{r}}r^{-4}
+\end{equation}
+Sostituendo $u = r^{-1}$, allora si avrà che:
+$$
+\dfrac{du}{d\theta}=u'=-\dfrac{1}{r^2}r'
+$$
+Allora $A$ diventa:
+\begin{equation}\label{key}
+		\dfrac{1}{A^2}  = \dfrac{u'^2 + u^2}{E+ku}
+\end{equation}
+Da questa è facile ricavare che:
+\begin{equation}\label{key}
+	\dfrac{1}{2}\Bigl(\dfrac{du}{d\theta}+u^2\Bigl)^2+\dfrac{1}{2}u^2-\dfrac{k}{A^2}u=\dfrac{E}{A^2}
+\end{equation}
+che è proprio l'equazione che ci eravamo ricavati per le orbite kepleriane. 
+\subsection{Particella relativistica}
 	DA FARE
 	
 	\newpage
@@ -6360,9 +6449,9 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\end{equation}
 	Mentre la lagrangiana è definita sullo spazio delle configurazioni ($q, \dot{q}$, coordinate indipendenti), la hamiltoniana è definita nello spazio delle fasi ($q,p$, anch'esse indipendenti). Notiamo che l'hamiltoniana ha la stessa forma dell'energia poiché:
 	$$
-	\mathcal{H} = \dfrac{\partial \Lambda}{\partial \dot{q}_k}\dot{q}_k - \Lambda = H 
+	\mathcal{H}(q,p) = \dfrac{\partial \Lambda}{\partial \dot{q}_k}\dot{q}_k - \Lambda = H 
 	$$
-	L'hamiltoniana, dunque, ha il significato di un'energia meccanica ma non è solamente un integrale primo del moto. È qualcosa di più, esattamente come lo era la lagrangiana, perché a partire da essa è possibile derivare interamente la dinamica di un sistema dinamico. Vediamo come ricavare le equazioni del moto a partire dall'hamiltoniana.
+	L'hamiltoniana, dunque, ha il significato di un'energia meccanica ma non è solamente un integrale primo del moto. È qualcosa di più, esattamente come lo era la lagrangiana, perché a partire da essa è possibile derivare interamente la dinamica di un sistema meccanico. Vediamo come ricavare le equazioni del moto a partire dall'hamiltoniana.
 	\subsection{Equazioni di Hamilton}
 	La funzione hamiltoniana $\mathcal{H}$ è funzione delle coordinate generalizzate e dei relativi momenti:
 	$$
@@ -6380,6 +6469,10 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 			&= \dot{q}_k dp_k -  \dot{p}_k dq_k - \dfrac{\partial \Lambda}{\partial t} 
 		\end{aligned}
 	\end{equation}
+dove è stato usato il fatto che:
+$$
+\dfrac{\partial \Lambda}{\partial q_k} = \dot{p}_k   \quad \quad \quad \quad \dfrac{\partial \Lambda}{\partial \dot{q}_k} = p_k
+$$
 	Confrontando le due espressioni, otteniamo le \textit{equazioni canoniche di Hamilton}, che costituiscono la versione hamiltoniana delle equazioni del moto:
 	\begin{equation}\label{key}
 		\begin{cases}
@@ -6398,11 +6491,13 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\begin{equation}\label{key}
 		\delta \int_{t_A}^{t_B} \Lambda dt = 0
 	\end{equation}
-	essendo $\mathcal{H} = \dot{q}_k p_k - \Lambda$, allora
+	essendo $\mathcal{H} = \dot{q}_k p_k - \Lambda=\dot{q}p-\Lambda $, allora
 	\begin{equation}\label{key}
-		\delta \int_{t_A}^{t_B}(\dot{q}_k p_k-\mathcal{H}) dt = 0
+		\delta \int_{t_A}^{t_B}(\dot{q} p-\mathcal{H}) dt = 0
 	\end{equation}
-	In questo caso, però, il dominio su cui si cerca il minimo è un po' diverso (rimane sempre la condizione $q(t_A)=q_A, q(t_B)=q_B$, ma su $p$ non c'è vincolo alcuno). Prendiamo degli incremente sulle variabili della hamiltoniana, $\delta q, \delta p$ e, espandendo con Taylor fino al primo ordine, avremo che
+	In questo caso, però, il dominio su cui si cerca il minimo è un po' diverso (rimane sempre la condizione $q(t_A)=q_A, q(t_B)=q_B$, ma su $p$ non c'è vincolo alcuno. E la curva che cerco vive nello spazio delle fasi, non nello spazio delle configurazioni). A partire da questo principio, proviamo a derivare un'altra volta le equazioni di Hamilton. 
+	
+	Prendiamo degli incrementi sulle variabili della hamiltoniana, $\delta q, \delta p$ e, espandendo con Taylor fino al primo ordine, avremo che
 	\begin{equation}\label{key}
 		\int_{t_A}^{t_B}\Bigl(\dot{q}dp+p\delta \dot{q} - \dfrac{\partial \mathcal{
 				H}}{\partial q}\delta q - \dfrac{\partial \mathcal{
@@ -6432,20 +6527,24 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\end{equation}
 	che sono proprio le equazioni di Hamilton caratteristiche della meccanica hamiltoniana. Abbiamo confermato, nuovamente, l'equivalenza logica fra principio di minima azione e equazioni di Hamilton.
 	
-	A questo punto, viene bene un nuovo funzionale $\mathcal{F}$ in termini dell'hamiltoniana che però vive nello spazio delle fasi:
+	A questo punto, l'azione scritta con l'hamiltoniana (attenzione che qui però è l'azione nello spazio delle fasi):
 	$$
-	\mathcal{F} = \int_{t_A}^{t_B}(p\dot{q}-\mathcal{H}) dt 
+	\mathcal{S} = \int_{t_A}^{t_B}(p\dot{q}-\mathcal{H}) dt 
 	$$
 	e le soluzioni fisiche sono caratterizzate da:
 	$$
-	\delta \mathcal{F}(p,q) = 0
+	\delta \mathcal{S}(p,q) = 0
 	$$
-	Riscriviamo meglio $\mathcal{F}$ moltiplicando per $dt$:
+	Riscriviamo meglio $\mathcal{S}$ moltiplicando per $dt$:
 	\begin{equation}\label{key}
-		\mathcal{F}(q(t),p(t)) = \int_{A}^{B}(pdq-\mathcal{H}dt)
+		\mathcal{S}(q(t),p(t)) = \int_{A}^{B}(pdq-\mathcal{H}dt)
 	\end{equation}
 	Cioè l'integrale di una \textit{1-forma differenziale lineare} :
 	$$
 	\omega = pdq-\mathcal{H}dt
 	$$
+	$$
+	d\mathcal{S} = pdq -\mathcal{H}dt
+	$$
+	Questa forma differenziale definisce nello spazio delle fasi una nuova geometria, detta \textbf{geometria simplettica}. Se la meccanica classica poteva essere tradotto in affermazioni geometriche nello spazio delle configurazioni col principio di Maupertuis, a patto di modificare la metrica dello spazio, qui facciamo una cosa simile nello spazio delle fasi. La geometria di questo spazio che mi permette di ottenere le curve fisiche è proprio la geometria simplettica.
 \end{document}
