@@ -21,11 +21,10 @@
 \usepackage{geometry}
 \geometry{a4paper, right=3cm, left=3cm,bottom=4cm}
 \makeglossary
-\title{Appunti dal corso di Meccanica Analitica }
+\title{\textbf{Appunti dal corso di Meccanica Analitica} }
 \author{Lorenzo Rizzi
 \\
-Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzorizzi17} :)  }
-\date{A.A. 2022/2023 }
+Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzorizzi17}.\\ Buono studio! :)  }
 \begin{document}
 	\newpage
 	\maketitle
@@ -6386,7 +6385,7 @@ e quindi devo minimizzare il funzionale:
 \end{equation}
 Procediamo come al solito, senza passare dalle equazioni di Eulero. Riconosco una lagrangiana:
 \begin{equation}\label{key}
-	\Lambda = \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}= \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'2 + r^2\Bigl)}
+	\Lambda = \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}= \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)}
 \end{equation}
 che non dipende esplicitamente dal parametro $\theta$ e quindi abbiamo un integrale primo del moto, un'energia fittizia, data da:
 \begin{equation}\label{key}
@@ -6409,12 +6408,27 @@ Allora $A$ diventa:
 \end{equation}
 Da questa è facile ricavare che:
 \begin{equation}\label{key}
-	\dfrac{1}{2}\Bigl(\dfrac{du}{d\theta}+u^2\Bigl)^2+\dfrac{1}{2}u^2-\dfrac{k}{A^2}u=\dfrac{E}{A^2}
+	\dfrac{1}{2}\Bigl(\dfrac{du}{d\theta}\Bigl)^2+\dfrac{1}{2}u^2-\dfrac{k}{A^2}u=\dfrac{E}{2A^2}
 \end{equation}
 che è proprio l'equazione che ci eravamo ricavati per le orbite kepleriane. 
 \subsection{Particella relativistica}
-	DA FARE
-	
+	Tutta la trattazione esposta in precedenza è di pertinenza della meccanica classica. Chiaramente possiamo estendere i metodi della meccanica lagrangiana anche per particelle relativistiche. La differenza più vistosa rispetto al caso classico è che, ora, lo spazio delle configurazioni per una particella libera comprende anche la variabile tempo e ha dimensione $4$:
+	\begin{equation}\label{key}
+		\mathcal{M} = \mathbb{R}^4
+	\end{equation}
+In fisica relativistica, dunque, le posizioni sono sostituite dagli eventi.
+	È possibile passare da un sistema di riferimento $S$ ad un secondo sistema $S'$ operando con le trasformazioni di Lorentz. Nello spazio delle configurazioni (che è lo \textbf{spaziotempo}\footnote{Ricordiamo che la relatività speciale descrive la fisica munendosi di sistema spazio-temporali in cui le coordinate sono sia spaziale e temporali. In fisica classica, i sistemi di riferimento erano solo spaziali e il tempo era un parametro. Qui il tempo diventa parte della geometria dello spazio delle configurazioni. Le soluzioni fisiche vanno scritte nello spaziotempo.}), la metrica è quella minkowskiana\footnote{Per comodità prendiamo una sola dimensione spaziale}:
+	\begin{equation}\label{key}
+		ds^2 = c^2dt^2-dx^2
+	\end{equation}
+e questa metrica è invariante per trasformazione di Lorentz. Come costruiamo la Lagrangiana di un sistema fisico descritto da un osservatore $S$? Poiché richiediamo che la lagrangiana sia uno scalare, allora questa deve essere costruita solo usando invarianti relativistici. Ci fidiamo e scriviamo che:
+\begin{equation}\label{key}
+	\Lambda dt = -mcds
+\end{equation}
+Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi pare sia invariante.}. Esprimendo per bene $ds$, otteniamo infine che la lagrangiana di una particella libera relativistica è:
+\begin{equation}\label{key}
+	\Lambda(v)= -mc^2\sqrt{1-\dfrac{v^2}{c^2}}
+\end{equation}
 	\newpage
 	
 	\section{Formulazione Hamiltoniana}
