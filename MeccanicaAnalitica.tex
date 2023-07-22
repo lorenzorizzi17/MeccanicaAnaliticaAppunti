@@ -6432,7 +6432,7 @@ Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi par
 	\newpage
 	
 	\section{Formulazione Hamiltoniana}
-	Esiste un'ultima formulazione della meccanica classica che prende il nome dal suo scopritore, \textit{Hamilton}. La formulazione hamiltoniana della meccanica classica permette di generalizzare ulteriormente i risultati della dinamica e, in alcuni casi, si rivela molto più potente della lagrangiana. Così tanto che la meccanica quantistica ne ha rubato i metodi, cambiando però i principi fondamentali.
+	Esiste un'ultima formulazione della meccanica classica che prende il nome dal suo scopritore, \textit{Hamilton}. La formulazione hamiltoniana della meccanica classica permette di generalizzare ulteriormente i risultati della dinamica e, in alcuni casi, si rivela molto più potente della lagrangiana (ad esempio in teoria perturbativa). Così tanto che la meccanica quantistica ne ha rubato i metodi, cambiando però i principi fondamentali.
 	
 	Partiamo dalla lagrangiana di un sistema, $\Lambda$. Abbiamo definito i \textit{momenti generalizzati} $p_k$ come:
 	\begin{equation}
@@ -6447,10 +6447,11 @@ Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi par
 	\begin{equation}\label{key}
 		\dfrac{d}{dt} \dfrac{\partial \Lambda}{\partial \dot{q}_k} - \dfrac{\partial \Lambda}{\partial q_k} = 0
 	\end{equation}
+che posso riscrivere comodamente come
 	$$
 	\dot{p}_k = \dfrac{\partial \Lambda}{\partial q_k}
 	$$
-	che è la forma covariante dell'equazione di Newton. A partire dall'equazione (\ref{defMom}) possiamo, ad esempio, invertire e ricavarci $\dot{q}_k$ in funzione di $q_k,p_k$:
+	che è la forma covariante dell'equazione di Newton (ci assomiglia molto, in fondo: la derivata temporale del momento generalizzato è uguale alla forza generalizzata). A partire dall'equazione (\ref{defMom}) possiamo, ad esempio, invertire e ricavarci $\dot{q}_k$ in funzione di $q_k,p_k$:
 	$$
 	\dot{q}_k = \dot{q}_k (q,p,t)
 	$$
@@ -6471,7 +6472,8 @@ Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi par
 	$$
 	\mathcal{H} = \mathcal{H}(q,p,t)
 	$$
-	Ne calcolo ora il differenziale, tenendo in mente da cosa dipende:
+	ed agisce nello spazio delle fasi (non in quello delle configurazioni). 
+	Ne calcolo ora il differenziale, tenendo in mente da cosa dipende (cioè $p,q,t$):
 	\begin{equation}\label{key}
 		d\mathcal{H} = \dfrac{\partial \mathcal{H}}{\partial q_k}dq_k +\dfrac{\partial \mathcal{H}}{\partial p_k}dp_k + \dfrac{\partial \mathcal{H}}{\partial t}
 	\end{equation}
@@ -6488,19 +6490,20 @@ $$
 \dfrac{\partial \Lambda}{\partial q_k} = \dot{p}_k   \quad \quad \quad \quad \dfrac{\partial \Lambda}{\partial \dot{q}_k} = p_k
 $$
 	Confrontando le due espressioni, otteniamo le \textit{equazioni canoniche di Hamilton}, che costituiscono la versione hamiltoniana delle equazioni del moto:
-	\begin{equation}\label{key}
+	\begin{equation}\
 		\begin{cases}
 			\dot{q}_k = \dfrac{\partial \mathcal{H}}{\partial p_k}\vspace{2mm}   \\
 			
 			\dot{p}_k = -\dfrac{\partial \mathcal{H}}{\partial q_k}
 		\end{cases}
+	\label{EqHamilton}
 	\end{equation}
 	e anche che, collateralmente,
 	\begin{equation}\label{key}
 		\dfrac{\partial \mathcal{H}}{\partial t}(q,p) = - \dfrac{\partial \Lambda}{\partial t}(q,\dot{q})
 	\end{equation}
-	Così se la lagrangiana non dipende esplicitamente dal tempo, neppure l'hamiltoniana ne dipende esplicitamente. 
-	\subsection{Principio variazionale con l'hamiltoniana}
+	Così se la lagrangiana non dipende esplicitamente dal tempo, neppure l'hamiltoniana ne dipende esplicitamente. Le equazioni (\ref{EqHamilton}), molto simmetriche, sono il nuovo principio della meccanica hamiltoniana.
+	\subsection{Principio variazionale con l'hamiltoniana e geometria simplettica}
 	Come possiamo riscrivere il principio di minima azione sfruttando la definizione appena data di Hamiltoniana? Tale principio recita:
 	\begin{equation}\label{key}
 		\delta \int_{t_A}^{t_B} \Lambda dt = 0
@@ -6560,5 +6563,355 @@ $$
 	$$
 	d\mathcal{S} = pdq -\mathcal{H}dt
 	$$
-	Questa forma differenziale definisce nello spazio delle fasi una nuova geometria, detta \textbf{geometria simplettica}. Se la meccanica classica poteva essere tradotto in affermazioni geometriche nello spazio delle configurazioni col principio di Maupertuis, a patto di modificare la metrica dello spazio, qui facciamo una cosa simile nello spazio delle fasi. La geometria di questo spazio che mi permette di ottenere le curve fisiche è proprio la geometria simplettica.
+	Questa forma differenziale definisce nello spazio delle fasi una nuova geometria, detta \textbf{geometria simplettica}. Se la meccanica classica poteva essere tradotto in affermazioni geometriche nello spazio delle configurazioni col principio di Maupertuis, a patto di modificare la metrica dello spazio, qui facciamo una cosa simile nello spazio delle fasi. La geometria di questo spazio che mi permette di ottenere le curve fisiche è proprio la geometria simplettica. Nella visione hamiltoniana della meccanica, dunque, ad ogni sistema dinamico viene associata una varietà (lo spazio delle fasi) arricchito di una struttura simplettica (la 1-forma $\omega$) su cui è definita una funzione (la hamiltoniana).
+	\subsection{Le parentesi di Poisson}
+	Definiamo il concetto di parentesi di Poisson. Prendiamo due funzioni sufficientemente regolari $F,G$ definite sullo spazio delle fasi:
+	$$
+	F=F(q,p) \quad \quad \quad G=G(q,p)
+	$$
+	Allora il simbolo \textit{parentesi di Poisson} fornisce una nuova funzione nello spazio delle fasi definita:
+	\begin{equation}\label{key}
+		\{F,G\} = \dfrac{\partial F}{\partial q_k}\dfrac{\partial G}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial G}{\partial q_k}
+	\end{equation}
+Si tratta di un operatore bilineare e antisimmetrico, cioè:
+\begin{equation}\label{key}
+	\{F,aG+bH\} = a\{F,G\}+b\{F,H\}
+\end{equation}
+\begin{equation*}
+	\{F,G\} = -\{G,F\}
+\end{equation*}
+Per le parentesi di Poisson, valgono alcune identità interessanti, che mi limito a scrivere senza dimostrare:
+\begin{equation}
+	\{F,GH\} = H\{F,G\} + G\{F,H\}
+	\label{ParPoisson}
+\end{equation}
+$$
+\{F,\{G,H\}\} + \{G,\{H,F\}\}+\{H,\{F,G\}\} = 0
+$$
+Inoltre valgono le relazioni:
+\begin{equation}\label{key}
+	\{q_i,p_j\} = \delta_{ij} \quad \quad \{q_i,q_j\} = 	\{p_i,p_j\} = 0
+\end{equation}
+Le parentesi di Poisson sono simbolicamente molto comode perché ci permettono di rappresentare una derivata temporale in maniera comoda, cioè:
+\begin{equation}
+	\dfrac{d}{dt}F(q,p) = \{F,\mathcal{H}\}
+	\label{HamilNulla}
+\end{equation}
+con $\mathcal{H}$ hamiltoniana del sistema meccanico che vive nello spazio delle fasi. Infatti,
+\begin{equation}\label{key}
+	\begin{aligned}
+		\{F,\mathcal{H}\} &= \dfrac{\partial F}{\partial q_k}\dfrac{\partial \mathcal{H}}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial \mathcal{H}}{\partial q_k} = \dfrac{\partial F}{\partial q_k}\dot{q}_k+\dfrac{\partial F}{\partial p_k}\dot{p}_k = \\
+		&= \dfrac{\partial F}{\partial q_k}\dfrac{dq_k}{dt}+\dfrac{\partial F}{\partial p_k}\dfrac{dp_k}{dt} = \dfrac{d}{dt}F(q,p)
+	\end{aligned}
+\end{equation}
+Dunque possiamo riscrivere le equazioni di Hamilton in una forma ancora più compatta e, soprattutto, simmetrica:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{q}_k = \{q_k,\mathcal{H}\} \\
+		\dot{p}_k = \{p_k, \mathcal{H}\}
+	\end{cases}
+\end{equation}
+
+
+Le parentesi di Poisson permettono di semplificare spesso la notazione di alcune equazioni. Vediamo alcune  proprietà interessanti in meccanica hamiltoniana. Dalla (\ref{HamNulla}), notiamo che se $F=F(q,p)$ è una funzione sullo spazio delle fasi e $\mathcal{H}$ l'hamiltoniana del sistema, se vale:
+\begin{equation}\label{key}
+	\{F,\mathcal{H}\} = 0
+\end{equation}
+allora $F$ è un integrale primo del moto per il sistema $\mathcal{H}$. Ma anche viceversa: poiché $\{F,\mathcal{H}\} = -\{\mathcal{H},F\} = 0$, allora possiamo interpretare $F$ come hamiltoniana di un generico sistema (che tanto è definito sullo spazio delle fasi quindi non ha problemi di definizione) e $\mathcal{H}$ una funzione che funge da integrale primo del moto per il sistema $F$.
+
+Abbiamo anche altri fatti notevoli. Prendiamo infatti in considerazioni $L_x,L_y,L_z$, le proiezioni di $\vec{
+L}$ momento angolare lungo assi cartesiani. Allora è facile dimostrare che:
+\begin{equation}\label{key}
+	\{L_x,L_y\} = L_z 
+\end{equation}
+Da questo possiamo dimostrare che, se $L_x, L_y$ sono integrali primi per un sistema, allora anche $L_z$ lo è. Infatti, se faccio:
+\begin{equation}\label{key}
+	\{L_z, \mathcal{H}\} = \{\{L_x,L_y\},\mathcal{H}\} = -\{\mathcal{H},\{L_x,L_y\}\}
+\end{equation}
+e per la proprietà di sopra (\ref{ParPoisson}), questo equivale a:
+\begin{equation}\label{key}
+	\{\mathcal{H},\{L_x,L_y\}\} = \{L_x,\{L_y,\mathcal{H}\}\} + \{L_y,\{\mathcal{H},L_x\}\}
+\end{equation}
+Ora, poiché $L_x, L_y$ sono integrali primi del moto, allora la loro parentesi di Poisson con $\mathcal{H}$ è necessariamente nulla:
+$$
+\{L_x,\mathcal{H}\} = 0
+$$
+$$
+\{L_y,\mathcal{H}\} = 0
+$$
+Dunque
+\begin{equation}\label{key}
+	\{L_z, \mathcal{H}\} = \{L_x,0\} + \{L_y,0\} = 0
+\end{equation}
+ed è dimostrato che anche $L_z$ è integrale primo del moto.
+\subsection{Trasformazioni canoniche}
+Prendiamo un sistema hamiltoniano descritto dalle coordinate $q$ e dai relativi momenti coniugati $p$. Sia $\mathcal{H}$ la sua hamiltoniana. Proviamo a fare un cambio di variabili nello spazio delle fasi e, dunque, passare dalla coppia $(q,p)$ ad una coppia di variabili generica $(Q,P)$ con una trasformazione $T$:
+$$
+T(q,p) = (Q,P)
+$$
+Questa cosa è lecita? Per quanto $q$ e $p$ siano variabili indipendenti a priori, $p$ non è una variabile a caso, è un momento coniugato e, dato lo spazio delle configurazioni individuato dalle $q$, esso è ben determinato da:
+$$
+p_k = \dfrac{\partial \Lambda}{\partial \dot{q}_k}
+$$
+e con questa definizione, avevo garantita la struttura simplettica dello spazio delle fasi. Se decido di operare con un cambio di variabili nello spazio delle fasi generico (da $q,p$ a $Q,P$) chi mi dice che $P$ sia ancora interpretabile come un momento coniugato a $Q$ rispetto a qualche lagrangiana? Mi posso inventare un $P$ a caso, e allora tale variabile perderebbe la sua naturale interpretazione di momento coniugato. Questa particolare trasformazione nello spazio delle fasi, dunque, non è indolore, non è come cambiare le coordinate con cui descrivo lo spazio delle configurazioni di un sistema. Infatti, se mando $q$ in $Q$, allora avrei che il nuovo momento $P$ è già stabilito:
+$$
+P = \dfrac{\partial \Lambda}{\partial \dot{Q}}
+$$ 
+Se mi invento a caso un $P$, perché voglio descrivere lo spazio delle fasi con delle nuove coordinate, chi mi garantisce che $P$ sia ancora un momento coniugato in senso lagrangiano? Che poi solo se $p$ è un momento coniugato tutta la trattazione fatta in precedenza è preservata? Con un generico cambio di variabile $T$, avrei ancora garantita la struttura delle equazioni di Hamilton? Cioè, varrebbe ancora
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+		\dot{P} =- \dfrac{\partial \mathcal{H}}{\partial Q}
+	\end{cases}
+\end{equation}
+Nel caso generico, chiaramente no. Però, sotto determinate condizioni, questa cosa è possibile. In questo senso, la meccanica hamiltoniana è molto più potente di quella lagrangiana. Posso infatti modificare (seguendo però certe regole) con molto più margine di libertà le coordinate dello spazio delle fasi. Posso trasformare insieme coordinate e momenti in maniera indipendente fra di loro (cosa non concessa nella visione lagrangiana) al punto che $p$ può perdere la sua interpretazione di momento (e nonostante tutto le cose funzionerebbero ancora). Vedremo che questa grande libertà, che però si paga con un certo prezzo, permette di ottenere risultati notevoli.
+
+
+Torniamo allora alla trasformazione $T$ e cerchiamo di isolare le sole trasformazioni che siano ragionevoli alla luce di quanto appena illustrato. Siccome le equazioni fondamentali della meccanica hamiltoniana le conosciamo, dobbiamo richiedere che la trasformazione $T$ preservi proprio la struttura delle equazioni di Hamilton (o, alternativamente, la geometria simplettica dello spazio delle fasi). Definiamo allora la \textbf{trasformazione canonica} $T$:
+$$
+T(q,p) = (Q,P)
+$$
+tale per cui, se valgono le equazioni di Hamilton per $(q,p)$, allora valgono anche le equazioni di Hamilton nelle nuove variabili $(Q,P)$:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
+		\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
+	\end{cases}
+\iff
+	\begin{cases}
+		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
+	\end{cases}
+\end{equation}
+con la stessa funzione di Hamilton, cioè $\mathcal{H}(q,p) = \mathcal{H}(q(Q,P),p(Q,P))$. Tale trasformazione preserva la struttura "bella" e simmetrica delle equazioni di Hamilton e ne conserva anche la funzione di Hamilton.\footnote{A dirla tutta, non è strettamente necessaria l'ultima richiesta, cioè che la hamiltoniana sia sempre la stessa a meno di un cambio di variabili. Vedremo dopo bene.} La nuova variabile $P$ può anche non essere un momento nel senso lagrangiano del termine (cioè derivata rispetto a $\dot{Q}$ della lagrangiana): in questo senso, ogni trasformazione delle coordinate nello spazio delle configurazioni ammette una relativa trasformazione canonica nello spazio delle fasi mentre il viceverse non è garantito (appunto, posso trovare trasformazioni canoniche in cui $P$ non è per forza un momento coniugato, mi basta che la sua definzione sia tale da preservare la forma delle equazioni di Hamilton).
+\subsubsection{Come è fatta una trasformazione canonica}
+Come possiamo immaginarci una trasformazione canonica nel concreto? Possiamo dimostrare che, date due funzioni $F,G$ definite nello spazio delle fasi, allora se $T(q,p)=(Q,P)$ è canonica deve valere che:
+$$
+\{F(q,p),G(q,p)\}_{q,p} = \{F(Q,P),G(Q,P)\}_{Q,P}
+$$
+cioè fare le parentesi di Poisson con le funzioni scritte in termini di $q,p$ o farle in termine di $Q,P$ è del tutto indifferente:
+\begin{equation}\label{key}
+	\dfrac{\partial F}{\partial q_k}\dfrac{\partial G}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial G}{\partial q_k} = \dfrac{\partial F}{\partial Q_k}\dfrac{\partial G}{\partial P_k}-\dfrac{\partial F}{\partial P_k}\dfrac{\partial G}{\partial Q_k}
+\end{equation}
+(perché? mi sono perso la dim). Con questo teorema, possiamo caratterizzare meglio una trasformazione canonica. Proponiamo un esempio: sia lo spazio delle fasi tutto $\mathbb{R}^2$ e le variabili $q,p$. Sia $T(q,p)=(Q,P)$ una trasformazione canonica. Noi sappiamo che:
+$$
+\{Q,P\}_{Q,P} = \dfrac{\partial Q}{\partial Q}\dfrac{\partial P}{\partial P} - \dfrac{\partial Q}{\partial P}\dfrac{\partial P}{\partial Q} = 1
+$$
+Per la proprietà vista sopra, dovrà valere anche che:
+$$
+1 = \{Q,P\}_{Q,P} = \{Q(q,p),P(q,p)\}_{q,p}
+$$
+cioè uguale alle stesse funzioni espresse in termine delle variabili $q,p$ derivate rispetto alle $q,p$. Dunque:
+\begin{equation}
+	\{Q(q,p),P(q,p)\}_{q,p} = \dfrac{\partial Q}{\partial q}\dfrac{\partial P}{\partial p}-\dfrac{\partial Q}{\partial p}\dfrac{\partial P}{\partial q}=1
+	\label{511}
+\end{equation}
+Ma, rappresentando lo jacobiano della trasformazione $T$ in forma matriciale:
+\begin{equation}\label{key}
+	J_{T} =
+	\begin{pmatrix}
+		\dfrac{\partial Q}{\partial q} & \dfrac{\partial Q}{\partial p} \\
+		\dfrac{\partial P}{\partial q} &
+		\dfrac{\partial P}{\partial p}
+	\end{pmatrix}
+\end{equation}
+Allora la condizione di (\ref{511}) diventa banalmente:
+\begin{equation}\label{key}
+	det(J_{T})=1
+\end{equation}
+e quindi, geometricamente, la trasformazione $T$ è tale da conservare le aree nello spazio delle fasi. In altre parole, \textbf{le trasformazioni canoniche nel piano delle fasi devono preservare le aree}.
+\subsection{Funzioni generatrici del I e II tipo}
+C'è un modo abbastanza comodo per individuare e caratterizzare ulteriormente le trasformazioni canoniche\footnote{Perché tutta 'sta pippa sulle trasformazioni canoniche? Ci arriviamo fra un po', il senso c'è.}. Abbiamo detto che le equazioni di Hamilton sono ricavabili geometricamente dalla 1-forma differenziale $\omega$:
+$$
+\omega = pdq-\mathcal{H}dt
+$$
+e le traiettorie fisiche nello spazio delle fasi saranno proprio le curve che estremizzano l'integrale curvilineo secondo questa forma differenziale. Abbiamo poi definito le trasformazioni canoniche. Dobbiamo, in questo caso, fare una piccola precisazione. Una generica trasformazione canonica $T(q,p) = (Q,P)$ è tale per cui, se $(q,p)$ soddisfano le equazioni di Hamilton per l'hamiltoniana $\mathcal{H}$, cioè:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
+		\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
+	\end{cases}
+\end{equation}
+allora anche nelle variabili $Q,P$ devo avere una struttura delle equazioni di Hamilton simile:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{Q} = \dfrac{\partial \mathcal{H}'}{\partial P} \\
+		\dot{P} = -\dfrac{\partial \mathcal{H}'}{\partial Q}
+	\end{cases}
+\end{equation}
+e non è strettamente richiesto che $\mathcal{H}' = \mathcal{H}$. Mi basta sapere che esiste una funzione generica $\mathcal{H}'$, che poi assume significato di hamiltoniana scritta nelle $Q,P$, che mi permette di riscrivere le equazioni di Hamilton per $Q,P$ nella forma simmetrica di sopra. Questo è la richiesta fondamentale per una trasformazione canonica: conservare la struttura, la forma delle equazioni di Hamilton. 
+
+Se poi la trasformazione $T$ è tale per cui $\mathcal{H}'(Q,P) = \mathcal{H}(q(Q,P),p(Q,P))$ allora diremo che la trasformazione è \textbf{completamente canonica} e le equazioni di Hamilton per $(Q,P)$ sono ancora più belle:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P}(Q,P) \\
+		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}(Q,P)
+	\end{cases}
+\end{equation}
+e quindi quelle che avevamo definito in precedenza sono, più propriamente, trasformazioni completamente canoniche\footnote{Non sono sicuro questa differenza sia stata fatta in classe, però mi sembra essenziale per capire il resto.}
+
+Torniamo alle funzioni generatrici. Abbiamo detto che le equazioni di Hamilton sono equivalenti alla 1-forma differenziale $\omega$. Cosa succede a tale forma differenziale se effettuo una trasformazione canonica? Cominciamo con le trasformazioni completamente canoniche, in cui $\mathcal{H}' = \mathcal{H}$. Nelle nuove variabili, la 1-forma differenziale sarà:
+$$
+\omega' = PdQ-\mathcal{H}'dt =  PdQ-\mathcal{H}dt
+$$
+Tuttavia noi sappiamo che dalla 1-forma differenziale possiamo risalire alla forma delle equazioni di Hamilton per $(Q,P)$\footnote{Cioè, in realtà abbiamo mostrato il contrario, che se le equazioni di Hamilton hanno la forma che hanno, allora la geometria dello spazio delle fasi è determinata da quella specifica forma differenziale. È chiaro però che il ragionamento logico è invertibile}:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
+	\end{cases}
+\end{equation}
+che, siccome la trasformazione è canonica, è la stessa forma delle equazioni di Hamilton nelle variabili $(q,p)$, che a sua volte produce la 1-forma differenziale $\omega$. Perciò ci verrebbe da dire che:
+$$
+\omega = \omega'
+$$
+In realtà questo non è necessariamente vero. Vediamo infatti che succede se a $\omega$ aggiungo un differenziale esatto di una generica funzione $F(q,p)$:
+$$
+\omega + dF
+$$
+Quando integro questa forma addizionata lungo una curva, il differenziale $dF$, integrato mi produce un numero che, tuttavia, non dipende dal percorso che scelgo (è una proprietà dei differenziali esatti, sono path-independent). Siccome la forma differenziale $\omega+dF$ va integrata e poi ne ricerco il minimo su di una curva i cui estremi sono fissati, il contributo di $dF$ è trascurabile perché costante per tutte le curve che connettono i medesimi punti nello spazio delle fasi. Quindi aggiungere un termine del tipo $dF$ non modifica la forma delle equazioni di Hamilton che produrrebbe una forma differenziale del tipo $\omega + dF$. Allora, ritornando al caso delle trasformazioni canoniche, la relazione che cercavamo è più correttamente:
+\begin{equation}
+	\omega = \omega' + dF
+	\label{Diffre}
+\end{equation}
+dove $F$ è una qualsiasi funzione definita nello spazio delle fasi. La (\ref{Diffre}) ci dice che, se voglio che le 1-forme differenziali $\omega$ (creata dai $q,p$) e $\omega'$ (creata dai $Q,P$) inducano delle equazioni che siano uguali nella forma (le equazioni di Hamilton), allora la relazione che intercorre fra di loro è proprio quella. Esplicitando le 1-forme differenziali (per trasformazioni completamente canoniche),
+\begin{equation*}\label{key}
+	pdq-\mathcal{H}dt = PdQ-\mathcal{H}dt + dF
+\end{equation*}
+cioè
+\begin{equation}
+	dF = pdq - PdQ
+	\label{dF}
+\end{equation}
+Abbiamo dunque scoperte che, se vogliamo che la trasformazione $T$ sia completamente canonica, deve esistere una funzione $F$ che goda di questa proprietà. Se richiediamo che $F$ sia funzione di $q,Q$ allora il suo differenziale è, per definizione:
+$$
+dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ
+$$
+confrontando con la (\ref{dF}), dovremo avere che:
+\begin{equation}
+	\begin{cases}
+		\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
+		\dfrac{\partial F}{\partial Q}(q,Q) = -P
+	\end{cases}
+\label{sistemaHam}
+\end{equation}
+Ricapitolando, se vogliamo che $T$ sia una trasformazione completamente canonica, allora deve esistere una funzione $F(q,Q)$ (detta \textit{generatrice del primo tipo}) che goda delle proprietà di (\ref{sistemaHam}). La funzione $F$ è detta generatrice perché permette di \textit{generare} implicitamente la trasformazione mediante le equazioni di (\ref{sistemaHam}).
+\subsubsection{Generatrici del secondo tipo}
+Esiste un modo diverso per generare implicitamente una trasformazione canonica. Riprendiamo l'equazione che sancisce l'equivalenze di due 1-forme differenziali per una trasformazione completamente canonica:
+$$
+\omega = \omega'+dF
+$$
+$$
+pdq = PdQ + dF
+$$
+Ora posso riscrivere:
+$$
+PdQ = d(PQ)-QdP
+$$
+dunque ho:
+$$
+pdq = d(PQ)-QdP +dF
+$$
+$$
+pdq = d(F+QP)-QdP = dG - QdP
+$$
+Avendo definito la funzione $G=F+QP$. Per questa funzione, vale:
+$$
+dG = pdq + QdP
+$$
+e quindi perché il differenziale sia esatto, dovrà essere solo funzione di $(q,P)$ e dovrà avere le derivate parziali:
+\begin{equation}
+	\begin{cases}
+		\dfrac{\partial G}{\partial q} = p \\[6pt]
+		\dfrac{\partial G}{\partial P} = Q
+	\end{cases}
+\label{325}
+\end{equation}
+in questo caso $G$ è funzione solo di $q,P$ mentre la funzione $F$ generatrice del primo tipo era funzione di $q,Q$. In analogia col caso precedente, una funzione $G=G(q,P)$ siffatta si dice \textbf{generatrice del secondo tipo}.
+
+Facciamo subito un esempio. Prendiamo la funzione generatrice del secondo tipo definita così:
+$$
+G(q,P) = qP
+$$
+a che trasformazione completamente canonica corrisponde? Lo possiamo scoprire a partire dalle equazioni che caratterizzano le generatrici del secondo tipo, cioè il sistema (\ref{325}):
+\begin{equation}\label{key}
+	\begin{cases}
+		\dfrac{\partial G}{\partial q} = p \\[6pt]
+		\dfrac{\partial G}{\partial P} = Q
+	\end{cases}
+\iff 
+	\begin{cases}
+	\dfrac{\partial }{\partial q}(qP) = p \\[6pt]
+	\dfrac{\partial }{\partial P}(qP) = Q
+\end{cases}
+\end{equation}
+cioè
+\begin{equation}\label{key}
+	\begin{cases}
+	P = p \\[6pt]
+	q = Q
+\end{cases}
+\end{equation}
+ma queste sono le equazioni che contraddistinguono la trasformazione identità, $I(q,p) = (q,p)$. Dunque la funzione del secondo tipo $G(q,P) = qP$ genera la trasformazione completamente canonica identità.
+\subsection{Equazioni di Hamilton-Jacobi}
+E se la trasformazione non fosse completamente canonica? In tal caso, l'equivalenza delle forme differenziali diventerebbe:
+\begin{equation}\label{key}
+	pdq-\mathcal{H}dt = PdQ-\mathcal{H}'+dF
+\end{equation}
+e qui $\mathcal{H} \mbox{ e } \mathcal{H}'$ sono due funzioni diverse (non basta sostituire le nuove coordinate). Operando come sopra, abbiamo che:
+$$
+dF = pdq + PdQ + (\mathcal{H}'-\mathcal{H})dt
+$$
+e quindi, se vogliamo che $dF$ sia un differenziale esatto, stavolta ci serve che la funzione $F$, la generatrice del primo tipo, dipenda anche dal tempo:
+$$
+dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ + \dfrac{\partial F}{\partial t}dt
+$$
+In altre parole, la differenza fra generatrici del primo tipo per trasformazioni canoniche e completamente canoniche è che, nel secondo caso, la funzione $F$ non dipende dal tempo. Confrontando le due formule per il differenziale $dF$, abbiamo infine:
+\begin{equation}
+	\begin{cases}
+		\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
+		\dfrac{\partial F}{\partial Q}(q,Q) = -P
+	\end{cases}
+\end{equation}
+proprio come in precedenza ma anche che:
+\begin{equation}
+\mathcal{H}' = \mathcal{H}  + \dfrac{\partial F}{\partial t}
+\end{equation}
+Cioè se scelgo di fare un cambio di variabili e rappresentare lo spazio delle fasi con $P,Q$ ho ancora la struttura delle equazioni fondamentali della meccanica (quelle di Hamilton e questo succede perché la trasformazione è canonica) ma devo cambiare la hamiltoniana, come a descrivere un nuovo sistema dinamico (legato al primo tramite la trasformazione canonica stessa). La nuova Hamiltoniana è legata alla vecchia in base alla relazione di sopra.
+
+Ora un passo fondamentale. Sono riuscito a trovare un modo per trasformare le hamiltoniane di sistemi fisici operando con delle trasformazioni nello spazio delle fasi. E se riuscissi a trovare una trasformazione in un set di nuove variabili $(Q,P)$ con generatrice $F$ tale per cui:
+\begin{equation}\label{key}
+	\mathcal{H}' = 0
+\end{equation}
+questo sarebbe tanta roba. Infatti, visto che la trasformazione è canonica, posso invocare le equazioni di Hamilton e ottenere:
+\begin{equation}\label{key}
+	\begin{cases}
+		\dot{Q} = 0 \\
+		\dot{P} =0
+	\end{cases}
+\end{equation}
+cioè $Q = Q(q,p)$ e $P=P(q,p)$ sono due integrali primi del moto per il sistema iniziale $\mathcal{H}$. Questa fu l'idea di Hamilton, il punto pivotale e più alto di tutta la meccanica razionale.
+
+\begin{tcolorbox}
+	Dato un sistema hamiltoniano nelle variabili coordinate-momento $q,p$ con hamiltoniana $\mathcal{H}$, se sono in grado di trovare una trasformazione canoniche $T(q,p) = (Q,P)$, dove $Q,P$ sono variabili indipendenti e non necessariamente coppia coordinata-momenti, generata dalla funzione $F=F(q,Q,t)$ tale per cui:
+	\begin{equation}\label{key}
+		\mathcal{H}' = \mathcal{H}+\dfrac{\partial F}{\partial t} = 0
+	\end{equation}
+allora ho individuato immediatamente degli integrali primi del moto per il sistema $\mathcal{H}$, ossia $Q(q,p), P(q,P)$
+\end{tcolorbox}
+La questione dell'individuazione degli integrali primi del moto, allora, si risolve nella questione dell'individuazione di una adeguata trasformazione canonica. E come trovo questa trasformazione? Dovendo essere:
+\begin{equation}\label{key}
+	\mathcal{H}(q,p,t)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
+\end{equation}
+Ma da quanto abbiamo scoperto per le generatrici del primo tipo,
+\begin{equation}\label{key}
+	\dfrac{\partial F}{\partial q} = p
+\end{equation}
+dunque otteniamo questa equazione, detta \textbf{equazione di Hamilton-Jacobi}:
+\begin{equation}\label{key}
+	\mathcal{H}(q,\dfrac{\partial F}{\partial q},t)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
+\end{equation}
+che è un'equazione differenziale nella funzione $F(q,Q,t)$ a tutti gli effetti. Una volta risolta questa equazione differenziale, ho trovato la generatrice $F$ e, quindi, gli integrali primi del moto. \textit{L'equazione di Hamilton-Jacobi è dunque il metodo tanto cercato per individuare gli integrali primi del moto di un sistema meccanico}. Questa equazione differenziale è alle derivate parziali e non lineare, dunque molto molto complicata da risolvere. Però, una volta risolta e se risolvibile, permette di comprendere fino in fondo un problema meccanico.
+\subsection{Variabili azione-angolo}
+	WIP
 \end{document}
