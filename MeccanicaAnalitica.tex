@@ -6909,9 +6909,44 @@ Ma da quanto abbiamo scoperto per le generatrici del primo tipo,
 \end{equation}
 dunque otteniamo questa equazione, detta \textbf{equazione di Hamilton-Jacobi}:
 \begin{equation}\label{key}
-	\mathcal{H}(q,\dfrac{\partial F}{\partial q},t)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
+	\mathcal{H}\Bigl(q,\dfrac{\partial F}{\partial q},t\Bigl)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
 \end{equation}
 che è un'equazione differenziale nella funzione $F(q,Q,t)$ a tutti gli effetti. Una volta risolta questa equazione differenziale, ho trovato la generatrice $F$ e, quindi, gli integrali primi del moto. \textit{L'equazione di Hamilton-Jacobi è dunque il metodo tanto cercato per individuare gli integrali primi del moto di un sistema meccanico}. Questa equazione differenziale è alle derivate parziali e non lineare, dunque molto molto complicata da risolvere. Però, una volta risolta e se risolvibile, permette di comprendere fino in fondo un problema meccanico.
 \subsection{Variabili azione-angolo}
-	WIP
+	Un esempio notevole di trasformazione canonica è quella già incontrata in precedenza con le variabili angolo-azione. Riprendiamole brevemente.
+	
+	Consideriamo un problema unidimensionale dove $x$ è la coordinata e $p = m\dot{x}$ il momento coniugato (che ha interpretazione fisica di quantità di moto). Lavoriamo solo con sistemi che ammettono orbite chiuse almeno in una regione dello spazio delle fasi. In tale area dove le traiettorie sono definitivamente chiuse, definisco la variabile \textbf{azione}:
+	\begin{equation}
+		I = \dfrac{1}{2\pi}\oint_{H=E}pdx
+		\label{Azione2}
+	\end{equation}
+ Geometricamente parlando, l'azione corrisponde all'area nello spazio delle fasi racchiusa da una determinata orbita (riscalata per un certo fattore $2\pi$). È chiaro che, per come è stata definita, l'azione si mantiene costante durante il moto (se l'orbita rimane sempre la stessa in virtù della sua chiusura, l'area anche è la stessa). Da sola, l'azione non basta per determinare lo stato dinamico del sistema: essa infatti mi indica solo su quale orbita sto, ma non mi dice a che punto di tale traiettoria sono nel tempo, come mi muovo su di questa. Avevamo dunque definito la variabile angolo che mi permette di identificare univocamente tutti i punti nello spazio delle fasi (o almeno, nella regione di orbite chiuse). 
+ 
+ Come possiamo definire l'angolo $\theta$, una volta nota la formula per l'azione? Vogliamo che la trasformazione $T(x,p) = (\theta, I)$ sia canonica, per le regioni già spiegate in precedenza. Quindi ora la domanda è: come definire $\theta$ di modo che la trasformazione $T$ sia canonica, sapendo che $I$ segue la formula (\ref{Azione2})?
+ 
+ Dobbiamo cercare una generatrice per la trasformazione in questione. Se definisco:
+ $$
+ F(x,I) = \int_{H=E}^{x}pdx
+ $$
+ possiamo dimostrare che questa è proprio la generatrice cercata. Si tratta di una funzione generatrice del secondo tipo\footnote{L'azione corrisponde ad un momento, non alla coordinata spaziale} che è definita come l'area sottesa delle orbite \textit{fino} al punto x (dunque non chiudo l'intregrale su tutta l'orbita). Trattandosi di una generatrice del secondo tipo, dobbiamo avere che:
+ \begin{equation}\label{key}
+ 	\dfrac{\partial F}{\partial x}(x,I) = p
+ \end{equation}
+e questo è vero per il teorema fondamentale del calcolo integrale. Allora la definizione di $\theta$ è vincolata ad essere:
+\begin{equation}\label{key}
+	\dfrac{\partial F}{\partial I}(x,I) = \theta
+\end{equation}
+cioè:
+\begin{equation}\label{key}
+	\theta = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
+\end{equation}
+
+Che era proprio la formula già data in precendeza. La trasformazione:
+\begin{equation}\label{key}
+	\begin{cases}
+		I(x,p)  = \dfrac{1}{2\pi}\oint_{H=E}pdx \\[6pt]
+		\theta(x,p) = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
+	\end{cases}
+\end{equation}
+è canonica (completamente perché la generatrice non dipende dal tempo).
 \end{document}
