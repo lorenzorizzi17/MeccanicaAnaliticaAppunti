@@ -23,8 +23,8 @@
 \makeglossary
 \title{\textbf{Appunti dal corso di Meccanica Analitica} }
 \author{Lorenzo Rizzi
-\\
-Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzorizzi17}.\\ Buono studio! :)  }
+	\\
+	Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzorizzi17}.\\ Buono studio! :)  }
 \begin{document}
 	\newpage
 	\maketitle
@@ -3572,7 +3572,7 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 		$$
 	\end{itemize}
 	\newpage
-	\section{Altre applicazioni della meccaninca lagrangiana}
+	\section{Altre applicazioni della meccanica lagrangiana}
 	\subsection{Problema dei due corpi}
 	Studiamo il cosiddetto problema dei due corpi, ovvero la dinamica di un sistema nello spazio tridimensionale in cui sono immersi due punti materiali di massa $m_1, m_2$ isolati\footnote{Attenzione, questo problema è diverso dal caso precedente del punto materiale soggetto a campo centrale. In quel caso la sorgente del campo era fissa nell'origine, qui invece le due sorgenti si possono muovere. I due problemi sono in realtà collegati, ma lo vedremo solo a posteriori.}. I due corpi possono interagire mutuamente. Stabilendo un sistema di riferimento arbitrario nello spazio, la lagrangiana del sistema è:
 	\begin{equation}\label{key}
@@ -4073,15 +4073,15 @@ Se volete offrirmi un caffè e farmi felice, \url{https://www.paypal.me/lorenzor
 	$$
 	e quindi
 	$$
-		(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i =( \delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})v_j \dfrac{\partial A^{m}}{\partial x_l}
+	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i =( \delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})v_j \dfrac{\partial A^{m}}{\partial x_l}
 	$$	
 	$$
 	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_i =v_j\Bigl( \dfrac{\partial A^{j}}{\partial x_i}- \dfrac{\partial A^{i}}{\partial x_j}\Bigl)
 	$$	
 	volendo l'indice $j$ (ho fatto la formula iniziale con l'indice $i$ perché mi piaceva di più il tensore di Ricci scritto $\varepsilon_{ijk}$):
-$$
-(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^i}{\partial x_j} -\dfrac{\partial A^j}{\partial x_i}\Bigl) 
-$$
+	$$
+	(\vec{v} \times (\vec{\nabla}\times \vec{A}))_j = \dot{x}_i \Bigl(\dfrac{\partial A^i}{\partial x_j} -\dfrac{\partial A^j}{\partial x_i}\Bigl) 
+	$$
 	In altre parole, in coordinate cartesiane la forza generata da un potenziale generalizzato può essere espressa come:
 	\begin{equation}
 		\vec{F} = \vec{v} \times (\vec{\nabla}\times \vec{A})
@@ -4168,7 +4168,7 @@ $$
 	$$
 	\Lambda(\vec{x},\vec{v}) = \Lambda(\vec{x}',\vec{v}')
 	$$
-	Questo non vuol dire che le soluzioni del moto siano esattamente uguali, cioè $x(t) = x'(t)$, ma semplicemente che hanno la stessa forma e differiscono solo per le condizioni iniziali (diversi da $S$ a $S'$). Il fatto che però le due Lagrangiane siano uguali è di fondamentale importanza: anche per la meccaninca lagrangiana, i sistemi inerziali sono tutti equivalenti, in quanti condividono la medesima funzione $\Lambda$. Anche per questa riformulazione della meccanica, le leggi fondamentali della fisica sono invarianti per sistemi inerziali, basta trovarne uno e scrivere la Lagrangiana in quel sistema e il gioco è fatto, non c'è sistema privilegiato. L'invarianza di gauge è dunque intimamente legata alla covarianza delle leggi fisiche per trasformazioni di Galileo.
+	Questo non vuol dire che le soluzioni del moto siano esattamente uguali, cioè $x(t) = x'(t)$, ma semplicemente che hanno la stessa forma e differiscono solo per le condizioni iniziali (diversi da $S$ a $S'$). Il fatto che però le due Lagrangiane siano uguali è di fondamentale importanza: anche per la meccanica lagrangiana, i sistemi inerziali sono tutti equivalenti, in quanti condividono la medesima funzione $\Lambda$. Anche per questa riformulazione della meccanica, le leggi fondamentali della fisica sono invarianti per sistemi inerziali, basta trovarne uno e scrivere la Lagrangiana in quel sistema e il gioco è fatto, non c'è sistema privilegiato. L'invarianza di gauge è dunque intimamente legata alla covarianza delle leggi fisiche per trasformazioni di Galileo.
 	\subsection{Sistemi rotanti}
 	Il formalismo Lagrangiano funziona se il sistema viene descritto in un sistema di riferimento inerziale. Così, ad esempio, un sistema di riferimento rotante non è inerziale e non è possibile descrivere direttamente la fisica di quel sistema con coordinate locali rotanti nella lagrangiana. C'è però un metodo alternativo che consente di lavorare direttamente nei sistemi non inerziali col prezzo di aggiungere forze fittizie di natura non fisica. Proprio come in meccanica newtoniana era possibile operare in sistemi non inerziali aggiungendo forze fittizie, vogliamo trovare un equivalente in meccanica lagrangiana.
 	
@@ -4271,8 +4271,8 @@ $$
 	\begin{equation}
 		T = (R^{T}\dot{\vec{X}})^2 = \dfrac{1}{2}m\dot{\vec{x}}^{2} + m\dot{\vec{x}}\cdot(\vec{\omega}\times\vec{x})+ \dfrac{1}{2}m (\vec{\omega}\times\vec{x})^{2}
 	\end{equation}
-Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. Nel caso 1D, vedremo che il termine di doppio prodotto è una derivate temporale.} come accadeva quando trasformavo la velocità con Galileo, quindi non posso ometterli.
-
+	Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. Nel caso 1D, vedremo che il termine di doppio prodotto è una derivate temporale.} come accadeva quando trasformavo la velocità con Galileo, quindi non posso ometterli.
+	
 	Dunque, la lagrangiana in coordinate cartesiane per sistemi rotanti (scritta nelle coordinate non inerziali) diventa:
 	\begin{equation}
 		\Lambda = \dfrac{1}{2}mv^{2} + m\vec{v}\cdot(\vec{\omega}\times\vec{x}) + \dfrac{1}{2}m(\vec{\omega}\times\vec{x})^{2} - V(x)
@@ -4294,7 +4294,7 @@ Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. 
 	Questa è l'espressione cartesiana della cosiddetta \textit{forza di Coriolis}, un'altra forza fittizia che compare solo nei sistemi di riferimento rotanti.
 	Essendo $\vec{F}_{cor} \perp \vec{v}$, tale forza non è in grado di erogare potenza, esattamente quanto ci aspettiamo da un potenziale generalizzato (questo a patto che $\omega$ non dipenda dal tempo, nel qual caso la formula per $\vec{F}$ è diversa perché non possiamo trascurare la derivata temporale di $\omega$).
 	
-	 Notiamo, in ultimo, che tale espressione è molto simile alla forza di Lorentz per il campo magnetico. C'è, infatti, una profonda connessione fra il vettore $\vec{\omega}$ e $\vec{B}$ ...
+	Notiamo, in ultimo, che tale espressione è molto simile alla forza di Lorentz per il campo magnetico. C'è, infatti, una profonda connessione fra il vettore $\vec{\omega}$ e $\vec{B}$ ...
 	\subsubsection{Pendolo di Foucault}
 	Un classico esempio di problema fisico in cui è necessario tenere conto della forza di Coriolis è quello del pendolo di Foucault. Consideriamo il seguente set-up: una punto materiale di massa $m$ nel piano $xy$ attaccato ad una molla centrata nell'origine degli assi. Tale piano è in realtà posto in maniera tangente su di una sfera che ruota attorno al suo asse polare con velocità angolare $\vec{\Omega}$ costante. Qual è il moto del punto? Se decidiamo di descrivere la situazione fisica nel sistema di riferimento rotante solidale alla sfera il cui origine coincide col punto di tangenza (e con l'estremo fissato della molla), allora è necessario tenere conto delle forze di natura non inerziale che naturalmente insorgono nella lagrangiana. 
 	
@@ -4310,7 +4310,7 @@ Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. 
 	$$
 	V_{cen} = \dfrac{1}{2}m(\vec{\omega}\times\vec{x})^2 = O(\Omega^2)
 	$$
-	 Allora la Lagrangiana scritta nel sistema di riferimento rotante con coordinate cartesiane è:
+	Allora la Lagrangiana scritta nel sistema di riferimento rotante con coordinate cartesiane è:
 	\begin{equation}
 		\Lambda = \dfrac{1}{2}m(\dot{x}^{2}+\dot{y}^{2}) + m\Omega \cos\alpha (x\dot{y}-\dot{x}y) - \dfrac{k}{2}(x^2+y^2) + O(\Omega^2)
 	\end{equation}
@@ -4792,38 +4792,38 @@ Questi termini aggiuntivi non sono semplici derivate nel tempo\footnote{Piomme. 
 	\begin{equation}\label{key}
 		Q_{\lambda}^{T}G^{0}Q_{\mu} = \langle Q_{\lambda},Q_{\mu} \rangle_{G}
 	\end{equation}
-Questa equazione mi dice, sostanzialmente, che i vettori $Q_{\lambda}$ sono fra di loro perpendicolari nello spazio (la metrica mi racconta come cambiare il prodotto scalare in seguito a cambi di coordinate dal set cartesiano. Se impiegassimo le cartesiane, la metrica sarebbe l'identità $G_{ij} = \delta_{ij}$ e otterremmo il risultato aspettato $\langle Q_{\lambda},Q_{\mu}\rangle = Q_{\lambda,1}Q_{\mu,1}+ ... + Q_{\lambda,n}Q_{\mu,n}=0$, che è la condizione normale di perpendicolarità. La metrica serve apposta per aggiustare il prodotto scalare.)
-Come lo dimostro?
-Dall'eq (\ref{eq12}), so che:
-\begin{equation}
-	\begin{aligned}
-		m\lambda^2 Q_{\mu} G^0 Q_{\lambda} =  Q_{\mu} (	m\lambda^2G^0) Q_{\lambda} = Q_{\mu}(-H^0)Q_{\lambda} =- Q_{\mu}H^0Q_{\lambda}
-	\end{aligned}
-\end{equation}
-La matrice $H^0$ è simmetrica, dunque posso scambiarla nel prodotto scalare: 
-\begin{equation}\label{key}
-	-Q_{\mu}(H^0Q_{\lambda}) = -(H^0 Q_{\mu})Q_{\lambda}
-\end{equation}
-Sempre dall'eq (\ref{eq12}), ma stavolta con $\mu$,
-\begin{equation}\label{key}
-	(-H^0 Q_{\mu})Q_{\lambda} = (m\mu^2 G^{0}Q_{\mu})Q_{\lambda}
-\end{equation}
-E sfruttando la simmetria di $G^0$:
-\begin{equation}\label{key}
-	m\mu^2 G^{0}Q_{\mu}Q_{\lambda} = m\mu^2 Q_{\mu}G^0Q_{\lambda}
-\end{equation}
-cioè in definitiva, ricordando a cosa ciò era uguale,
-$$
-m\mu^2 Q_{\mu}G^0Q_{\lambda} = 	m\lambda^2 Q_{\mu} G^0 Q_{\lambda}
-$$
-$$
-(\lambda^2-\mu^2)Q_{\mu} G^0 Q_{\lambda} = 0
-$$
-Se $\lambda \neq \mu$, allora necessariamente si ha che:
-\begin{equation}\label{key}
-	Q_{\mu} G^0 Q_{\lambda} = 0
-\end{equation}
-dunque davvero si tratta di una base ortogonale (eventualmente normalizzabile) dello spazio delle configurazioni. Poiché trattasi di vettori ortogonali, allora sono anche linearmente indipendenti e la soluzione finale della lagrangiana delle piccole oscillazione è esprimibile come somma degli autovettori ortogonali:
+	Questa equazione mi dice, sostanzialmente, che i vettori $Q_{\lambda}$ sono fra di loro perpendicolari nello spazio (la metrica mi racconta come cambiare il prodotto scalare in seguito a cambi di coordinate dal set cartesiano. Se impiegassimo le cartesiane, la metrica sarebbe l'identità $G_{ij} = \delta_{ij}$ e otterremmo il risultato aspettato $\langle Q_{\lambda},Q_{\mu}\rangle = Q_{\lambda,1}Q_{\mu,1}+ ... + Q_{\lambda,n}Q_{\mu,n}=0$, che è la condizione normale di perpendicolarità. La metrica serve apposta per aggiustare il prodotto scalare.)
+	Come lo dimostro?
+	Dall'eq (\ref{eq12}), so che:
+	\begin{equation}
+		\begin{aligned}
+			m\lambda^2 Q_{\mu} G^0 Q_{\lambda} =  Q_{\mu} (	m\lambda^2G^0) Q_{\lambda} = Q_{\mu}(-H^0)Q_{\lambda} =- Q_{\mu}H^0Q_{\lambda}
+		\end{aligned}
+	\end{equation}
+	La matrice $H^0$ è simmetrica, dunque posso scambiarla nel prodotto scalare: 
+	\begin{equation}\label{key}
+		-Q_{\mu}(H^0Q_{\lambda}) = -(H^0 Q_{\mu})Q_{\lambda}
+	\end{equation}
+	Sempre dall'eq (\ref{eq12}), ma stavolta con $\mu$,
+	\begin{equation}\label{key}
+		(-H^0 Q_{\mu})Q_{\lambda} = (m\mu^2 G^{0}Q_{\mu})Q_{\lambda}
+	\end{equation}
+	E sfruttando la simmetria di $G^0$:
+	\begin{equation}\label{key}
+		m\mu^2 G^{0}Q_{\mu}Q_{\lambda} = m\mu^2 Q_{\mu}G^0Q_{\lambda}
+	\end{equation}
+	cioè in definitiva, ricordando a cosa ciò era uguale,
+	$$
+	m\mu^2 Q_{\mu}G^0Q_{\lambda} = 	m\lambda^2 Q_{\mu} G^0 Q_{\lambda}
+	$$
+	$$
+	(\lambda^2-\mu^2)Q_{\mu} G^0 Q_{\lambda} = 0
+	$$
+	Se $\lambda \neq \mu$, allora necessariamente si ha che:
+	\begin{equation}\label{key}
+		Q_{\mu} G^0 Q_{\lambda} = 0
+	\end{equation}
+	dunque davvero si tratta di una base ortogonale (eventualmente normalizzabile) dello spazio delle configurazioni. Poiché trattasi di vettori ortogonali, allora sono anche linearmente indipendenti e la soluzione finale della lagrangiana delle piccole oscillazione è esprimibile come somma degli autovettori ortogonali:
 	\begin{equation}\label{key}
 		Q(t) = \sum_{\omega}Q_{\omega}(A_{\omega}\cos(\omega t)+B_{\omega}\sin(\omega t))
 	\end{equation}
@@ -5017,51 +5017,51 @@ dunque davvero si tratta di una base ortogonale (eventualmente normalizzabile) d
 	La posizione delle masse oscillanti sarà allora:
 	\begin{equation}
 		\begin{cases}
-		x_1 = x_c + l\sin\theta \\
-		y_1 = -l\cos\theta
+			x_1 = x_c + l\sin\theta \\
+			y_1 = -l\cos\theta
 		\end{cases}
-	\begin{cases}
-		x_2 = x_c + l\sin\varphi \\
-		y_2 = -l\cos\varphi
-	\end{cases}
+		\begin{cases}
+			x_2 = x_c + l\sin\varphi \\
+			y_2 = -l\cos\varphi
+		\end{cases}
 	\end{equation}
-e le velocità
-\begin{equation}
-	\begin{cases}
-		\dot{x}_1 = \dot{x}_c + l\dot{\theta}\cos\theta \\
-		y_1 = l\dot{\theta}\sin\theta
-	\end{cases}
-	\begin{cases}
-		\dot{x}_2 = \dot{x}_c + l\dot{\varphi}\cos\varphi \\
-		y_2 = l\dot{\varphi}\sin\varphi
-	\end{cases}
-\end{equation}
-\begin{equation}\label{key}
-	v_1^2 = \dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta
-	\quad \quad \quad 
-	v_2^2 = \dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi
-\end{equation}
-E la Lagrangiana diventa:
-\begin{equation}\label{key}
-	\Lambda = \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta)+ \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi) + \dfrac{M}{2}\dot{x}_c^2 + mgl\cos\theta + mgl\sin\theta
-\end{equation}
-La coordinata $x_c$ è ciclica, dunque si conserva:
-$$
-\dfrac{\partial \Lambda}{\partial \dot{x}_c} = 2m\dot{x}_c +m l\dot{\theta}\cos\theta+ ml\dot{\varphi}\cos\varphi + M\dot{x}_c = \dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)
-$$
-che coincide con il momento della quantità di moto totale del sistema. A questo punto ci facciamo furbi: ci mettiamo nel sistema di riferimento in cui questo è nullo: 
-$$
-\dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)=0
-$$
-Integrando per $dt$, noto che:
-$$
-\dot{x}_c(2m+M) + ml(\sin\theta+\sin\varphi) =0
-$$
-$$
-\dot{x}_c = \dfrac{ml(\sin\theta+\sin\varphi) }{2m+M}
-$$
-Quindi la posizione del supporto non è propriamente libera ma è funzione delle coordinate angolari: il problema ha allora dimensione $2$. Posso sostituire allora nella lagrangiana\footnote{Posso farlo perché qua non si tratta di un integrale primo del moto, che potrebbe variare da orbita a orbita (e da condizione iniziali a condizione iniziali). Se mi metto nel sistema di riferimento a momento nullo, questo sempre deve rimanere, qualsiasi condizione iniziale. È un vincolo del sistema!} e ottenere ... 	WIP
-\subsection{Esercizio: piccole oscillazioni con potenziali generalizzati}
+	e le velocità
+	\begin{equation}
+		\begin{cases}
+			\dot{x}_1 = \dot{x}_c + l\dot{\theta}\cos\theta \\
+			y_1 = l\dot{\theta}\sin\theta
+		\end{cases}
+		\begin{cases}
+			\dot{x}_2 = \dot{x}_c + l\dot{\varphi}\cos\varphi \\
+			y_2 = l\dot{\varphi}\sin\varphi
+		\end{cases}
+	\end{equation}
+	\begin{equation}\label{key}
+		v_1^2 = \dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta
+		\quad \quad \quad 
+		v_2^2 = \dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi
+	\end{equation}
+	E la Lagrangiana diventa:
+	\begin{equation}\label{key}
+		\Lambda = \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\theta}^2+2l\dot{x}_c\dot{\theta}\cos\theta)+ \dfrac{m}{2}(\dot{x}_c^2 + l^2\dot{\varphi}^2+2l\dot{x}_c\dot{\varphi}\cos\varphi) + \dfrac{M}{2}\dot{x}_c^2 + mgl\cos\theta + mgl\sin\theta
+	\end{equation}
+	La coordinata $x_c$ è ciclica, dunque si conserva:
+	$$
+	\dfrac{\partial \Lambda}{\partial \dot{x}_c} = 2m\dot{x}_c +m l\dot{\theta}\cos\theta+ ml\dot{\varphi}\cos\varphi + M\dot{x}_c = \dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)
+	$$
+	che coincide con il momento della quantità di moto totale del sistema. A questo punto ci facciamo furbi: ci mettiamo nel sistema di riferimento in cui questo è nullo: 
+	$$
+	\dot{x}_c(2m+M) + ml(\dot\theta\cos\theta+\dot\varphi\cos\varphi)=0
+	$$
+	Integrando per $dt$, noto che:
+	$$
+	\dot{x}_c(2m+M) + ml(\sin\theta+\sin\varphi) =0
+	$$
+	$$
+	\dot{x}_c = \dfrac{ml(\sin\theta+\sin\varphi) }{2m+M}
+	$$
+	Quindi la posizione del supporto non è propriamente libera ma è funzione delle coordinate angolari: il problema ha allora dimensione $2$. Posso sostituire allora nella lagrangiana\footnote{Posso farlo perché qua non si tratta di un integrale primo del moto, che potrebbe variare da orbita a orbita (e da condizione iniziali a condizione iniziali). Se mi metto nel sistema di riferimento a momento nullo, questo sempre deve rimanere, qualsiasi condizione iniziale. È un vincolo del sistema!} e ottenere ... 	WIP
+	\subsection{Esercizio: piccole oscillazioni con potenziali generalizzati}
 	Consideriamo una guida circolare di raggio $R$ che inizialmente stia nel piano $xy$ sulla quale viene posto un punto materiale di massa $m$ e carica $q$. Viene acceso un campo magnetico $\vec{B} = B_0\hat{z}$. Sapendo che la guida è libera di ruotare attorno all'asse $x$, troviamo la lagrangiana del sistema e calcoliamo la frequenza delle piccole oscillazioni. 
 	
 	Che coordinate usare compatibili col vincolo olonomo della guida? Conviene impiegare la coppia $(\theta,\varphi)$, dove $\theta$ è l'angolo spazzato dal punto nel piano della spira e $\varphi$ è l'angolo che il piano della spira individua rispetto al piano $xy$. Come individuamo le coordinate del punto materiale in funzione di $\theta, \varphi$? La posizione della carica sulla guida quando questa è parallela al piano $xy$ (cioè $\varphi = 0$) è data da
@@ -5332,7 +5332,7 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 	dove $d$ è la distanza di un punto del corpo rigido rispetto all'asse in esame. Questa definizione è comoda perché allora l'energia cinetica si scrive come:
 	\begin{equation}
 		T = \dfrac{1}{2}I_{\omega}\omega^2
-	\label{MomInerzia}
+		\label{MomInerzia}
 	\end{equation}
 	Il momento di inerzia fa sempre riferimento alla rotazione rispetto ad uno specifico asse, mentre il tensore di inerzia non richiede che l'asse rimanga fisso. Se possediamo l'informazione del tensore di inerzia rispetto ad una generica terna cartesiana $xyz$ e vogliamo calcolare il momento di inerzia rispetto ad un asse $\hat{\omega}$, come possiamo fare? Basta operare:
 	$$
@@ -5363,7 +5363,7 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 	A questo punto ci accorgiamo di un fatto interessante. Per come è stato definito, il tensore di inerzia possiede, lungo la diagonale, i momenti di inerzia lungo i tre assi di $S'$.
 	
 	\subsubsection{Teorema di Steiner}
-	Sia $K$ un corpo rigido. Se conosco il momento di inerzia di $K$ rispetto ad un asse $\hat{\omega}$ passante per il centro di massa, posso calcolare il momento di inerzia rispetto ad un asse parallelo a $\hat{\omega}$ distante $d$ dal centro di massa che passa per $O$ come:
+	Sia $K$ un corpo rigido. Se conosco il momento di inerzia di $K$ rispetto ad un asse $\hat{\omega}$ passante per il centro di massa\footnote{Attenzione che $\hat{\omega}$ è adimensionale, è solo un versore che indica la direzione dell'asse di rotazione}, posso calcolare il momento di inerzia rispetto ad un asse parallelo a $\hat{\omega}$ distante $d$ dal centro di massa che passa per $O$ come:
 	$$
 	I_{\omega,O} = I_{\omega, CM} + Md^{2}
 	$$
@@ -5378,26 +5378,26 @@ Quindi la posizione del supporto non è propriamente libera ma è funzione delle
 			I_{\omega,O} = \int_{K}d^2_O \rho d\vec{x}
 		\end{aligned}
 	\end{equation}
-    dove $d_O$ è la distanza fra asse e punto. Questa è uguale a:
-    $$
-    d_O = |\vec{x}_{0}\times\hat{\omega}|
-    $$
-    cioè del vettore posizione $\vec{x}_O$ che connette un generico punto P al punto $O$ devo prendere solo la componente perpendicolare all'asse stesso. Allora:
-    \begin{equation}\label{key}
-    	\begin{aligned}
-    		I_{\omega} = \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x}
-    	\end{aligned}
-    \end{equation}
-Sostituendo $\vec{x}_O = \vec{x}_{CM}+\vec{d}$ ho che
-    \begin{equation}\label{key}
-	\begin{aligned}
-		I_{\omega,O} &= \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x} = \int_{K}((\vec{x}_{CM}+\vec{d})\times\hat{\omega})^2 \rho d\vec{x} =  \\
-		&= \int_{K}(\vec{x}_{CM}\times\hat\omega)^2\rho d\vec{x} + 2(\vec{d}\times\hat\omega)\int_{K}\vec{x}_{CM}\times\hat\omega\rho d\vec{x} +(\vec{d}\times\hat\omega)^2 \int_{K}\rho d\vec{x} = \\
-		&= I_{\omega, CM} + 2(\vec{d}\times\hat\omega)\Bigl(\int_{K}\vec{x}_{CM}\rho d\vec{x}\Bigl) \times \hat\omega+ (\vec{d}\times\hat\omega)^2 M = \\
-		&= I_{\omega, CM} + Md^2
-	\end{aligned}
-\end{equation}
-Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di Steiner deve sempre essere usato con il centro di massa. Non posso usarlo fra due generici punti di cui conosco la distanza $d$ (perché solo col centro di massa vale la proprietà che mi permette di cancellare il termine doppio prodotto).
+	dove $d_O$ è la distanza fra asse e punto. Questa è uguale a:
+	$$
+	d_O = |\vec{x}_{0}\times\hat{\omega}|
+	$$
+	cioè del vettore posizione $\vec{x}_O$ che connette un generico punto P al punto $O$ devo prendere solo la componente perpendicolare all'asse stesso. Allora:
+	\begin{equation}\label{key}
+		\begin{aligned}
+			I_{\omega} = \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x}
+		\end{aligned}
+	\end{equation}
+	Sostituendo $\vec{x}_O = \vec{x}_{CM}+\vec{d}$ ho che
+	\begin{equation}\label{key}
+		\begin{aligned}
+			I_{\omega,O} &= \int_{K}(\vec{x}_{O}\times\hat{\omega})^2 \rho d\vec{x} = \int_{K}((\vec{x}_{CM}+\vec{d})\times\hat{\omega})^2 \rho d\vec{x} =  \\
+			&= \int_{K}(\vec{x}_{CM}\times\hat\omega)^2\rho d\vec{x} + 2(\vec{d}\times\hat\omega)\int_{K}\vec{x}_{CM}\times\hat\omega\rho d\vec{x} +(\vec{d}\times\hat\omega)^2 \int_{K}\rho d\vec{x} = \\
+			&= I_{\omega, CM} + 2(\vec{d}\times\hat\omega)\Bigl(\int_{K}\vec{x}_{CM}\rho d\vec{x}\Bigl) \times \hat\omega+ (\vec{d}\times\hat\omega)^2 M = \\
+			&= I_{\omega, CM} + Md^2
+		\end{aligned}
+	\end{equation}
+	Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di Steiner deve sempre essere usato con il centro di massa. Non posso usarlo fra due generici punti di cui conosco la distanza $d$ (perché solo col centro di massa vale la proprietà che mi permette di cancellare il termine doppio prodotto).
 	\subsection{Diagonalizzazione del tensore di inerzia}
 	Ripetiamo quanto appena scoperto. Dato un sistema di riferimento rotante solidale al corpo rigido $K$ con punto fisso, posso definire una matrice covariante detta \textit{tensore di inerzia} i cui elementi sono:
 	$$
@@ -5549,10 +5549,10 @@ Avendo sfruttato le proprietà del centro di massa. Attenzione! Il teorema di St
 			0 & 0 & \dfrac{1}{I_z} \\
 		\end{pmatrix}
 	\end{equation}
-e quindi:
-\begin{equation}\label{key}
-	I^{-1}\vec{L} = \Bigl(\dfrac{L_x}{I_x},\dfrac{L_y}{I_y},\dfrac{L_z}{I_z}\Bigl)
-\end{equation}
+	e quindi:
+	\begin{equation}\label{key}
+		I^{-1}\vec{L} = \Bigl(\dfrac{L_x}{I_x},\dfrac{L_y}{I_y},\dfrac{L_z}{I_z}\Bigl)
+	\end{equation}
 	e, facendo il prodotto vettoriale, l'equazione cardinale nel sistema degli assi principali si riduce al sistema:
 	\begin{equation}
 		\begin{cases}
@@ -5573,11 +5573,11 @@ e quindi:
 	E = T = \dfrac{1}{2}\vec{\omega}I\vec{\omega} = \dfrac{1}{2}\vec{\omega}\cdot\vec{L} = \dfrac{1}{2}I^{-1}\vec{L}\cdot\vec{L} =  \dfrac{1}{2}\Bigl(\dfrac{L_x^2}{I_x} +\dfrac{L_y^2}{I_y}+\dfrac{L_z^2}{I_z}\Bigl) = const
 	$$
 	La conservazione del momento angolare descrive una sfera nello spazio delle configurazioni $(L_x,L_y,L_z)$ mentre la conservazione dell'energia impone un ellissoide nello stesso spazio: le soluzioni del sistema stanno dunque nell'intersezioni fra tale sfera e l'ellissoide.
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale = 0.2]{ell1.jpg}
-	\caption{\textit{Visualizzazione delle soluzioni per il problema di Eulero sul corpo rigido libero (dall'Arnold). L'ellissoide è il vincolo imposto dalla conservazione dell'energia. Le varie intersezioni con le sfere (vincoli del modulo di $\vec{L}$) sono mostrate sull'ellissoide. Come sarà più chiaro nel prossimo capitolo, notiamo che le soluzioni che stanno vicine ai due assi $e_1, e_3$ (gli assi di inerzia maggiore e minore) rimangono abbastanza confinate mentre le soluzioni attorno a $e_2$ tendono ad allontanarsi di molto dall'asse stesso (comportamento iperbolico).}}
-\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale = 0.2]{ell1.jpg}
+		\caption{\textit{Visualizzazione delle soluzioni per il problema di Eulero sul corpo rigido libero (dall'Arnold). L'ellissoide è il vincolo imposto dalla conservazione dell'energia. Le varie intersezioni con le sfere (vincoli del modulo di $\vec{L}$) sono mostrate sull'ellissoide. Come sarà più chiaro nel prossimo capitolo, notiamo che le soluzioni che stanno vicine ai due assi $e_1, e_3$ (gli assi di inerzia maggiore e minore) rimangono abbastanza confinate mentre le soluzioni attorno a $e_2$ tendono ad allontanarsi di molto dall'asse stesso (comportamento iperbolico).}}
+	\end{figure}
 	\subsection{Stabilità degli assi principali}
 	I punti di equilibrio di un corpo rigido libero (con tutti i momenti di inerzia diversi) sono quelli per cui il momento angolare è inizialmente lungo uno degli assi principali di inerzia:
 	$$
@@ -5873,11 +5873,11 @@ e quindi:
 	\begin{equation}\label{key}
 		\dfrac{p^2}{4I_x}-Mgd > 0
 	\end{equation}
-    cioè:
-    \begin{equation}\label{key}
-    	p^2 > 4I_xMgd
-    \end{equation}
-ossia la trottola deve spinnare su se stessa abbastanza velocemente (in fondo $p = I_z\dot\varphi$). Nelle situazioni reali, l'attrito tende a rallentare la rotazione finché l'equilibrio diventa instabile: la trottola si risveglia e segue la trattazione vista in precedenza.
+	cioè:
+	\begin{equation}\label{key}
+		p^2 > 4I_xMgd
+	\end{equation}
+	ossia la trottola deve spinnare su se stessa abbastanza velocemente (in fondo $p = I_z\dot\varphi$). Nelle situazioni reali, l'attrito tende a rallentare la rotazione finché l'equilibrio diventa instabile: la trottola si risveglia e segue la trattazione vista in precedenza.
 	\newpage 
 	\subsection{Esempi ed esercizi}
 	\subsubsection{Tensore di inerzia di un corpo bidimensionale}
@@ -5937,37 +5937,37 @@ ossia la trottola deve spinnare su se stessa abbastanza velocemente (in fondo $p
 	cosa che è effettivamente vera (e dalla quale avremmo potuto ricavare che necessariamente $I_y = 0$).
 	\subsubsection{Tensore di inerzia di un rettangolo omogeneo}
 	Calcoliamo il tensore di inerzia di un rettangolo a densità omogenea. Siano $a$ e $b$ le due dimensioni lineari del rettangolo
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[x=1cm,y=1cm]
-		\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$}; % x-axis
-		\draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$}; % y-axis
-		
-		\draw (-2,-1.5) rectangle (2,1.5); % rectangle
-
-		
-		
-		\draw[dashed] (-2.5,0) -- (2.5,0); % dashed x-axis extension
-		\draw[dashed] (0,-2.5) -- (0,2.5); % dashed y-axis extension
-	\end{tikzpicture}
-\end{figure}
-Già sappiamo che $I_z = I_x+I_y$, quindi procediamo a calcolare:
-$$
-I_x = \int_{A}y^2\sigma dA =\sigma\int_{-b/2}^{b/2}dx\int_{-a/2}^{a/2}y^2dy = \dfrac{M}{ab}b\dfrac{1}{12}a^3 = \dfrac{1}{12}Ma^2
-$$
-Analogamente,
-$$
-I_y = \dfrac{1}{12}Mb^2
-$$
-e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
-\begin{equation}\label{key}
-	I = \dfrac{1}{12}M
-	\begin{pmatrix}
-		a^2 & 0 & 0 \\
-		0 & b^2 & 0 \\
-		0 & 0 & a^2+b^2
-	\end{pmatrix}
-\end{equation}
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[x=1cm,y=1cm]
+			\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$}; % x-axis
+			\draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$}; % y-axis
+			
+			\draw (-2,-1.5) rectangle (2,1.5); % rectangle
+			
+			
+			
+			\draw[dashed] (-2.5,0) -- (2.5,0); % dashed x-axis extension
+			\draw[dashed] (0,-2.5) -- (0,2.5); % dashed y-axis extension
+		\end{tikzpicture}
+	\end{figure}
+	Già sappiamo che $I_z = I_x+I_y$, quindi procediamo a calcolare:
+	$$
+	I_x = \int_{A}y^2\sigma dA =\sigma\int_{-b/2}^{b/2}dx\int_{-a/2}^{a/2}y^2dy = \dfrac{M}{ab}b\dfrac{1}{12}a^3 = \dfrac{1}{12}Ma^2
+	$$
+	Analogamente,
+	$$
+	I_y = \dfrac{1}{12}Mb^2
+	$$
+	e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
+	\begin{equation}\label{key}
+		I = \dfrac{1}{12}M
+		\begin{pmatrix}
+			a^2 & 0 & 0 \\
+			0 & b^2 & 0 \\
+			0 & 0 & a^2+b^2
+		\end{pmatrix}
+	\end{equation}
 	\subsubsection{Disco su di una guida rotante}
 	Consideriamo un problema in cui vi sia una guida circolare di raggio $2R$ inizialmente nel piano $xy$ al cui interno può ruotare un altro disco omogeneo di raggio $R$. Il disco si muove sotto l'effetto della forza peso. Ad un certo punto la guida viene messa in rotazione attorno all'asse verticale con velocità angolare costante $\vec{\Omega}$. Il disco è vincolato a ruotare senza strisciare all'interno della guida.
 	
@@ -6052,7 +6052,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	$$
 	L = \int_{\gamma}ds = \int_{a}^{b}\sqrt{\dot{q}_i G_{ij}\dot{q}_j}dt = \int_{a}^{b}\sqrt{\dot{\vec{q}} \textbf{G}\dot{\vec{q}}}dt
 	$$
-	con $G$ matrice metrica dello spazio delle configurazioni con le coordinate generalizzate \footnote{Per comodità, da qui in poi useremo la notazione vettoriale e non più quella matriciale, senza però usare esplicitamente la freccetta.}. La lunghezza è dunque un funzionale (associa ad una curva un numero). 
+	con $G$ matrice metrica dello spazio delle configurazioni con le coordinate generalizzate \footnote{Per comodità, da qui in poi useremo la notazione vettoriale e non più quella indiciale, senza però usare esplicitamente la freccetta.}. La lunghezza è dunque un funzionale (associa ad una curva un numero). 
 	
 	Definiamo ora cosa intendiamo per \textit{estremale} di un funzionale. Detto $\tilde{F}$ un funzionale, allora $q\in Q$ si dice traiettoria estremale o, semplicemente, estremale per $\tilde{F}$ se:
 	\begin{equation}\label{key}
@@ -6089,7 +6089,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	$$
 	\dfrac{\partial F}{\partial q}-\dfrac{d}{dt}\dfrac{\partial F}{\partial \dot{q}} = 0
 	$$
-	detta equazione di Eulero. Questa equazione ricorda da vicino le equazioni di Lagrange che già abbiamo visto. Infatti, se costruiscono un funzionale con $F= \Lambda$:
+	detta equazione di Eulero. Questa equazione ricorda da vicino le equazioni di Lagrange che già abbiamo visto. Infatti, se costruisco un funzionale con $F= \Lambda$:
 	\begin{equation}\label{key}
 		S = \int_{t_B}^{t_A} \Lambda(q,\dot{q},t) dt
 	\end{equation}
@@ -6097,7 +6097,7 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\begin{equation}\label{key}
 		\delta \int_{t_A}^{t_B}\Lambda \> dt = 0
 	\end{equation}
-	Il principio di minima azione si presta ad una vastità di applicazioni che permettono di risolvere problemi impossibili da comprendere tramite la meccaninca lagrangiana. Inoltre, consente di intravedere una sorprendente analogia fra meccanica e geometria.
+	Il principio di minima azione si presta ad una vastità di applicazioni che permettono di risolvere problemi impossibili da comprendere tramite la meccanica lagrangiana. Inoltre, consente di intravedere una sorprendente analogia fra meccanica e geometria.
 	
 	Notiamo, in ultimo, che nell'usare correttamente il principio dobbiamo imporre due condizioni di contorno, non più propriamente iniziali. Se nella formulazione lagrangiana ci preoccupavamo di conoscere lo stato iniziale (posizione e impulso), qua richiediamo di sapere le posizione in due istanti temporali differenti.
 	\subsubsection{Esempio: la catenaria}
@@ -6107,45 +6107,42 @@ e allora il tensore di inerzia si scrive nel sistema degli assi principali come:
 	\begin{equation}\label{key}
 		V = \int_{\gamma}dV = \int_{-a}^{a}\rho g y(x)\sqrt{1+y'^2(x)}dx
 	\end{equation}
-Avendo indicato $y'$ la derivata rispetto a $x$. È chiaro che la forma di sopra è un funzionale: ad ogni possibile curva $y(x)$, diamo un valore cumulativo di energia. L'azione $S$, essendo $\Lambda = V$ all'equilibrio, diventa:
-\begin{equation}\label{key}
-	S = -\int_{\gamma}dV = -\int_{-a}^{a}\rho g y(x)\sqrt{1+y'^2(x)}dx
-\end{equation}
-e dunque devo trovare la curva $y(x)$ che la minimizza (o meglio la rende stazionaria).\footnote{Nelle condizioni di equilibrio, richiedere che l'azione sia minima equivale a richiedere che il potenziale sia minimo.} Per comodità, minimizziamo l'energia (tanto c'è solo un segno di differenza)
-
-Nel problema c'è però un vincolo, quello della lunghezza $l$ della corda, cioè:
-\begin{equation}\label{key}
-	l = \int_{-a}^{a}\sqrt{1+y'^2(x)}dx
-\end{equation}
-Nei problemi di minimizzazione coi vincoli, ricorriamo al metodo dei moltiplicatori di Lagrange. Generiamo un nuovo funzionale con la variabile ausiliaria $\lambda$:
-\begin{equation}\label{key}
-	\tilde{F}(y,y') = V(y,y')-\lambda\int_{-a}^{a}\sqrt{1+y'^2(x)} =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx
-\end{equation}
-e minimizziamo globalmente questo. Potremmo a questo punto usare le equazioni di Eulero che produrrebbero\footnote{Attenzione che qua il parametro è $x$, non $t$!}:
-\begin{equation}\label{key}
-	\Bigl(\dfrac{d}{dx}\dfrac{\partial}{\partial y'}-\dfrac{\partial}{\partial y}\Bigl)(\rho g y-\lambda)\sqrt{1+y'^2(x)} = 0
-\end{equation}
-\begin{equation}\label{key}
-	\dfrac{d}{dx}(\rho g y -\lambda)\dfrac{y'}{\sqrt{1+y'^2}}-\rho g \sqrt{1+y'^2} =0
-\end{equation}
-Invece cerchiamo di cavarcela diversamente. Riprendiamo il funzionale da minimizzare:
-\begin{equation}\label{key}
-	\tilde{F}(y,y') =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx =\int_{-a}^{a} \Lambda'(y,y')dx
-\end{equation}
-Possiamo interpretare l'integrando come una lagrangiana di un qualche sistema fisico descritto dalla coordinata $y$ nel parametro $x$ (non più il tempo dunque). Questa lagrangiana fittizia non dipende da $x$ (che è alla stregua del tempo) e allora ci aspettiamo che, definendo un'energia con la formula rigorosa:
-\begin{equation}\label{key}
-	E = \dfrac{\partial \Lambda'}{\partial y'}y'-\Lambda' = (\rho g y -\lambda)\dfrac{y'^2}{\sqrt{1+y'^2}} - (\rho g y-\lambda)\sqrt{1+y'^2(x)} 
-\end{equation}
-questa quantità si conserva (rispetto a $x$, quindi ovunque nella corda). Svolgendo i calcoli, questo integrale primo $E$ diventa:
-\begin{equation}\label{key}
-	E = - \dfrac{\rho g y - \lambda}{\sqrt{1+y'^2}}
-\end{equation}
-Il gioco è fatto: questa è un'equazione differenziale un po' più semplice di quella di sopra (non è al secondo ordine) e, separando le variabili, posso integrare e ottenere analiticamente $y=y(x)$. La curva che ne risulta, è detta catenaria, e ha la forma tipo:
-\begin{equation}\label{key}
-	y(x) = A - B\cosh(Cx)
-\end{equation}
-
-\subsection{Proprietà del funzionale d'azione}
+	Avendo indicato $y'$ la derivata rispetto a $x$. È chiaro che la forma di sopra è un funzionale: ad ogni possibile curva $y(x)$, diamo un valore cumulativo di energia. 
+	Dunque devo trovare la curva $y(x)$ che la minimizza (o meglio la rende stazionaria: l'equilibrio si raggiunge quando l'energia potenziale è minima).
+	
+	Nel problema c'è però un vincolo, quello della lunghezza $l$ della corda, cioè:
+	\begin{equation}\label{key}
+		l = \int_{-a}^{a}\sqrt{1+y'^2(x)}dx
+	\end{equation}
+	Nei problemi di minimizzazione coi vincoli, ricorriamo al metodo dei moltiplicatori di Lagrange. Generiamo un nuovo funzionale con la variabile ausiliaria $\lambda$:
+	\begin{equation}\label{key}
+		\tilde{F}(y,y') = V(y,y')-\lambda\int_{-a}^{a}\sqrt{1+y'^2(x)} =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx
+	\end{equation}
+	e minimizziamo globalmente questo. Potremmo a questo punto usare le equazioni di Eulero che produrrebbero\footnote{Attenzione che qua il parametro è $x$, non $t$!}:
+	\begin{equation}\label{key}
+		\Bigl(\dfrac{d}{dx}\dfrac{\partial}{\partial y'}-\dfrac{\partial}{\partial y}\Bigl)(\rho g y-\lambda)\sqrt{1+y'^2(x)} = 0
+	\end{equation}
+	\begin{equation}\label{key}
+		\dfrac{d}{dx}(\rho g y -\lambda)\dfrac{y'}{\sqrt{1+y'^2}}-\rho g \sqrt{1+y'^2} =0
+	\end{equation}
+	Invece cerchiamo di cavarcela diversamente. Riprendiamo il funzionale da minimizzare:
+	\begin{equation}\label{key}
+		\tilde{F}(y,y') =\int_{-a}^{a}(\rho g y-\lambda)\sqrt{1+y'^2(x)}  dx =\int_{-a}^{a} \Lambda'(y,y')dx
+	\end{equation}
+	Possiamo interpretare l'integrando come una lagrangiana di un qualche sistema fisico descritto dalla coordinata $y$ nel parametro $x$ (non più il tempo dunque). Questa lagrangiana fittizia non dipende da $x$ (che è alla stregua del tempo) e allora ci aspettiamo che, definendo un'energia con la formula rigorosa:
+	\begin{equation}\label{key}
+		E = \dfrac{\partial \Lambda'}{\partial y'}y'-\Lambda' = (\rho g y -\lambda)\dfrac{y'^2}{\sqrt{1+y'^2}} - (\rho g y-\lambda)\sqrt{1+y'^2(x)} 
+	\end{equation}
+	questa quantità si conserva (rispetto a $x$, quindi ovunque nella corda). Svolgendo i calcoli, questo integrale primo $E$ diventa:
+	\begin{equation}\label{key}
+		E = - \dfrac{\rho g y - \lambda}{\sqrt{1+y'^2}}
+	\end{equation}
+	Il gioco è fatto: questa è un'equazione differenziale un po' più semplice di quella di sopra (non è al secondo ordine) e, separando le variabili, posso integrare e ottenere analiticamente $y=y(x)$. La curva che ne risulta, è detta catenaria, e ha la forma tipo:
+	\begin{equation}\label{key}
+		y(x) = A - B\cosh(Cx)
+	\end{equation}
+	
+	\subsection{Proprietà del funzionale d'azione}
 	Tramite il principio di minima azione è possibile ricavare alcune proprietà già verificate in precedenza. Ad esempio, sappiamo che la lagrangiana è invariante per gauge, cioè data $\Lambda'$:
 	$$
 	\Lambda' = \Lambda + \dfrac{dF}{dt}
@@ -6205,40 +6202,40 @@ Il gioco è fatto: questa è un'equazione differenziale un po' più semplice di 
 	\begin{equation}\label{key}
 		Lag(\Lambda) = 0
 	\end{equation}
-\begin{equation}\label{key}
-	\Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\dot{q}G\dot{q}\Bigl) = 0
-\end{equation}
-\begin{equation}\label{eq123}
-	2\dfrac{d}{dt}G\dot{q}-\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
-\end{equation}
-\begin{equation}\label{eq124}
-	\dfrac{d}{dt}G\dot{q}-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
-\end{equation}
-Teniamo a mente questa relazione. Passiamo ora alla parte delle geodetiche. Il funzionale da minimizzare è quello di lunghezza, cioè
-$$
-\delta \int_{\lambda_A}^{\lambda_B}\sqrt{q'Gq'}d\lambda  = 0
-$$
-dove la curva è stata parametrizzata con $\lambda$ ed è tale da avere $q(\lambda_A) = q_A, q(\lambda_B) = q_B$. Impiegando le equazioni di Eulero per trovare l'estremale,
-\begin{equation}\label{key}
-	\Bigl(\dfrac{d}{d\lambda}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\sqrt{q'Gq'}\Bigl)
-\end{equation}
-\begin{equation}\label{eq321}
-	\dfrac{d}{d\lambda}\Bigl(\dfrac{1}{\sqrt{q'Gq'}}Gq'\Bigl)-\dfrac{1}{2\sqrt{q'Gq'}}q'\dfrac{\partial G}{\partial q}q' =0
-\end{equation}
-Ora dobbiamo sfruttare un fatto molto importante, caratteristico delle geodetiche. Si può infatti dimostrare che, dato un generico parametro $\lambda$ per la curva $q(\lambda)$, allora :
-$$
-\sqrt{q'Gq'} = \dfrac{ds}{d\lambda} = const
-$$
-costante rispetto a $\lambda$ (cioè le curve geodetiche vengono percorse con una velocità parametrica costante). Allora posso tirare fuori questo termine dalla (\ref{eq321}) e ottenere:
-\begin{equation}\label{key}
+	\begin{equation}\label{key}
+		\Bigl(\dfrac{d}{dt}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\dot{q}G\dot{q}\Bigl) = 0
+	\end{equation}
+	\begin{equation}\label{eq123}
+		2\dfrac{d}{dt}G\dot{q}-\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+	\end{equation}
+	\begin{equation}\label{eq124}
+		\dfrac{d}{dt}G\dot{q}-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+	\end{equation}
+	Teniamo a mente questa relazione. Passiamo ora alla parte delle geodetiche. Il funzionale da minimizzare è quello di lunghezza, cioè
+	$$
+	\delta \int_{\lambda_A}^{\lambda_B}\sqrt{q'Gq'}d\lambda  = 0
+	$$
+	dove la curva è stata parametrizzata con $\lambda$ ed è tale da avere $q(\lambda_A) = q_A, q(\lambda_B) = q_B$. Impiegando le equazioni di Eulero per trovare l'estremale,
+	\begin{equation}\label{key}
+		\Bigl(\dfrac{d}{d\lambda}\dfrac{\partial}{\partial \dot{q}}-\dfrac{\partial}{\partial q}\Bigl)\Bigl(\sqrt{q'Gq'}\Bigl)
+	\end{equation}
+	\begin{equation}\label{eq321}
+		\dfrac{d}{d\lambda}\Bigl(\dfrac{1}{\sqrt{q'Gq'}}Gq'\Bigl)-\dfrac{1}{2\sqrt{q'Gq'}}q'\dfrac{\partial G}{\partial q}q' =0
+	\end{equation}
+	Ora dobbiamo sfruttare un fatto molto importante, caratteristico delle geodetiche. Si può infatti dimostrare che, dato un generico parametro $\lambda$ per la curva $q(\lambda)$, allora :
+	$$
+	\sqrt{q'Gq'} = \dfrac{ds}{d\lambda} = const
+	$$
+	costante rispetto a $\lambda$ (cioè le curve geodetiche vengono percorse con una velocità parametrica costante). Allora posso tirare fuori questo termine dalla (\ref{eq321}) e ottenere:
+	\begin{equation}\label{key}
 		\dfrac{1}{\sqrt{q'Gq'}}\dfrac{d}{d\lambda}\Bigl(Gq'\Bigl)-\dfrac{1}{2\sqrt{q'Gq'}}q'\dfrac{\partial G}{\partial q}q' =0
-\end{equation}
-\begin{equation}\label{key}\dfrac{d}{d\lambda}\Bigl(Gq'\Bigl)-\dfrac{1}{2}q'\dfrac{\partial G}{\partial q}q' =0
-\end{equation}
-Ora, a patto di scegliere come parametro proprio il tempo $t$, questa equazione diventa:
-\begin{equation}\label{key}\dfrac{d}{dt}\Bigl(G\dot{q}\Bigl)-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
-\end{equation}
-Formalmente uguale alla (\ref{eq124}). Allora, almeno finché il corpo è libero, \textbf{le curve fisiche tracciate nello spazio delle configurazioni coincidono con le geodetiche di questo spazio}. Possiamo dire, in un certo senso, che la dinamica è una specificazione della geometria, nel senso che si specifica l'esistenza di parametro privilegiato per descrivere le traiettorie, ossia il \textit{tempo}. Una curva geodetica, dunque, costituisce la traiettoria di un problema fisica e se sceglio di parametrizzarla col tempo $t$, allora la geodetica non solo è traiettoria, ma è anche la curva del moto.
+	\end{equation}
+	\begin{equation}\label{key}\dfrac{d}{d\lambda}\Bigl(Gq'\Bigl)-\dfrac{1}{2}q'\dfrac{\partial G}{\partial q}q' =0
+	\end{equation}
+	Ora, a patto di scegliere come parametro proprio il tempo $t$, questa equazione diventa:
+	\begin{equation}\label{key}\dfrac{d}{dt}\Bigl(G\dot{q}\Bigl)-\dfrac{1}{2}\dot{q}\dfrac{\partial G}{\partial q}\dot{q} =0
+	\end{equation}
+	Formalmente uguale alla (\ref{eq124}). Allora, almeno finché il corpo è libero, \textbf{le curve fisiche tracciate nello spazio delle configurazioni coincidono con le geodetiche di questo spazio}. Possiamo dire, in un certo senso, che la dinamica è una specificazione della geometria, nel senso che si specifica l'esistenza di parametro privilegiato per descrivere le traiettorie, ossia il \textit{tempo}. Una curva geodetica, dunque, costituisce la traiettoria di un problema fisica e se sceglio di parametrizzarla col tempo $t$, allora la geodetica non solo è traiettoria, ma è anche la curva del moto.
 	
 	
 	Almeno per problemi senza potenziali, il principio di minima azione (e quindi la fisica) è equivalente al principio delle geodesiche. Se, ad esempio, definissimo una nuova lagrangiana, suggerita direttamente dal lato geometrico che abbiamo appena scoperto,
@@ -6362,7 +6359,7 @@ Formalmente uguale alla (\ref{eq124}). Allora, almeno finché il corpo è libero
 	\begin{equation}\label{key}
 		\dfrac{d\gamma}{dt} = \sqrt{\dfrac{2}{m}(E-V(q))}
 	\end{equation}
-cioè imporre che la \textit{velocità parametrica} (la velocità con cui ci si muove sulla curva in base al generico parametro di descrizione) sia proprio la velocità fisica, che a sua volta esprimo come funzione del potenziale e dell'energia dell'orbita. Poiché questa esposta sopra è, di fatto, la legge di conservazione dell'energia, allora stiamo cercando quel parametro della curva $t$ tale per cui si conservi davvero la quantità $E$.
+	cioè imporre che la \textit{velocità parametrica} (la velocità con cui ci si muove sulla curva in base al generico parametro di descrizione) sia proprio la velocità fisica, che a sua volta esprimo come funzione del potenziale e dell'energia dell'orbita. Poiché questa esposta sopra è, di fatto, la legge di conservazione dell'energia, allora stiamo cercando quel parametro della curva $t$ tale per cui si conservi davvero la quantità $E$.
 	\subsection{Applicazione nel problema di Keplero}
 	Usiamo le coordinate polari $(r,\theta)$ per descrivere il moto di un corpo soggetto al potenziale di keplero. La metrica dello spazio delle configurazioni $\mathcal{M} = \{(r,\theta), r>0, 0 <\theta < 2\pi\}$ è data da:
 	$$
@@ -6376,59 +6373,59 @@ cioè imporre che la \textit{velocità parametrica} (la velocità con cui ci si 
 	\begin{equation}\label{key}
 		d\sigma =  \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta
 	\end{equation}
-e quindi devo minimizzare il funzionale:
-\begin{equation}\label{key}
-	\int_{\theta_1}^{\theta_2} \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
-\end{equation}
-\begin{equation}\label{key}
-	\int_{\theta_1}^{\theta_2} \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
-\end{equation}
-Procediamo come al solito, senza passare dalle equazioni di Eulero. Riconosco una lagrangiana:
-\begin{equation}\label{key}
-	\Lambda = \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}= \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)}
-\end{equation}
-che non dipende esplicitamente dal parametro $\theta$ e quindi abbiamo un integrale primo del moto, un'energia fittizia, data da:
-\begin{equation}\label{key}
-	\begin{aligned}
-	H = \dfrac{\partial\Lambda}{\partial r'}r'-\Lambda &= \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r'^2 -  \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)} = \\
-	&= - \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r^2
-	\end{aligned}
-\end{equation}
-cioà abbiamo ottenuto un integrale primo (da non confondere con l'energia $E$ che è l'energia fisica del problema di Keplero, questa $H$ è solo un artificio matematico) che chiamiamo $A$ per non confonderci, dunque:
-\begin{equation}\label{key}
-	\dfrac{1}{A^2} = \dfrac{r'^2+r^2}{E+\dfrac{k}{r}}r^{-4}
-\end{equation}
-Sostituendo $u = r^{-1}$, allora si avrà che:
-$$
-\dfrac{du}{d\theta}=u'=-\dfrac{1}{r^2}r'
-$$
-Allora $A$ diventa:
-\begin{equation}\label{key}
+	e quindi devo minimizzare il funzionale:
+	\begin{equation}\label{key}
+		\int_{\theta_1}^{\theta_2} \sqrt{\dfrac{2}{m}\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
+	\end{equation}
+	\begin{equation}\label{key}
+		\int_{\theta_1}^{\theta_2} \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}d\theta 
+	\end{equation}
+	Procediamo come al solito, senza passare dalle equazioni di Eulero. Riconosco una lagrangiana:
+	\begin{equation}\label{key}
+		\Lambda = \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(\Bigl(\dfrac{dr}{d\theta}\Bigl)^2 + r^2\Bigl)}= \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)}
+	\end{equation}
+	che non dipende esplicitamente dal parametro $\theta$ e quindi abbiamo un integrale primo del moto, un'energia fittizia, data da:
+	\begin{equation}\label{key}
+		\begin{aligned}
+			H = \dfrac{\partial\Lambda}{\partial r'}r'-\Lambda &= \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r'^2 -  \sqrt{\Bigl(E+\dfrac{k}{r}\Bigl)\Bigl(r'^2 + r^2\Bigl)} = \\
+			&= - \sqrt{\dfrac{E+\dfrac{k}{r}}{r'^2+r^2}}r^2
+		\end{aligned}
+	\end{equation}
+	cioà abbiamo ottenuto un integrale primo (da non confondere con l'energia $E$ che è l'energia fisica del problema di Keplero, questa $H$ è solo un artificio matematico) che chiamiamo $A$ per non confonderci, dunque:
+	\begin{equation}\label{key}
+		\dfrac{1}{A^2} = \dfrac{r'^2+r^2}{E+\dfrac{k}{r}}r^{-4}
+	\end{equation}
+	Sostituendo $u = r^{-1}$, allora si avrà che:
+	$$
+	\dfrac{du}{d\theta}=u'=-\dfrac{1}{r^2}r'
+	$$
+	Allora $A$ diventa:
+	\begin{equation}\label{key}
 		\dfrac{1}{A^2}  = \dfrac{u'^2 + u^2}{E+ku}
-\end{equation}
-Da questa è facile ricavare che:
-\begin{equation}\label{key}
-	\dfrac{1}{2}\Bigl(\dfrac{du}{d\theta}\Bigl)^2+\dfrac{1}{2}u^2-\dfrac{k}{A^2}u=\dfrac{E}{2A^2}
-\end{equation}
-che è proprio l'equazione che ci eravamo ricavati per le orbite kepleriane. 
-\subsection{Particella relativistica}
+	\end{equation}
+	Da questa è facile ricavare che:
+	\begin{equation}\label{key}
+		\dfrac{1}{2}\Bigl(\dfrac{du}{d\theta}\Bigl)^2+\dfrac{1}{2}u^2-\dfrac{k}{A^2}u=\dfrac{E}{2A^2}
+	\end{equation}
+	che è proprio l'equazione che ci eravamo ricavati per le orbite kepleriane. 
+	\subsection{Particella relativistica}
 	Tutta la trattazione esposta in precedenza è di pertinenza della meccanica classica. Chiaramente possiamo estendere i metodi della meccanica lagrangiana anche per particelle relativistiche. La differenza più vistosa rispetto al caso classico è che, ora, lo spazio delle configurazioni per una particella libera comprende anche la variabile tempo e ha dimensione $4$:
 	\begin{equation}\label{key}
 		\mathcal{M} = \mathbb{R}^4
 	\end{equation}
-In fisica relativistica, dunque, le posizioni sono sostituite dagli eventi.
+	In fisica relativistica, dunque, le posizioni sono sostituite dagli eventi.
 	È possibile passare da un sistema di riferimento $S$ ad un secondo sistema $S'$ operando con le trasformazioni di Lorentz. Nello spazio delle configurazioni (che è lo \textbf{spaziotempo}\footnote{Ricordiamo che la relatività speciale descrive la fisica munendosi di sistema spazio-temporali in cui le coordinate sono sia spaziale e temporali. In fisica classica, i sistemi di riferimento erano solo spaziali e il tempo era un parametro. Qui il tempo diventa parte della geometria dello spazio delle configurazioni. Le soluzioni fisiche vanno scritte nello spaziotempo.}), la metrica è quella minkowskiana\footnote{Per comodità prendiamo una sola dimensione spaziale}:
 	\begin{equation}\label{key}
 		ds^2 = c^2dt^2-dx^2
 	\end{equation}
-e questa metrica è invariante per trasformazione di Lorentz. Come costruiamo la Lagrangiana di un sistema fisico descritto da un osservatore $S$? Poiché richiediamo che la lagrangiana sia uno scalare, allora questa deve essere costruita solo usando invarianti relativistici. Ci fidiamo e scriviamo che:
-\begin{equation}\label{key}
-	\Lambda dt = -mcds
-\end{equation}
-Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi pare sia invariante.}. Esprimendo per bene $ds$, otteniamo infine che la lagrangiana di una particella libera relativistica è:
-\begin{equation}\label{key}
-	\Lambda(v)= -mc^2\sqrt{1-\dfrac{v^2}{c^2}}
-\end{equation}
+	e questa metrica è invariante per trasformazione di Lorentz. Come costruiamo la Lagrangiana di un sistema fisico descritto da un osservatore $S$? Poiché richiediamo che la lagrangiana sia uno scalare, allora questa deve essere costruita solo usando invarianti relativistici. Ci fidiamo e scriviamo che:
+	\begin{equation}\label{key}
+		\Lambda dt = -mcds
+	\end{equation}
+	Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi pare sia invariante.}. Esprimendo per bene $ds$, otteniamo infine che la lagrangiana di una particella libera relativistica è:
+	\begin{equation}\label{key}
+		\Lambda(v)= -mc^2\sqrt{1-\dfrac{v^2}{c^2}}
+	\end{equation}
 	\newpage
 	
 	\section{Formulazione Hamiltoniana}
@@ -6447,7 +6444,7 @@ Essendo infatti $m,c,ds$ invarianti relativistici\footnote{Ok ma $dt$ non mi par
 	\begin{equation}\label{key}
 		\dfrac{d}{dt} \dfrac{\partial \Lambda}{\partial \dot{q}_k} - \dfrac{\partial \Lambda}{\partial q_k} = 0
 	\end{equation}
-che posso riscrivere comodamente come
+	che posso riscrivere comodamente come
 	$$
 	\dot{p}_k = \dfrac{\partial \Lambda}{\partial q_k}
 	$$
@@ -6485,10 +6482,10 @@ che posso riscrivere comodamente come
 			&= \dot{q}_k dp_k -  \dot{p}_k dq_k - \dfrac{\partial \Lambda}{\partial t} 
 		\end{aligned}
 	\end{equation}
-dove è stato usato il fatto che:
-$$
-\dfrac{\partial \Lambda}{\partial q_k} = \dot{p}_k   \quad \quad \quad \quad \dfrac{\partial \Lambda}{\partial \dot{q}_k} = p_k
-$$
+	dove è stato usato il fatto che:
+	$$
+	\dfrac{\partial \Lambda}{\partial q_k} = \dot{p}_k   \quad \quad \quad \quad \dfrac{\partial \Lambda}{\partial \dot{q}_k} = p_k
+	$$
 	Confrontando le due espressioni, otteniamo le \textit{equazioni canoniche di Hamilton}, che costituiscono la versione hamiltoniana delle equazioni del moto:
 	\begin{equation}\
 		\begin{cases}
@@ -6496,7 +6493,7 @@ $$
 			
 			\dot{p}_k = -\dfrac{\partial \mathcal{H}}{\partial q_k}
 		\end{cases}
-	\label{EqHamilton}
+		\label{EqHamilton}
 	\end{equation}
 	e anche che, collateralmente,
 	\begin{equation}\label{key}
@@ -6573,346 +6570,346 @@ $$
 	\begin{equation}\label{key}
 		\{F,G\} = \dfrac{\partial F}{\partial q_k}\dfrac{\partial G}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial G}{\partial q_k}
 	\end{equation}
-Si tratta di un operatore bilineare e antisimmetrico, cioè:
-\begin{equation}\label{key}
-	\{F,aG+bH\} = a\{F,G\}+b\{F,H\}
-\end{equation}
-\begin{equation*}
-	\{F,G\} = -\{G,F\}
-\end{equation*}
-Per le parentesi di Poisson, valgono alcune identità interessanti, che mi limito a scrivere senza dimostrare:
-\begin{equation}
-	\{F,GH\} = H\{F,G\} + G\{F,H\}
-	\label{ParPoisson}
-\end{equation}
-$$
-\{F,\{G,H\}\} + \{G,\{H,F\}\}+\{H,\{F,G\}\} = 0
-$$
-Inoltre valgono le relazioni:
-\begin{equation}\label{key}
-	\{q_i,p_j\} = \delta_{ij} \quad \quad \{q_i,q_j\} = 	\{p_i,p_j\} = 0
-\end{equation}
-Le parentesi di Poisson sono simbolicamente molto comode perché ci permettono di rappresentare una derivata temporale in maniera comoda, cioè:
-\begin{equation}
-	\dfrac{d}{dt}F(q,p) = \{F,\mathcal{H}\}
-	\label{HamilNulla}
-\end{equation}
-con $\mathcal{H}$ hamiltoniana del sistema meccanico che vive nello spazio delle fasi. Infatti,
-\begin{equation}\label{key}
-	\begin{aligned}
-		\{F,\mathcal{H}\} &= \dfrac{\partial F}{\partial q_k}\dfrac{\partial \mathcal{H}}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial \mathcal{H}}{\partial q_k} = \dfrac{\partial F}{\partial q_k}\dot{q}_k+\dfrac{\partial F}{\partial p_k}\dot{p}_k = \\
-		&= \dfrac{\partial F}{\partial q_k}\dfrac{dq_k}{dt}+\dfrac{\partial F}{\partial p_k}\dfrac{dp_k}{dt} = \dfrac{d}{dt}F(q,p)
-	\end{aligned}
-\end{equation}
-Dunque possiamo riscrivere le equazioni di Hamilton in una forma ancora più compatta e, soprattutto, simmetrica:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{q}_k = \{q_k,\mathcal{H}\} \\
-		\dot{p}_k = \{p_k, \mathcal{H}\}
-	\end{cases}
-\end{equation}
-
-
-Le parentesi di Poisson permettono di semplificare spesso la notazione di alcune equazioni. Vediamo alcune  proprietà interessanti in meccanica hamiltoniana. Dalla (\ref{HamNulla}), notiamo che se $F=F(q,p)$ è una funzione sullo spazio delle fasi e $\mathcal{H}$ l'hamiltoniana del sistema, se vale:
-\begin{equation}\label{key}
-	\{F,\mathcal{H}\} = 0
-\end{equation}
-allora $F$ è un integrale primo del moto per il sistema $\mathcal{H}$. Ma anche viceversa: poiché $\{F,\mathcal{H}\} = -\{\mathcal{H},F\} = 0$, allora possiamo interpretare $F$ come hamiltoniana di un generico sistema (che tanto è definito sullo spazio delle fasi quindi non ha problemi di definizione) e $\mathcal{H}$ una funzione che funge da integrale primo del moto per il sistema $F$.
-
-Abbiamo anche altri fatti notevoli. Prendiamo infatti in considerazioni $L_x,L_y,L_z$, le proiezioni di $\vec{
-L}$ momento angolare lungo assi cartesiani. Allora è facile dimostrare che:
-\begin{equation}\label{key}
-	\{L_x,L_y\} = L_z 
-\end{equation}
-Da questo possiamo dimostrare che, se $L_x, L_y$ sono integrali primi per un sistema, allora anche $L_z$ lo è. Infatti, se faccio:
-\begin{equation}\label{key}
-	\{L_z, \mathcal{H}\} = \{\{L_x,L_y\},\mathcal{H}\} = -\{\mathcal{H},\{L_x,L_y\}\}
-\end{equation}
-e per la proprietà di sopra (\ref{ParPoisson}), questo equivale a:
-\begin{equation}\label{key}
-	\{\mathcal{H},\{L_x,L_y\}\} = \{L_x,\{L_y,\mathcal{H}\}\} + \{L_y,\{\mathcal{H},L_x\}\}
-\end{equation}
-Ora, poiché $L_x, L_y$ sono integrali primi del moto, allora la loro parentesi di Poisson con $\mathcal{H}$ è necessariamente nulla:
-$$
-\{L_x,\mathcal{H}\} = 0
-$$
-$$
-\{L_y,\mathcal{H}\} = 0
-$$
-Dunque
-\begin{equation}\label{key}
-	\{L_z, \mathcal{H}\} = \{L_x,0\} + \{L_y,0\} = 0
-\end{equation}
-ed è dimostrato che anche $L_z$ è integrale primo del moto.
-\subsection{Trasformazioni canoniche}
-Prendiamo un sistema hamiltoniano descritto dalle coordinate $q$ e dai relativi momenti coniugati $p$. Sia $\mathcal{H}$ la sua hamiltoniana. Proviamo a fare un cambio di variabili nello spazio delle fasi e, dunque, passare dalla coppia $(q,p)$ ad una coppia di variabili generica $(Q,P)$ con una trasformazione $T$:
-$$
-T(q,p) = (Q,P)
-$$
-Questa cosa è lecita? Per quanto $q$ e $p$ siano variabili indipendenti a priori, $p$ non è una variabile a caso, è un momento coniugato e, dato lo spazio delle configurazioni individuato dalle $q$, esso è ben determinato da:
-$$
-p_k = \dfrac{\partial \Lambda}{\partial \dot{q}_k}
-$$
-e con questa definizione, avevo garantita la struttura simplettica dello spazio delle fasi. Se decido di operare con un cambio di variabili nello spazio delle fasi generico (da $q,p$ a $Q,P$) chi mi dice che $P$ sia ancora interpretabile come un momento coniugato a $Q$ rispetto a qualche lagrangiana? Mi posso inventare un $P$ a caso, e allora tale variabile perderebbe la sua naturale interpretazione di momento coniugato. Questa particolare trasformazione nello spazio delle fasi, dunque, non è indolore, non è come cambiare le coordinate con cui descrivo lo spazio delle configurazioni di un sistema. Infatti, se mando $q$ in $Q$, allora avrei che il nuovo momento $P$ è già stabilito:
-$$
-P = \dfrac{\partial \Lambda}{\partial \dot{Q}}
-$$ 
-Se mi invento a caso un $P$, perché voglio descrivere lo spazio delle fasi con delle nuove coordinate, chi mi garantisce che $P$ sia ancora un momento coniugato in senso lagrangiano? Che poi solo se $p$ è un momento coniugato tutta la trattazione fatta in precedenza è preservata? Con un generico cambio di variabile $T$, avrei ancora garantita la struttura delle equazioni di Hamilton? Cioè, varrebbe ancora
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
-		\dot{P} =- \dfrac{\partial \mathcal{H}}{\partial Q}
-	\end{cases}
-\end{equation}
-Nel caso generico, chiaramente no. Però, sotto determinate condizioni, questa cosa è possibile. In questo senso, la meccanica hamiltoniana è molto più potente di quella lagrangiana. Posso infatti modificare (seguendo però certe regole) con molto più margine di libertà le coordinate dello spazio delle fasi. Posso trasformare insieme coordinate e momenti in maniera indipendente fra di loro (cosa non concessa nella visione lagrangiana) al punto che $p$ può perdere la sua interpretazione di momento (e nonostante tutto le cose funzionerebbero ancora). Vedremo che questa grande libertà, che però si paga con un certo prezzo, permette di ottenere risultati notevoli.
-
-
-Torniamo allora alla trasformazione $T$ e cerchiamo di isolare le sole trasformazioni che siano ragionevoli alla luce di quanto appena illustrato. Siccome le equazioni fondamentali della meccanica hamiltoniana le conosciamo, dobbiamo richiedere che la trasformazione $T$ preservi proprio la struttura delle equazioni di Hamilton (o, alternativamente, la geometria simplettica dello spazio delle fasi). Definiamo allora la \textbf{trasformazione canonica} $T$:
-$$
-T(q,p) = (Q,P)
-$$
-tale per cui, se valgono le equazioni di Hamilton per $(q,p)$, allora valgono anche le equazioni di Hamilton nelle nuove variabili $(Q,P)$:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
-		\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
-	\end{cases}
-\iff
-	\begin{cases}
-		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
-		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
-	\end{cases}
-\end{equation}
-con la stessa funzione di Hamilton, cioè $\mathcal{H}(q,p) = \mathcal{H}(q(Q,P),p(Q,P))$. Tale trasformazione preserva la struttura "bella" e simmetrica delle equazioni di Hamilton e ne conserva anche la funzione di Hamilton.\footnote{A dirla tutta, non è strettamente necessaria l'ultima richiesta, cioè che la hamiltoniana sia sempre la stessa a meno di un cambio di variabili. Vedremo dopo bene.} La nuova variabile $P$ può anche non essere un momento nel senso lagrangiano del termine (cioè derivata rispetto a $\dot{Q}$ della lagrangiana): in questo senso, ogni trasformazione delle coordinate nello spazio delle configurazioni ammette una relativa trasformazione canonica nello spazio delle fasi mentre il viceverse non è garantito (appunto, posso trovare trasformazioni canoniche in cui $P$ non è per forza un momento coniugato, mi basta che la sua definzione sia tale da preservare la forma delle equazioni di Hamilton).
-\subsubsection{Come è fatta una trasformazione canonica}
-Come possiamo immaginarci una trasformazione canonica nel concreto? Possiamo dimostrare che, date due funzioni $F,G$ definite nello spazio delle fasi, allora se $T(q,p)=(Q,P)$ è canonica deve valere che:
-$$
-\{F(q,p),G(q,p)\}_{q,p} = \{F(Q,P),G(Q,P)\}_{Q,P}
-$$
-cioè fare le parentesi di Poisson con le funzioni scritte in termini di $q,p$ o farle in termine di $Q,P$ è del tutto indifferente:
-\begin{equation}\label{key}
-	\dfrac{\partial F}{\partial q_k}\dfrac{\partial G}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial G}{\partial q_k} = \dfrac{\partial F}{\partial Q_k}\dfrac{\partial G}{\partial P_k}-\dfrac{\partial F}{\partial P_k}\dfrac{\partial G}{\partial Q_k}
-\end{equation}
-(perché? mi sono perso la dim). Con questo teorema, possiamo caratterizzare meglio una trasformazione canonica. Proponiamo un esempio: sia lo spazio delle fasi tutto $\mathbb{R}^2$ e le variabili $q,p$. Sia $T(q,p)=(Q,P)$ una trasformazione canonica. Noi sappiamo che:
-$$
-\{Q,P\}_{Q,P} = \dfrac{\partial Q}{\partial Q}\dfrac{\partial P}{\partial P} - \dfrac{\partial Q}{\partial P}\dfrac{\partial P}{\partial Q} = 1
-$$
-Per la proprietà vista sopra, dovrà valere anche che:
-$$
-1 = \{Q,P\}_{Q,P} = \{Q(q,p),P(q,p)\}_{q,p}
-$$
-cioè uguale alle stesse funzioni espresse in termine delle variabili $q,p$ derivate rispetto alle $q,p$. Dunque:
-\begin{equation}
-	\{Q(q,p),P(q,p)\}_{q,p} = \dfrac{\partial Q}{\partial q}\dfrac{\partial P}{\partial p}-\dfrac{\partial Q}{\partial p}\dfrac{\partial P}{\partial q}=1
-	\label{511}
-\end{equation}
-Ma, rappresentando lo jacobiano della trasformazione $T$ in forma matriciale:
-\begin{equation}\label{key}
-	J_{T} =
-	\begin{pmatrix}
-		\dfrac{\partial Q}{\partial q} & \dfrac{\partial Q}{\partial p} \\
-		\dfrac{\partial P}{\partial q} &
-		\dfrac{\partial P}{\partial p}
-	\end{pmatrix}
-\end{equation}
-Allora la condizione di (\ref{511}) diventa banalmente:
-\begin{equation}\label{key}
-	det(J_{T})=1
-\end{equation}
-e quindi, geometricamente, la trasformazione $T$ è tale da conservare le aree nello spazio delle fasi. In altre parole, \textbf{le trasformazioni canoniche nel piano delle fasi devono preservare le aree}.
-\subsection{Funzioni generatrici del I e II tipo}
-C'è un modo abbastanza comodo per individuare e caratterizzare ulteriormente le trasformazioni canoniche\footnote{Perché tutta 'sta pippa sulle trasformazioni canoniche? Ci arriviamo fra un po', il senso c'è.}. Abbiamo detto che le equazioni di Hamilton sono ricavabili geometricamente dalla 1-forma differenziale $\omega$:
-$$
-\omega = pdq-\mathcal{H}dt
-$$
-e le traiettorie fisiche nello spazio delle fasi saranno proprio le curve che estremizzano l'integrale curvilineo secondo questa forma differenziale. Abbiamo poi definito le trasformazioni canoniche. Dobbiamo, in questo caso, fare una piccola precisazione. Una generica trasformazione canonica $T(q,p) = (Q,P)$ è tale per cui, se $(q,p)$ soddisfano le equazioni di Hamilton per l'hamiltoniana $\mathcal{H}$, cioè:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
-		\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
-	\end{cases}
-\end{equation}
-allora anche nelle variabili $Q,P$ devo avere una struttura delle equazioni di Hamilton simile:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{Q} = \dfrac{\partial \mathcal{H}'}{\partial P} \\
-		\dot{P} = -\dfrac{\partial \mathcal{H}'}{\partial Q}
-	\end{cases}
-\end{equation}
-e non è strettamente richiesto che $\mathcal{H}' = \mathcal{H}$. Mi basta sapere che esiste una funzione generica $\mathcal{H}'$, che poi assume significato di hamiltoniana scritta nelle $Q,P$, che mi permette di riscrivere le equazioni di Hamilton per $Q,P$ nella forma simmetrica di sopra. Questo è la richiesta fondamentale per una trasformazione canonica: conservare la struttura, la forma delle equazioni di Hamilton. 
-
-Se poi la trasformazione $T$ è tale per cui $\mathcal{H}'(Q,P) = \mathcal{H}(q(Q,P),p(Q,P))$ allora diremo che la trasformazione è \textbf{completamente canonica} e le equazioni di Hamilton per $(Q,P)$ sono ancora più belle:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P}(Q,P) \\
-		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}(Q,P)
-	\end{cases}
-\end{equation}
-e quindi quelle che avevamo definito in precedenza sono, più propriamente, trasformazioni completamente canoniche\footnote{Non sono sicuro questa differenza sia stata fatta in classe, però mi sembra essenziale per capire il resto.}
-
-Torniamo alle funzioni generatrici. Abbiamo detto che le equazioni di Hamilton sono equivalenti alla 1-forma differenziale $\omega$. Cosa succede a tale forma differenziale se effettuo una trasformazione canonica? Cominciamo con le trasformazioni completamente canoniche, in cui $\mathcal{H}' = \mathcal{H}$. Nelle nuove variabili, la 1-forma differenziale sarà:
-$$
-\omega' = PdQ-\mathcal{H}'dt =  PdQ-\mathcal{H}dt
-$$
-Tuttavia noi sappiamo che dalla 1-forma differenziale possiamo risalire alla forma delle equazioni di Hamilton per $(Q,P)$\footnote{Cioè, in realtà abbiamo mostrato il contrario, che se le equazioni di Hamilton hanno la forma che hanno, allora la geometria dello spazio delle fasi è determinata da quella specifica forma differenziale. È chiaro però che il ragionamento logico è invertibile}:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
-		\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
-	\end{cases}
-\end{equation}
-che, siccome la trasformazione è canonica, è la stessa forma delle equazioni di Hamilton nelle variabili $(q,p)$, che a sua volte produce la 1-forma differenziale $\omega$. Perciò ci verrebbe da dire che:
-$$
-\omega = \omega'
-$$
-In realtà questo non è necessariamente vero. Vediamo infatti che succede se a $\omega$ aggiungo un differenziale esatto di una generica funzione $F(q,p)$:
-$$
-\omega + dF
-$$
-Quando integro questa forma addizionata lungo una curva, il differenziale $dF$, integrato mi produce un numero che, tuttavia, non dipende dal percorso che scelgo (è una proprietà dei differenziali esatti, sono path-independent). Siccome la forma differenziale $\omega+dF$ va integrata e poi ne ricerco il minimo su di una curva i cui estremi sono fissati, il contributo di $dF$ è trascurabile perché costante per tutte le curve che connettono i medesimi punti nello spazio delle fasi. Quindi aggiungere un termine del tipo $dF$ non modifica la forma delle equazioni di Hamilton che produrrebbe una forma differenziale del tipo $\omega + dF$. Allora, ritornando al caso delle trasformazioni canoniche, la relazione che cercavamo è più correttamente:
-\begin{equation}
-	\omega = \omega' + dF
-	\label{Diffre}
-\end{equation}
-dove $F$ è una qualsiasi funzione definita nello spazio delle fasi. La (\ref{Diffre}) ci dice che, se voglio che le 1-forme differenziali $\omega$ (creata dai $q,p$) e $\omega'$ (creata dai $Q,P$) inducano delle equazioni che siano uguali nella forma (le equazioni di Hamilton), allora la relazione che intercorre fra di loro è proprio quella. Esplicitando le 1-forme differenziali (per trasformazioni completamente canoniche),
-\begin{equation*}\label{key}
-	pdq-\mathcal{H}dt = PdQ-\mathcal{H}dt + dF
-\end{equation*}
-cioè
-\begin{equation}
-	dF = pdq - PdQ
-	\label{dF}
-\end{equation}
-Abbiamo dunque scoperte che, se vogliamo che la trasformazione $T$ sia completamente canonica, deve esistere una funzione $F$ che goda di questa proprietà. Se richiediamo che $F$ sia funzione di $q,Q$ allora il suo differenziale è, per definizione:
-$$
-dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ
-$$
-confrontando con la (\ref{dF}), dovremo avere che:
-\begin{equation}
-	\begin{cases}
-		\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
-		\dfrac{\partial F}{\partial Q}(q,Q) = -P
-	\end{cases}
-\label{sistemaHam}
-\end{equation}
-Ricapitolando, se vogliamo che $T$ sia una trasformazione completamente canonica, allora deve esistere una funzione $F(q,Q)$ (detta \textit{generatrice del primo tipo}) che goda delle proprietà di (\ref{sistemaHam}). La funzione $F$ è detta generatrice perché permette di \textit{generare} implicitamente la trasformazione mediante le equazioni di (\ref{sistemaHam}).
-\subsubsection{Generatrici del secondo tipo}
-Esiste un modo diverso per generare implicitamente una trasformazione canonica. Riprendiamo l'equazione che sancisce l'equivalenze di due 1-forme differenziali per una trasformazione completamente canonica:
-$$
-\omega = \omega'+dF
-$$
-$$
-pdq = PdQ + dF
-$$
-Ora posso riscrivere:
-$$
-PdQ = d(PQ)-QdP
-$$
-dunque ho:
-$$
-pdq = d(PQ)-QdP +dF
-$$
-$$
-pdq = d(F+QP)-QdP = dG - QdP
-$$
-Avendo definito la funzione $G=F+QP$. Per questa funzione, vale:
-$$
-dG = pdq + QdP
-$$
-e quindi perché il differenziale sia esatto, dovrà essere solo funzione di $(q,P)$ e dovrà avere le derivate parziali:
-\begin{equation}
-	\begin{cases}
-		\dfrac{\partial G}{\partial q} = p \\[6pt]
-		\dfrac{\partial G}{\partial P} = Q
-	\end{cases}
-\label{325}
-\end{equation}
-in questo caso $G$ è funzione solo di $q,P$ mentre la funzione $F$ generatrice del primo tipo era funzione di $q,Q$. In analogia col caso precedente, una funzione $G=G(q,P)$ siffatta si dice \textbf{generatrice del secondo tipo}.
-
-Facciamo subito un esempio. Prendiamo la funzione generatrice del secondo tipo definita così:
-$$
-G(q,P) = qP
-$$
-a che trasformazione completamente canonica corrisponde? Lo possiamo scoprire a partire dalle equazioni che caratterizzano le generatrici del secondo tipo, cioè il sistema (\ref{325}):
-\begin{equation}\label{key}
-	\begin{cases}
-		\dfrac{\partial G}{\partial q} = p \\[6pt]
-		\dfrac{\partial G}{\partial P} = Q
-	\end{cases}
-\iff 
-	\begin{cases}
-	\dfrac{\partial }{\partial q}(qP) = p \\[6pt]
-	\dfrac{\partial }{\partial P}(qP) = Q
-\end{cases}
-\end{equation}
-cioè
-\begin{equation}\label{key}
-	\begin{cases}
-	P = p \\[6pt]
-	q = Q
-\end{cases}
-\end{equation}
-ma queste sono le equazioni che contraddistinguono la trasformazione identità, $I(q,p) = (q,p)$. Dunque la funzione del secondo tipo $G(q,P) = qP$ genera la trasformazione completamente canonica identità.
-\subsection{Equazioni di Hamilton-Jacobi}
-E se la trasformazione non fosse completamente canonica? In tal caso, l'equivalenza delle forme differenziali diventerebbe:
-\begin{equation}\label{key}
-	pdq-\mathcal{H}dt = PdQ-\mathcal{H}'+dF
-\end{equation}
-e qui $\mathcal{H} \mbox{ e } \mathcal{H}'$ sono due funzioni diverse (non basta sostituire le nuove coordinate). Operando come sopra, abbiamo che:
-$$
-dF = pdq + PdQ + (\mathcal{H}'-\mathcal{H})dt
-$$
-e quindi, se vogliamo che $dF$ sia un differenziale esatto, stavolta ci serve che la funzione $F$, la generatrice del primo tipo, dipenda anche dal tempo:
-$$
-dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ + \dfrac{\partial F}{\partial t}dt
-$$
-In altre parole, la differenza fra generatrici del primo tipo per trasformazioni canoniche e completamente canoniche è che, nel secondo caso, la funzione $F$ non dipende dal tempo. Confrontando le due formule per il differenziale $dF$, abbiamo infine:
-\begin{equation}
-	\begin{cases}
-		\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
-		\dfrac{\partial F}{\partial Q}(q,Q) = -P
-	\end{cases}
-\end{equation}
-proprio come in precedenza ma anche che:
-\begin{equation}
-\mathcal{H}' = \mathcal{H}  + \dfrac{\partial F}{\partial t}
-\end{equation}
-Cioè se scelgo di fare un cambio di variabili e rappresentare lo spazio delle fasi con $P,Q$ ho ancora la struttura delle equazioni fondamentali della meccanica (quelle di Hamilton e questo succede perché la trasformazione è canonica) ma devo cambiare la hamiltoniana, come a descrivere un nuovo sistema dinamico (legato al primo tramite la trasformazione canonica stessa). La nuova Hamiltoniana è legata alla vecchia in base alla relazione di sopra.
-
-Ora un passo fondamentale. Sono riuscito a trovare un modo per trasformare le hamiltoniane di sistemi fisici operando con delle trasformazioni nello spazio delle fasi. E se riuscissi a trovare una trasformazione in un set di nuove variabili $(Q,P)$ con generatrice $F$ tale per cui:
-\begin{equation}\label{key}
-	\mathcal{H}' = 0
-\end{equation}
-questo sarebbe tanta roba. Infatti, visto che la trasformazione è canonica, posso invocare le equazioni di Hamilton e ottenere:
-\begin{equation}\label{key}
-	\begin{cases}
-		\dot{Q} = 0 \\
-		\dot{P} =0
-	\end{cases}
-\end{equation}
-cioè $Q = Q(q,p)$ e $P=P(q,p)$ sono due integrali primi del moto per il sistema iniziale $\mathcal{H}$. Questa fu l'idea di Hamilton, il punto pivotale e più alto di tutta la meccanica razionale.
-
-\begin{tcolorbox}
-	Dato un sistema hamiltoniano nelle variabili coordinate-momento $q,p$ con hamiltoniana $\mathcal{H}$, se sono in grado di trovare una trasformazione canoniche $T(q,p) = (Q,P)$, dove $Q,P$ sono variabili indipendenti e non necessariamente coppia coordinata-momenti, generata dalla funzione $F=F(q,Q,t)$ tale per cui:
+	Si tratta di un operatore bilineare e antisimmetrico, cioè:
 	\begin{equation}\label{key}
-		\mathcal{H}' = \mathcal{H}+\dfrac{\partial F}{\partial t} = 0
+		\{F,aG+bH\} = a\{F,G\}+b\{F,H\}
 	\end{equation}
-allora ho individuato immediatamente degli integrali primi del moto per il sistema $\mathcal{H}$, ossia $Q(q,p), P(q,P)$
-\end{tcolorbox}
-La questione dell'individuazione degli integrali primi del moto, allora, si risolve nella questione dell'individuazione di una adeguata trasformazione canonica. E come trovo questa trasformazione? Dovendo essere:
-\begin{equation}\label{key}
-	\mathcal{H}(q,p,t)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
-\end{equation}
-Ma da quanto abbiamo scoperto per le generatrici del primo tipo,
-\begin{equation}\label{key}
-	\dfrac{\partial F}{\partial q} = p
-\end{equation}
-dunque otteniamo questa equazione, detta \textbf{equazione di Hamilton-Jacobi}:
-\begin{equation}\label{key}
-	\mathcal{H}\Bigl(q,\dfrac{\partial F}{\partial q},t\Bigl)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
-\end{equation}
-che è un'equazione differenziale nella funzione $F(q,Q,t)$ a tutti gli effetti. Una volta risolta questa equazione differenziale, ho trovato la generatrice $F$ e, quindi, gli integrali primi del moto. \textit{L'equazione di Hamilton-Jacobi è dunque il metodo tanto cercato per individuare gli integrali primi del moto di un sistema meccanico}. Questa equazione differenziale è alle derivate parziali e non lineare, dunque molto molto complicata da risolvere. Però, una volta risolta e se risolvibile, permette di comprendere fino in fondo un problema meccanico.
-\subsection{Variabili azione-angolo}
+	\begin{equation*}
+		\{F,G\} = -\{G,F\}
+	\end{equation*}
+	Per le parentesi di Poisson, valgono alcune identità interessanti, che mi limito a scrivere senza dimostrare:
+	\begin{equation}
+		\{F,GH\} = H\{F,G\} + G\{F,H\}
+		\label{ParPoisson}
+	\end{equation}
+	$$
+	\{F,\{G,H\}\} + \{G,\{H,F\}\}+\{H,\{F,G\}\} = 0
+	$$
+	Inoltre valgono le relazioni:
+	\begin{equation}\label{key}
+		\{q_i,p_j\} = \delta_{ij} \quad \quad \{q_i,q_j\} = 	\{p_i,p_j\} = 0
+	\end{equation}
+	Le parentesi di Poisson sono simbolicamente molto comode perché ci permettono di rappresentare una derivata temporale diversamente, cioè:
+	\begin{equation}
+		\dfrac{d}{dt}F(q,p) = \{F,\mathcal{H}\}
+		\label{HamilNulla}
+	\end{equation}
+	con $\mathcal{H}$ hamiltoniana del sistema meccanico che vive nello spazio delle fasi. Infatti,
+	\begin{equation}\label{key}
+		\begin{aligned}
+			\{F,\mathcal{H}\} &= \dfrac{\partial F}{\partial q_k}\dfrac{\partial \mathcal{H}}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial \mathcal{H}}{\partial q_k} = \dfrac{\partial F}{\partial q_k}\dot{q}_k+\dfrac{\partial F}{\partial p_k}\dot{p}_k = \\
+			&= \dfrac{\partial F}{\partial q_k}\dfrac{dq_k}{dt}+\dfrac{\partial F}{\partial p_k}\dfrac{dp_k}{dt} = \dfrac{d}{dt}F(q,p)
+		\end{aligned}
+	\end{equation}
+	Dunque possiamo riscrivere le equazioni di Hamilton in una forma ancora più compatta e, soprattutto, simmetrica:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{q}_k = \{q_k,\mathcal{H}\} \\
+			\dot{p}_k = \{p_k, \mathcal{H}\}
+		\end{cases}
+	\end{equation}
+	
+	
+	Le parentesi di Poisson permettono di semplificare spesso la notazione di alcune equazioni. Vediamo alcune  proprietà interessanti in meccanica hamiltoniana. Dalla (\ref{HamNulla}), notiamo che se $F=F(q,p)$ è una funzione sullo spazio delle fasi e $\mathcal{H}$ l'hamiltoniana del sistema, se vale:
+	\begin{equation}\label{key}
+		\{F,\mathcal{H}\} = 0
+	\end{equation}
+	allora $F$ è un integrale primo del moto per il sistema $\mathcal{H}$. Ma anche viceversa: poiché $\{F,\mathcal{H}\} = -\{\mathcal{H},F\} = 0$, allora possiamo interpretare $F$ come hamiltoniana di un generico sistema (che tanto è definito sullo spazio delle fasi quindi non ha problemi di definizione) e $\mathcal{H}$ una funzione che funge da integrale primo del moto per il sistema $F$.
+	
+	Abbiamo anche altri fatti notevoli. Prendiamo infatti in considerazioni $L_x,L_y,L_z$, le proiezioni di $\vec{
+		L}$ momento angolare lungo assi cartesiani. Allora è facile dimostrare che:
+	\begin{equation}\label{key}
+		\{L_x,L_y\} = L_z 
+	\end{equation}
+	Da questo possiamo dimostrare che, se $L_x, L_y$ sono integrali primi per un sistema, allora anche $L_z$ lo è. Infatti, se faccio:
+	\begin{equation}\label{key}
+		\{L_z, \mathcal{H}\} = \{\{L_x,L_y\},\mathcal{H}\} = -\{\mathcal{H},\{L_x,L_y\}\}
+	\end{equation}
+	e per la proprietà di sopra (\ref{ParPoisson}), questo equivale a:
+	\begin{equation}\label{key}
+		\{\mathcal{H},\{L_x,L_y\}\} = \{L_x,\{L_y,\mathcal{H}\}\} + \{L_y,\{\mathcal{H},L_x\}\}
+	\end{equation}
+	Ora, poiché $L_x, L_y$ sono integrali primi del moto, allora la loro parentesi di Poisson con $\mathcal{H}$ è necessariamente nulla:
+	$$
+	\{L_x,\mathcal{H}\} = 0
+	$$
+	$$
+	\{L_y,\mathcal{H}\} = 0
+	$$
+	Dunque
+	\begin{equation}\label{key}
+		\{L_z, \mathcal{H}\} = \{L_x,0\} + \{L_y,0\} = 0
+	\end{equation}
+	ed è dimostrato che anche $L_z$ è integrale primo del moto.
+	\subsection{Trasformazioni canoniche}
+	Prendiamo un sistema hamiltoniano descritto dalle coordinate $q$ e dai relativi momenti coniugati $p$. Sia $\mathcal{H}$ la sua hamiltoniana. Proviamo a fare un cambio di variabili nello spazio delle fasi e, dunque, passare dalla coppia $(q,p)$ ad una coppia di variabili generica $(Q,P)$ con una trasformazione $T$:
+	$$
+	T(q,p) = (Q,P)
+	$$
+	Questa cosa è lecita? Per quanto $q$ e $p$ siano variabili indipendenti a priori, $p$ non è una variabile a caso, è un momento coniugato e, dato lo spazio delle configurazioni individuato dalle $q$, esso è ben determinato da:
+	$$
+	p_k = \dfrac{\partial \Lambda}{\partial \dot{q}_k}
+	$$
+	e con questa definizione, avevo garantita la struttura simplettica dello spazio delle fasi. Se decido di operare con un cambio di variabili nello spazio delle fasi generico (da $q,p$ a $Q,P$) chi mi dice che $P$ sia ancora interpretabile come un momento coniugato a $Q$ rispetto a qualche lagrangiana? Mi posso inventare un $P$ a caso, e allora tale variabile perderebbe la sua naturale interpretazione di momento coniugato. Questa particolare trasformazione nello spazio delle fasi, dunque, non è indolore, non è come cambiare le coordinate con cui descrivo lo spazio delle configurazioni di un sistema. Infatti, se mando $q$ in $Q$, allora avrei che il nuovo momento $P$ è già stabilito:
+	$$
+	P = \dfrac{\partial \Lambda}{\partial \dot{Q}}
+	$$ 
+	Se mi invento a caso un $P$, perché voglio descrivere lo spazio delle fasi con delle nuove coordinate, chi mi garantisce che $P$ sia ancora un momento coniugato in senso lagrangiano? Che poi solo se $p$ è un momento coniugato tutta la trattazione fatta in precedenza è preservata? Con un generico cambio di variabile $T$, avrei ancora garantita la struttura delle equazioni di Hamilton? Cioè, varrebbe ancora
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+			\dot{P} =- \dfrac{\partial \mathcal{H}}{\partial Q}
+		\end{cases}
+	\end{equation}
+	Nel caso generico, chiaramente no. Però, sotto determinate condizioni, questa cosa è possibile. In questo senso, la meccanica hamiltoniana è molto più potente di quella lagrangiana. Posso infatti modificare (seguendo però certe regole) con molto più margine di libertà le coordinate dello spazio delle fasi. Posso trasformare insieme coordinate e momenti in maniera indipendente fra di loro (cosa non concessa nella visione lagrangiana) al punto che $p$ può perdere la sua interpretazione di momento (e nonostante tutto le cose funzionerebbero ancora). Vedremo che questa grande libertà, che però si paga con un certo prezzo, permette di ottenere risultati notevoli.
+	
+	
+	Torniamo allora alla trasformazione $T$ e cerchiamo di isolare le sole trasformazioni che siano ragionevoli alla luce di quanto appena illustrato. Siccome le equazioni fondamentali della meccanica hamiltoniana le conosciamo, dobbiamo richiedere che la trasformazione $T$ preservi proprio la struttura delle equazioni di Hamilton (o, alternativamente, la geometria simplettica dello spazio delle fasi). Definiamo allora la \textbf{trasformazione canonica} $T$:
+	$$
+	T(q,p) = (Q,P)
+	$$
+	tale per cui, se valgono le equazioni di Hamilton per $(q,p)$, allora valgono anche le equazioni di Hamilton nelle nuove variabili $(Q,P)$:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
+			\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
+		\end{cases}
+		\iff
+		\begin{cases}
+			\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+			\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
+		\end{cases}
+	\end{equation}
+	con la stessa funzione di Hamilton, cioè $\mathcal{H}(q,p) = \mathcal{H}(q(Q,P),p(Q,P))$. Tale trasformazione preserva la struttura "bella" e simmetrica delle equazioni di Hamilton e ne conserva anche la funzione di Hamilton.\footnote{A dirla tutta, non è strettamente necessaria l'ultima richiesta, cioè che la hamiltoniana sia sempre la stessa a meno di un cambio di variabili. Vedremo dopo bene.} La nuova variabile $P$ può anche non essere un momento nel senso lagrangiano del termine (cioè derivata rispetto a $\dot{Q}$ della lagrangiana): in questo senso, ogni trasformazione delle coordinate nello spazio delle configurazioni ammette una relativa trasformazione canonica nello spazio delle fasi mentre il viceverse non è garantito (appunto, posso trovare trasformazioni canoniche in cui $P$ non è per forza un momento coniugato, mi basta che la sua definzione sia tale da preservare la forma delle equazioni di Hamilton).
+	\subsubsection{Come è fatta una trasformazione canonica}
+	Come possiamo immaginarci una trasformazione canonica nel concreto? Possiamo dimostrare che, date due funzioni $F,G$ definite nello spazio delle fasi, allora se $T(q,p)=(Q,P)$ è canonica deve valere che:
+	$$
+	\{F(q,p),G(q,p)\}_{q,p} = \{F(Q,P),G(Q,P)\}_{Q,P}
+	$$
+	cioè fare le parentesi di Poisson con le funzioni scritte in termini di $q,p$ o farle in termine di $Q,P$ è del tutto indifferente:
+	\begin{equation}\label{key}
+		\dfrac{\partial F}{\partial q_k}\dfrac{\partial G}{\partial p_k}-\dfrac{\partial F}{\partial p_k}\dfrac{\partial G}{\partial q_k} = \dfrac{\partial F}{\partial Q_k}\dfrac{\partial G}{\partial P_k}-\dfrac{\partial F}{\partial P_k}\dfrac{\partial G}{\partial Q_k}
+	\end{equation}
+	(perché? mi sono perso la dim). Con questo teorema, possiamo caratterizzare meglio una trasformazione canonica. Proponiamo un esempio: sia lo spazio delle fasi tutto $\mathbb{R}^2$ e le variabili $q,p$. Sia $T(q,p)=(Q,P)$ una trasformazione canonica. Noi sappiamo che:
+	$$
+	\{Q,P\}_{Q,P} = \dfrac{\partial Q}{\partial Q}\dfrac{\partial P}{\partial P} - \dfrac{\partial Q}{\partial P}\dfrac{\partial P}{\partial Q} = 1
+	$$
+	Per la proprietà vista sopra, dovrà valere anche che:
+	$$
+	1 = \{Q,P\}_{Q,P} = \{Q(q,p),P(q,p)\}_{q,p}
+	$$
+	cioè uguale alle stesse funzioni espresse in termine delle variabili $q,p$ derivate rispetto alle $q,p$. Dunque:
+	\begin{equation}
+		\{Q(q,p),P(q,p)\}_{q,p} = \dfrac{\partial Q}{\partial q}\dfrac{\partial P}{\partial p}-\dfrac{\partial Q}{\partial p}\dfrac{\partial P}{\partial q}=1
+		\label{511}
+	\end{equation}
+	Ma, rappresentando lo jacobiano della trasformazione $T$ in forma matriciale:
+	\begin{equation}\label{key}
+		J_{T} =
+		\begin{pmatrix}
+			\dfrac{\partial Q}{\partial q} & \dfrac{\partial Q}{\partial p} \\
+			\dfrac{\partial P}{\partial q} &
+			\dfrac{\partial P}{\partial p}
+		\end{pmatrix}
+	\end{equation}
+	Allora la condizione di (\ref{511}) diventa banalmente:
+	\begin{equation}\label{key}
+		det(J_{T})=1
+	\end{equation}
+	e quindi, geometricamente, la trasformazione $T$ è tale da conservare le aree nello spazio delle fasi. In altre parole, \textbf{le trasformazioni canoniche nel piano delle fasi devono preservare le aree}.
+	\subsection{Funzioni generatrici del I e II tipo}
+	C'è un modo abbastanza comodo per individuare e caratterizzare ulteriormente le trasformazioni canoniche\footnote{Perché tutta 'sta pippa sulle trasformazioni canoniche? Ci arriviamo fra un po', il senso c'è.}. Abbiamo detto che le equazioni di Hamilton sono ricavabili geometricamente dalla 1-forma differenziale $\omega$:
+	$$
+	\omega = pdq-\mathcal{H}dt
+	$$
+	e le traiettorie fisiche nello spazio delle fasi saranno proprio le curve che estremizzano l'integrale curvilineo secondo questa forma differenziale. Abbiamo poi definito le trasformazioni canoniche. Dobbiamo, in questo caso, fare una piccola precisazione. Una generica trasformazione canonica $T(q,p) = (Q,P)$ è tale per cui, se $(q,p)$ soddisfano le equazioni di Hamilton per l'hamiltoniana $\mathcal{H}$, cioè:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{q} = \dfrac{\partial \mathcal{H}}{\partial p} \\
+			\dot{p} = -\dfrac{\partial \mathcal{H}}{\partial q}
+		\end{cases}
+	\end{equation}
+	allora anche nelle variabili $Q,P$ devo avere una struttura delle equazioni di Hamilton simile:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{Q} = \dfrac{\partial \mathcal{H}'}{\partial P} \\
+			\dot{P} = -\dfrac{\partial \mathcal{H}'}{\partial Q}
+		\end{cases}
+	\end{equation}
+	e non è strettamente richiesto che $\mathcal{H}' = \mathcal{H}$. Mi basta sapere che esiste una funzione generica $\mathcal{H}'$, che poi assume significato di hamiltoniana scritta nelle $Q,P$, che mi permette di riscrivere le equazioni di Hamilton per $Q,P$ nella forma simmetrica di sopra. Questo è la richiesta fondamentale per una trasformazione canonica: conservare la struttura, la forma delle equazioni di Hamilton. 
+	
+	Se poi la trasformazione $T$ è tale per cui $\mathcal{H}'(Q,P) = \mathcal{H}(q(Q,P),p(Q,P))$ allora diremo che la trasformazione è \textbf{completamente canonica} e le equazioni di Hamilton per $(Q,P)$ sono ancora più belle:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P}(Q,P) \\
+			\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}(Q,P)
+		\end{cases}
+	\end{equation}
+	e quindi quelle che avevamo definito in precedenza sono, più propriamente, trasformazioni completamente canoniche\footnote{Non sono sicuro questa differenza sia stata fatta in classe, però mi sembra essenziale per capire il resto.}
+	
+	Torniamo alle funzioni generatrici. Abbiamo detto che le equazioni di Hamilton sono equivalenti alla 1-forma differenziale $\omega$. Cosa succede a tale forma differenziale se effettuo una trasformazione canonica? Cominciamo con le trasformazioni completamente canoniche, in cui $\mathcal{H}' = \mathcal{H}$. Nelle nuove variabili, la 1-forma differenziale sarà:
+	$$
+	\omega' = PdQ-\mathcal{H}'dt =  PdQ-\mathcal{H}dt
+	$$
+	Tuttavia noi sappiamo che dalla 1-forma differenziale possiamo risalire alla forma delle equazioni di Hamilton per $(Q,P)$\footnote{Cioè, in realtà abbiamo mostrato il contrario, che se le equazioni di Hamilton hanno la forma che hanno, allora la geometria dello spazio delle fasi è determinata da quella specifica forma differenziale. È chiaro però che il ragionamento logico è invertibile}:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{Q} = \dfrac{\partial \mathcal{H}}{\partial P} \\
+			\dot{P} = -\dfrac{\partial \mathcal{H}}{\partial Q}
+		\end{cases}
+	\end{equation}
+	che, siccome la trasformazione è canonica, è la stessa forma delle equazioni di Hamilton nelle variabili $(q,p)$, che a sua volte produce la 1-forma differenziale $\omega$. Perciò ci verrebbe da dire che:
+	$$
+	\omega = \omega'
+	$$
+	In realtà questo non è necessariamente vero. Vediamo infatti che succede se a $\omega$ aggiungo un differenziale esatto di una generica funzione $F(q,p)$:
+	$$
+	\omega + dF
+	$$
+	Quando integro questa forma addizionata lungo una curva, il differenziale $dF$, integrato mi produce un numero che, tuttavia, non dipende dal percorso che scelgo (è una proprietà dei differenziali esatti, sono path-independent). Siccome la forma differenziale $\omega+dF$ va integrata e poi ne ricerco il minimo su di una curva i cui estremi sono fissati, il contributo di $dF$ è trascurabile perché costante per tutte le curve che connettono i medesimi punti nello spazio delle fasi. Quindi aggiungere un termine del tipo $dF$ non modifica la forma delle equazioni di Hamilton che produrrebbe una forma differenziale del tipo $\omega + dF$. Allora, ritornando al caso delle trasformazioni canoniche, la relazione che cercavamo è più correttamente:
+	\begin{equation}
+		\omega = \omega' + dF
+		\label{Diffre}
+	\end{equation}
+	dove $F$ è una qualsiasi funzione definita nello spazio delle fasi. La (\ref{Diffre}) ci dice che, se voglio che le 1-forme differenziali $\omega$ (creata dai $q,p$) e $\omega'$ (creata dai $Q,P$) inducano delle equazioni che siano uguali nella forma (le equazioni di Hamilton), allora la relazione che intercorre fra di loro è proprio quella. Esplicitando le 1-forme differenziali (per trasformazioni completamente canoniche),
+	\begin{equation*}\label{key}
+		pdq-\mathcal{H}dt = PdQ-\mathcal{H}dt + dF
+	\end{equation*}
+	cioè
+	\begin{equation}
+		dF = pdq - PdQ
+		\label{dF}
+	\end{equation}
+	Abbiamo dunque scoperte che, se vogliamo che la trasformazione $T$ sia completamente canonica, deve esistere una funzione $F$ che goda di questa proprietà. Se richiediamo che $F$ sia funzione di $q,Q$ allora il suo differenziale è, per definizione:
+	$$
+	dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ
+	$$
+	confrontando con la (\ref{dF}), dovremo avere che:
+	\begin{equation}
+		\begin{cases}
+			\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
+			\dfrac{\partial F}{\partial Q}(q,Q) = -P
+		\end{cases}
+		\label{sistemaHam}
+	\end{equation}
+	Ricapitolando, se vogliamo che $T$ sia una trasformazione completamente canonica, allora deve esistere una funzione $F(q,Q)$ (detta \textit{generatrice del primo tipo}) che goda delle proprietà di (\ref{sistemaHam}). La funzione $F$ è detta generatrice perché permette di \textit{generare} implicitamente la trasformazione mediante le equazioni di (\ref{sistemaHam}).
+	\subsubsection{Generatrici del secondo tipo}
+	Esiste un modo diverso per generare implicitamente una trasformazione canonica. Riprendiamo l'equazione che sancisce l'equivalenze di due 1-forme differenziali per una trasformazione completamente canonica:
+	$$
+	\omega = \omega'+dF
+	$$
+	$$
+	pdq = PdQ + dF
+	$$
+	Ora posso riscrivere:
+	$$
+	PdQ = d(PQ)-QdP
+	$$
+	dunque ho:
+	$$
+	pdq = d(PQ)-QdP +dF
+	$$
+	$$
+	pdq = d(F+QP)-QdP = dG - QdP
+	$$
+	Avendo definito la funzione $G=F+QP$. Per questa funzione, vale:
+	$$
+	dG = pdq + QdP
+	$$
+	e quindi perché il differenziale sia esatto, dovrà essere solo funzione di $(q,P)$ e dovrà avere le derivate parziali:
+	\begin{equation}
+		\begin{cases}
+			\dfrac{\partial G}{\partial q} = p \\[6pt]
+			\dfrac{\partial G}{\partial P} = Q
+		\end{cases}
+		\label{325}
+	\end{equation}
+	in questo caso $G$ è funzione solo di $q,P$ mentre la funzione $F$ generatrice del primo tipo era funzione di $q,Q$. In analogia col caso precedente, una funzione $G=G(q,P)$ siffatta si dice \textbf{generatrice del secondo tipo}.
+	
+	Facciamo subito un esempio. Prendiamo la funzione generatrice del secondo tipo definita così:
+	$$
+	G(q,P) = qP
+	$$
+	a che trasformazione completamente canonica corrisponde? Lo possiamo scoprire a partire dalle equazioni che caratterizzano le generatrici del secondo tipo, cioè il sistema (\ref{325}):
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dfrac{\partial G}{\partial q} = p \\[6pt]
+			\dfrac{\partial G}{\partial P} = Q
+		\end{cases}
+		\iff 
+		\begin{cases}
+			\dfrac{\partial }{\partial q}(qP) = p \\[6pt]
+			\dfrac{\partial }{\partial P}(qP) = Q
+		\end{cases}
+	\end{equation}
+	cioè
+	\begin{equation}\label{key}
+		\begin{cases}
+			P = p \\[6pt]
+			q = Q
+		\end{cases}
+	\end{equation}
+	ma queste sono le equazioni che contraddistinguono la trasformazione identità, $I(q,p) = (q,p)$. Dunque la funzione del secondo tipo $G(q,P) = qP$ genera la trasformazione completamente canonica identità.
+	\subsection{Equazioni di Hamilton-Jacobi}
+	E se la trasformazione non fosse completamente canonica? In tal caso, l'equivalenza delle forme differenziali diventerebbe:
+	\begin{equation}\label{key}
+		pdq-\mathcal{H}dt = PdQ-\mathcal{H}'dt+dF
+	\end{equation}
+	e qui $\mathcal{H} \mbox{ e } \mathcal{H}'$ sono due funzioni diverse (non basta sostituire le nuove coordinate). Operando come sopra, abbiamo che:
+	$$
+	dF = pdq + PdQ + (\mathcal{H}'-\mathcal{H})dt
+	$$
+	e quindi, se vogliamo che $dF$ sia un differenziale esatto, stavolta ci serve che la funzione $F$, la generatrice del primo tipo, dipenda anche dal tempo:
+	$$
+	dF = \dfrac{\partial F}{\partial q}dq+\dfrac{\partial F}{\partial Q}dQ + \dfrac{\partial F}{\partial t}dt
+	$$
+	In altre parole, la differenza fra generatrici del primo tipo per trasformazioni canoniche e completamente canoniche è che, nel secondo caso, la funzione $F$ non dipende dal tempo. Confrontando le due formule per il differenziale $dF$, abbiamo infine:
+	\begin{equation}
+		\begin{cases}
+			\dfrac{\partial F}{\partial q}(q,Q)=p \\[8pt]
+			\dfrac{\partial F}{\partial Q}(q,Q) = -P
+		\end{cases}
+	\end{equation}
+	proprio come in precedenza ma anche che:
+	\begin{equation}
+		\mathcal{H}' = \mathcal{H}  + \dfrac{\partial F}{\partial t}
+	\end{equation}
+	Cioè se scelgo di fare un cambio di variabili e rappresentare lo spazio delle fasi con $P,Q$ ho ancora la struttura delle equazioni fondamentali della meccanica (quelle di Hamilton e questo succede perché la trasformazione è canonica) ma devo cambiare la hamiltoniana, come a descrivere un nuovo sistema dinamico (legato al primo tramite la trasformazione canonica stessa). La nuova Hamiltoniana è legata alla vecchia in base alla relazione di sopra.
+	
+	Ora un passo fondamentale. Sono riuscito a trovare un modo per trasformare le hamiltoniane di sistemi fisici operando con delle trasformazioni nello spazio delle fasi. E se riuscissi a trovare una trasformazione in un set di nuove variabili $(Q,P)$ con generatrice $F$ tale per cui:
+	\begin{equation}\label{key}
+		\mathcal{H}' = 0
+	\end{equation}
+	questo sarebbe tanta roba. Infatti, visto che la trasformazione è canonica, posso invocare le equazioni di Hamilton e ottenere:
+	\begin{equation}\label{key}
+		\begin{cases}
+			\dot{Q} = 0 \\
+			\dot{P} =0
+		\end{cases}
+	\end{equation}
+	cioè $Q = Q(q,p)$ e $P=P(q,p)$ sono due integrali primi del moto per il sistema iniziale $\mathcal{H}$. Questa fu l'idea di Hamilton, il punto pivotale e più alto di tutta la meccanica razionale.
+	
+	\begin{tcolorbox}
+		Dato un sistema hamiltoniano nelle variabili coordinate-momento $q,p$ con hamiltoniana $\mathcal{H}$, se sono in grado di trovare una trasformazione canoniche $T(q,p) = (Q,P)$, dove $Q,P$ sono variabili indipendenti e non necessariamente coppia coordinata-momenti, generata dalla funzione $F=F(q,Q,t)$ tale per cui:
+		\begin{equation}\label{key}
+			\mathcal{H}' = \mathcal{H}+\dfrac{\partial F}{\partial t} = 0
+		\end{equation}
+		allora ho individuato immediatamente degli integrali primi del moto per il sistema $\mathcal{H}$, ossia $Q(q,p), P(q,P)$
+	\end{tcolorbox}
+	La questione dell'individuazione degli integrali primi del moto, allora, si risolve nella questione dell'individuazione di una adeguata trasformazione canonica. E come trovo questa trasformazione? Dovendo essere:
+	\begin{equation}\label{key}
+		\mathcal{H}(q,p,t)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
+	\end{equation}
+	Ma da quanto abbiamo scoperto per le generatrici del primo tipo,
+	\begin{equation}\label{key}
+		\dfrac{\partial F}{\partial q} = p
+	\end{equation}
+	dunque otteniamo questa equazione, detta \textbf{equazione di Hamilton-Jacobi}:
+	\begin{equation}\label{key}
+		\mathcal{H}\Bigl(q,\dfrac{\partial F}{\partial q},t\Bigl)+\dfrac{\partial F}{\partial t}(q,Q,t) = 0
+	\end{equation}
+	che è un'equazione differenziale nella funzione $F(q,Q,t)$ a tutti gli effetti. Una volta risolta questa equazione differenziale, ho trovato la generatrice $F$ e, quindi, gli integrali primi del moto. \textit{L'equazione di Hamilton-Jacobi è dunque il metodo tanto cercato per individuare gli integrali primi del moto di un sistema meccanico}. Questa equazione differenziale è alle derivate parziali e non lineare, dunque molto molto complicata da risolvere. Però, una volta risolta e se risolvibile, permette di comprendere fino in fondo un problema meccanico.
+	\subsection{Variabili azione-angolo}
 	Un esempio notevole di trasformazione canonica è quella già incontrata in precedenza con le variabili angolo-azione. Riprendiamole brevemente.
 	
 	Consideriamo un problema unidimensionale dove $x$ è la coordinata e $p = m\dot{x}$ il momento coniugato (che ha interpretazione fisica di quantità di moto). Lavoriamo solo con sistemi che ammettono orbite chiuse almeno in una regione dello spazio delle fasi. In tale area dove le traiettorie sono definitivamente chiuse, definisco la variabile \textbf{azione}:
@@ -6920,33 +6917,33 @@ che è un'equazione differenziale nella funzione $F(q,Q,t)$ a tutti gli effetti.
 		I = \dfrac{1}{2\pi}\oint_{H=E}pdx
 		\label{Azione2}
 	\end{equation}
- Geometricamente parlando, l'azione corrisponde all'area nello spazio delle fasi racchiusa da una determinata orbita (riscalata per un certo fattore $2\pi$). È chiaro che, per come è stata definita, l'azione si mantiene costante durante il moto (se l'orbita rimane sempre la stessa in virtù della sua chiusura, l'area anche è la stessa). Da sola, l'azione non basta per determinare lo stato dinamico del sistema: essa infatti mi indica solo su quale orbita sto, ma non mi dice a che punto di tale traiettoria sono nel tempo, come mi muovo su di questa. Avevamo dunque definito la variabile angolo che mi permette di identificare univocamente tutti i punti nello spazio delle fasi (o almeno, nella regione di orbite chiuse). 
- 
- Come possiamo definire l'angolo $\theta$, una volta nota la formula per l'azione? Vogliamo che la trasformazione $T(x,p) = (\theta, I)$ sia canonica, per le regioni già spiegate in precedenza. Quindi ora la domanda è: come definire $\theta$ di modo che la trasformazione $T$ sia canonica, sapendo che $I$ segue la formula (\ref{Azione2})?
- 
- Dobbiamo cercare una generatrice per la trasformazione in questione. Se definisco:
- $$
- F(x,I) = \int_{H=E}^{x}pdx
- $$
- possiamo dimostrare che questa è proprio la generatrice cercata. Si tratta di una funzione generatrice del secondo tipo\footnote{L'azione corrisponde ad un momento, non alla coordinata spaziale} che è definita come l'area sottesa delle orbite \textit{fino} al punto x (dunque non chiudo l'intregrale su tutta l'orbita). Trattandosi di una generatrice del secondo tipo, dobbiamo avere che:
- \begin{equation}\label{key}
- 	\dfrac{\partial F}{\partial x}(x,I) = p
- \end{equation}
-e questo è vero per il teorema fondamentale del calcolo integrale. Allora la definizione di $\theta$ è vincolata ad essere:
-\begin{equation}\label{key}
-	\dfrac{\partial F}{\partial I}(x,I) = \theta
-\end{equation}
-cioè:
-\begin{equation}\label{key}
-	\theta = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
-\end{equation}
-
-Che era proprio la formula già data in precendeza. La trasformazione:
-\begin{equation}\label{key}
-	\begin{cases}
-		I(x,p)  = \dfrac{1}{2\pi}\oint_{H=E}pdx \\[6pt]
-		\theta(x,p) = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
-	\end{cases}
-\end{equation}
-è canonica (completamente perché la generatrice non dipende dal tempo).
+	Geometricamente parlando, l'azione corrisponde all'area nello spazio delle fasi racchiusa da una determinata orbita (riscalata per un certo fattore $2\pi$). È chiaro che, per come è stata definita, l'azione si mantiene costante durante il moto (se l'orbita rimane sempre la stessa in virtù della sua chiusura, l'area anche è la stessa). Da sola, l'azione non basta per determinare lo stato dinamico del sistema: essa infatti mi indica solo su quale orbita sto, ma non mi dice a che punto di tale traiettoria sono nel tempo, come mi muovo su di questa. Avevamo dunque definito la variabile angolo che mi permette di identificare univocamente tutti i punti nello spazio delle fasi (o almeno, nella regione di orbite chiuse). 
+	
+	Come possiamo definire l'angolo $\theta$, una volta nota la formula per l'azione? Vogliamo che la trasformazione $T(x,p) = (\theta, I)$ sia canonica, per le regioni già spiegate in precedenza. Quindi ora la domanda è: come definire $\theta$ di modo che la trasformazione $T$ sia canonica, sapendo che $I$ segue la formula (\ref{Azione2})?
+	
+	Dobbiamo cercare una generatrice per la trasformazione in questione. Se definisco:
+	$$
+	F(x,I) = \int_{H=E}^{x}pdx
+	$$
+	possiamo dimostrare che questa è proprio la generatrice cercata. Si tratta di una funzione generatrice del secondo tipo\footnote{L'azione corrisponde ad un momento, non alla coordinata spaziale} che è definita come l'area sottesa delle orbite \textit{fino} al punto x (dunque non chiudo l'intregrale su tutta l'orbita). Trattandosi di una generatrice del secondo tipo, dobbiamo avere che:
+	\begin{equation}\label{key}
+		\dfrac{\partial F}{\partial x}(x,I) = p
+	\end{equation}
+	e questo è vero per il teorema fondamentale del calcolo integrale. Allora la definizione di $\theta$ è vincolata ad essere:
+	\begin{equation}\label{key}
+		\dfrac{\partial F}{\partial I}(x,I) = \theta
+	\end{equation}
+	cioè:
+	\begin{equation}\label{key}
+		\theta = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
+	\end{equation}
+	
+	Che era proprio la formula già data in precendeza. La trasformazione:
+	\begin{equation}\label{key}
+		\begin{cases}
+			I(x,p)  = \dfrac{1}{2\pi}\oint_{H=E}pdx \\[6pt]
+			\theta(x,p) = \dfrac{\partial}{\partial I}\int_{H=E}^{x}pdx
+		\end{cases}
+	\end{equation}
+	è canonica (completamente perché la generatrice non dipende dal tempo).
 \end{document}
